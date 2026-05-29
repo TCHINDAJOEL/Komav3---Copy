@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Nos projets — KOMA Expertise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#45C9BF; --teal-dark:#2EAFA5; --teal-sky:#6DCEFC; --teal-mint:#69EBD1;
+  --teal-pale:#E8F9F6; --teal-soft:#B8EEE5;
+  --white:#FFFFFF; --paper:#F7FFFE; --light:#F4F4F4; --rule:#E8E8E8;
+  --stone:#888888; --body:#4A4A4A; --ink:#0F0F0F; --black:#111111;
+  --night:#0B1F23; --night-2:#0F2A2C;
+  --gold:#C19A4B; --gold-soft:#D9BB7B;
+  --grad-cta:linear-gradient(135deg,var(--teal-sky) 0%,var(--teal-mint) 100%);
+  --f-display:'Inter',system-ui,sans-serif; --f-body:'Inter',system-ui,sans-serif;
+  --maxw:1280px; --gut:clamp(20px,4vw,64px); --section-y:clamp(64px,8vw,120px);
+  --r-pill:999px; --r-md:12px; --r-lg:20px; --r-xl:28px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f-body);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:16px;line-height:1.6;}
+img,svg{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;cursor:pointer;border:none;background:none;}
+ul,ol{list-style:none;}
+h1{font-family:var(--f-display);font-size:clamp(40px,6vw,84px);font-weight:900;line-height:1.0;letter-spacing:-0.03em;color:var(--ink);text-wrap:balance;}
+h2{font-family:var(--f-display);font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.08;letter-spacing:-0.025em;color:var(--ink);text-wrap:balance;}
+h3{font-family:var(--f-display);font-size:clamp(20px,2vw,26px);font-weight:700;line-height:1.15;letter-spacing:-0.015em;color:var(--ink);}
+h4{font-family:var(--f-display);font-size:18px;font-weight:700;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);}
+p{text-wrap:pretty;}
+.lead{font-size:clamp(16px,1.4vw,19px);color:var(--body);line-height:1.65;max-width:58ch;}
+.label{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-dark);}
+.label-dark{color:rgba(255,255,255,0.7);}
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);}
+section{padding:var(--section-y) 0;}
+.sec-alt{background:var(--paper);}
+.sec-teal{background:var(--teal-pale);}
+.sec-dark{background:var(--ink);color:var(--white);}
+.sec-dark h2,.sec-dark h3,.sec-dark h4{color:var(--white);}
+.sec-dark .lead,.sec-dark p{color:rgba(255,255,255,0.72);}
+.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:52px;}
+.sec-head.centered{align-items:center;text-align:center;}
+.sec-head .label{margin-bottom:4px;}
+
+/* ===== NAVBAR — UBER STYLE ===== */
+.site-header{position:sticky;top:0;z-index:200;background:#111;border-bottom:1px solid rgba(255,255,255,0.08);}
+.nav-audience-bar{background:#111;border-bottom:1px solid rgba(255,255,255,0.07);height:46px;}
+.nav-audience-bar .container{display:flex;align-items:center;height:100%;}
+.nav-brand{display:flex;flex-direction:column;justify-content:center;flex-shrink:0;}
+.nav-brand .koma-word{font-family:var(--f-display);font-weight:900;font-size:21px;letter-spacing:0.09em;color:#fff;line-height:1;}
+.nav-brand .koma-sub{font-size:8px;font-weight:500;letter-spacing:0.30em;color:rgba(255,255,255,0.45);text-transform:uppercase;margin-top:2px;}
+.audience-tabs{display:flex;align-items:center;height:100%;margin-left:36px;}
+.aud-tab{height:100%;display:flex;align-items:center;padding:0 20px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.55);border-bottom:2px solid transparent;transition:.15s;white-space:nowrap;}
+.aud-tab:hover{color:rgba(255,255,255,0.85);}
+.aud-tab.active{color:#fff;border-bottom-color:var(--teal);}
+.nav-audience-bar .nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.nav-wecare{font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);padding:5px 12px;border-radius:var(--r-pill);transition:.15s;}
+.nav-wecare:hover{background:rgba(255,255,255,0.12);color:#fff;}
+.lang-toggle{display:flex;border:1px solid rgba(255,255,255,0.2);border-radius:var(--r-pill);overflow:hidden;}
+.lang-toggle button{padding:5px 9px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:0.06em;}
+.lang-toggle button.on{background:rgba(255,255,255,0.18);color:#fff;}
+.nav-main-bar{background:#1A1A1A;height:54px;border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-main-bar .nav{display:flex;align-items:center;height:100%;}
+.nav-links{display:flex;align-items:center;flex:1;height:100%;}
+.nav-item{height:100%;display:flex;align-items:center;padding:0 18px;font-size:14px;font-weight:500;color:rgba(255,255,255,0.70);white-space:nowrap;transition:color .15s;position:relative;}
+.nav-item:hover,.nav-item.active{color:#fff;}
+.nav-item.active::after{content:'';position:absolute;bottom:0;left:18px;right:18px;height:2px;background:var(--teal);border-radius:2px 2px 0 0;}
+.nav-item.has-mega{position:relative;}
+.nav-item.has-mega>a{color:rgba(255,255,255,0.70);font-size:14px;font-weight:500;display:flex;align-items:center;gap:4px;height:100%;transition:color .15s;}
+.nav-item.has-mega:hover>a{color:#fff;}
+.chevron{font-size:16px;color:rgba(255,255,255,0.4);transition:transform .2s;display:inline-block;}
+.nav-item.has-mega:hover .chevron{transform:rotate(90deg);}
+.mega-panel{display:none;position:absolute;top:100%;left:-16px;background:#1E1E1E;border:1px solid rgba(255,255,255,0.10);border-radius:0 0 16px 16px;padding:16px;min-width:520px;box-shadow:0 16px 48px rgba(0,0,0,0.4);z-index:300;}
+.nav-item.has-mega:hover .mega-panel{display:block;}
+.mega-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+.mega-link{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;transition:background .15s;}
+.mega-link:hover{background:rgba(255,255,255,0.06);}
+.mega-icon{width:36px;height:36px;border-radius:8px;background:rgba(69,201,191,0.14);display:grid;place-items:center;font-size:18px;flex-shrink:0;}
+.mega-link strong{display:block;font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;}
+.mega-link span{display:block;font-size:12px;color:rgba(255,255,255,0.50);line-height:1.3;}
+.nav-ctas{display:flex;align-items:center;gap:8px;flex-shrink:0;padding-left:16px;}
+.btn-outline-dark{background:transparent;color:rgba(255,255,255,0.80);border:1.5px solid rgba(255,255,255,0.25);transition:.15s;}
+.btn-outline-dark:hover{border-color:rgba(255,255,255,0.5);color:#fff;}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:var(--r-pill);font-family:var(--f-display);font-weight:600;font-size:15px;border:none;cursor:pointer;transition:opacity .15s,transform .15s;white-space:nowrap;}
+.btn:hover{opacity:0.92;transform:translateY(-1px);}
+.btn-cta{background:var(--grad-cta);color:var(--ink);box-shadow:0 4px 18px rgba(105,235,209,0.35);font-weight:700;}
+.btn-dark{background:var(--black);color:var(--white);}
+.btn-outline{background:transparent;color:var(--ink);border:2px solid var(--rule);}
+.btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.4);}
+.btn-white{background:var(--white);color:var(--ink);font-weight:700;}
+.btn-sm{padding:9px 16px;font-size:13px;}
+.btn .arrow{font-size:15px;transition:transform .2s;}
+.btn:hover .arrow{transform:translateX(3px);}
+
+/* ===== CARDS ===== */
+.card{background:var(--white);border:1px solid var(--rule);border-radius:var(--r-lg);padding:28px;transition:box-shadow .2s,transform .2s;}
+.card:hover{box-shadow:0 4px 24px rgba(0,0,0,0.07);}
+.card-teal{background:var(--teal-pale);border-color:var(--teal-soft);}
+.card-dark{background:var(--ink);border-color:rgba(255,255,255,0.08);color:var(--white);}
+.card-dark h3,.card-dark h4{color:var(--white);}
+.step-num{font-family:var(--f-display);font-weight:900;font-size:48px;line-height:1;letter-spacing:-0.04em;background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-big{font-family:var(--f-display);font-weight:900;font-size:clamp(36px,4vw,56px);letter-spacing:-0.03em;line-height:1;color:var(--ink);}
+.stat-big .accent{background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+/* ===== TRACKER ===== */
+.tracker{background:var(--white);border:1px solid var(--rule);border-radius:var(--r-xl);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.08);}
+.tracker-header{background:var(--teal);padding:20px 24px;display:flex;justify-content:space-between;align-items:center;}
+.tracker-title{font-weight:700;font-size:17px;color:var(--white);}
+.tracker-sub{font-size:12px;color:rgba(255,255,255,0.8);margin-top:3px;}
+.tracker-body{padding:22px;}
+.tracker-stages{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:22px;}
+.stage{padding:12px;border-radius:10px;background:var(--light);border:1px solid var(--rule);}
+.stage.done{background:rgba(69,201,191,0.10);border-color:rgba(69,201,191,0.30);}
+.stage.now{background:linear-gradient(135deg,rgba(109,206,252,0.12),rgba(105,235,209,0.15));border-color:rgba(69,201,191,0.45);}
+.stage .st-n{font-size:10px;font-weight:600;color:var(--stone);letter-spacing:0.1em;}
+.stage .st-name{font-weight:700;font-size:13px;color:var(--ink);margin-top:6px;}
+.stage .st-status{font-size:10px;margin-top:5px;color:var(--stone);}
+.stage.done .st-status{color:var(--teal-dark);}
+.stage.now .st-status{color:var(--teal-dark);font-weight:600;}
+.tracker-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;}
+.feed{display:grid;gap:8px;}
+.feed-item{display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:10px 14px;border:1px solid var(--rule);border-radius:8px;align-items:center;background:var(--light);}
+.feed-item .ic{width:32px;height:32px;border-radius:8px;background:var(--grad-cta);display:grid;place-items:center;font-size:14px;}
+.feed-item .lbl{font-size:13px;font-weight:500;}
+.feed-item .when{font-size:11px;color:var(--stone);white-space:nowrap;}
+.kpis{display:grid;gap:8px;}
+.kpi{padding:14px;border-radius:10px;background:var(--light);border:1px solid var(--rule);}
+.kpi .v{font-family:var(--f-display);font-weight:800;font-size:24px;color:var(--ink);letter-spacing:-0.02em;}
+.kpi .l{font-size:11px;font-weight:600;color:var(--stone);letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;}
+
+/* ===== TAGS ===== */
+.tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:var(--r-pill);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;background:var(--teal-pale);color:var(--teal-dark);border:1px solid var(--teal-soft);}
+.tag .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);}
+.tag.dark{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.2);}
+
+/* ===== IMAGE PLACEHOLDERS ===== */
+.imgph{position:relative;border-radius:var(--r-lg);overflow:hidden;background:repeating-linear-gradient(135deg,rgba(69,201,191,0.04) 0,rgba(69,201,191,0.04) 1px,transparent 1px,transparent 10px),linear-gradient(180deg,#E6F4F1 0%,#D4ECEA 100%);display:flex;align-items:flex-end;padding:14px;min-height:220px;}
+.imgph .cap{background:rgba(255,255,255,0.90);border:1px solid var(--rule);border-radius:6px;padding:6px 10px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--stone);}
+
+/* ===== HERO MAP (real image) ===== */
+.hero-map{position:relative;border-radius:var(--r-xl);overflow:hidden;border:1px solid rgba(69,201,191,0.20);box-shadow:0 18px 56px rgba(11,31,35,0.32);aspect-ratio:4/3;background:var(--night);}
+.hero-map img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-map .map-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,31,35,0) 40%,rgba(11,31,35,0.55) 100%);}
+.hero-map .live-chip{position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(11,31,35,0.78);border:1px solid rgba(105,235,209,0.3);color:var(--teal-mint);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 12px;border-radius:var(--r-pill);backdrop-filter:blur(6px);}
+.hero-map .live-chip .pulse{width:8px;height:8px;border-radius:50%;background:var(--teal-mint);box-shadow:0 0 0 0 rgba(105,235,209,0.6);animation:livep 2s infinite;}
+@keyframes livep{0%{box-shadow:0 0 0 0 rgba(105,235,209,0.55);}70%{box-shadow:0 0 0 9px rgba(105,235,209,0);}100%{box-shadow:0 0 0 0 rgba(105,235,209,0);}}
+.hero-map .map-cards{position:absolute;bottom:16px;left:16px;right:16px;display:flex;gap:10px;flex-wrap:wrap;}
+.map-card{background:rgba(11,31,35,0.80);border:1px solid rgba(105,235,209,0.22);border-radius:12px;padding:10px 14px;backdrop-filter:blur(6px);flex:1;min-width:120px;}
+.map-card .mc-route{font-size:10px;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.55);text-transform:uppercase;}
+.map-card .mc-name{font-size:13px;font-weight:700;color:#fff;margin-top:3px;}
+.map-card .mc-status{font-size:11px;color:var(--teal-mint);margin-top:3px;font-weight:600;}
+
+/* ===== WECARE ===== */
+.wecare-section{background:linear-gradient(135deg,#0F2A2C 0%,#0B1F23 100%);color:var(--white);}
+.wecare-section h2{color:var(--white);}
+.wecare-section .lead{color:rgba(255,255,255,0.72);}
+
+/* ===== FOOTER ===== */
+.site-footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:72px 0 32px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:32px;}
+.footer-grid h5{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:16px;}
+.footer-grid ul{display:grid;gap:10px;}
+.footer-grid a{font-size:14px;color:rgba(255,255,255,0.75);transition:color .15s;}
+.footer-grid a:hover{color:#fff;}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;letter-spacing:0.06em;color:rgba(255,255,255,0.35);flex-wrap:wrap;gap:12px;}
+.foot-bottom a{color:rgba(255,255,255,0.5);}
+.foot-bottom a:hover{color:#fff;}
+.wecare-badge{border:1px solid rgba(255,255,255,0.12);border-radius:var(--r-md);padding:14px 16px;margin-top:20px;background:rgba(255,255,255,0.03);}
+.wecare-badge .wrow{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase;}
+.wecare-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+
+/* ===== HELPERS ===== */
+.g-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.g-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.g-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.row-sb{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.hr{height:1px;background:var(--rule);border:none;}
+.page-hero{padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(48px,6vw,72px);border-bottom:1px solid var(--rule);}
+.page-hero h1{max-width:18ch;}
+.page-hero .lead{margin-top:20px;max-width:56ch;}
+.page-meta{display:flex;gap:28px;margin-top:28px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone);flex-wrap:wrap;}
+.page-meta span{display:flex;align-items:center;gap:8px;}
+.page-meta span::before{content:"";width:16px;height:1px;background:var(--teal);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:980px){
+  .g-2,.g-3,.g-4{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .nav-main-bar{display:none;}
+  .audience-tabs{display:none;}
+  .nav-audience-bar{height:60px;}
+  .tracker-stages{grid-template-columns:repeat(3,1fr);}
+  .tracker-grid{grid-template-columns:1fr;}
+  .hero-grid{grid-template-columns:1fr !important;}
+}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header class="site-header" id="site-header">
+  <div class="nav-audience-bar">
+    <div class="container">
+      <a href="home.html" class="nav-brand" aria-label="KOMA accueil">
+        <div class="koma-word">KOMA</div>
+        <div class="koma-sub">Expertise</div>
+      </a>
+      <div class="audience-tabs">
+        <a href="home.html" class="aud-tab active">Pour les clients</a>
+        <a href="partners.html" class="aud-tab">Pour les professionnels</a>
+      </div>
+      <div class="nav-right">
+        <a href="partners.html#wecare" class="nav-wecare">SCI WeCare</a>
+        <div class="lang-toggle"><button aria-pressed="false">EN</button><button class="on" aria-pressed="true">FR</button></div>
+        <a href="contact.html" class="btn btn-white btn-sm">Estimer mon projet</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-main-bar">
+    <div class="container nav">
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="home.html" class="nav-item">Accueil</a>
+        <div class="nav-item has-mega">
+          <a href="solutions.html">Solutions <span class="chevron">›</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid">
+              <a href="solutions.html#conseil" class="mega-link"><div class="mega-icon">🏗️</div><div><strong>Conseil &amp; cadrage</strong><span>Définir et structurer votre projet</span></div></a>
+              <a href="solutions.html#amoa" class="mega-link"><div class="mega-icon">📐</div><div><strong>Assistance maîtrise d'ouvrage</strong><span>Défendre vos intérêts sur le terrain</span></div></a>
+              <a href="solutions.html#financement" class="mega-link"><div class="mega-icon">💰</div><div><strong>Financement</strong><span>Structurer votre plan de financement</span></div></a>
+              <a href="solutions.html#coordination" class="mega-link"><div class="mega-icon">🤝</div><div><strong>Coordination chantier</strong><span>Architectes, entreprises, fournisseurs</span></div></a>
+              <a href="platform.html" class="mega-link"><div class="mega-icon">📱</div><div><strong>Suivi digital</strong><span>Tableau de bord en temps réel</span></div></a>
+              <a href="partners.html" class="mega-link"><div class="mega-icon">🌍</div><div><strong>Réseau de partenaires</strong><span>Experts &amp; entreprises vérifiés</span></div></a>
+            </div>
+          </div>
+        </div>
+        <a href="journey.html" class="nav-item">Comment ça marche</a>
+        <a href="platform.html" class="nav-item">Plateforme</a>
+        <a href="projects.html" class="nav-item active">Projets</a>
+        <a href="about.html" class="nav-item">À propos</a>
+      </nav>
+      <div class="nav-ctas">
+        <a href="contact.html" class="btn btn-outline-dark btn-sm">Parler à un expert</a>
+        <a href="contact.html" class="btn btn-cta btn-sm">Créer mon espace <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="tag" style="margin-bottom:20px;"><span class="dot"></span> Nos projets</div>
+    <h1>Construits à distance. Livrés sur le terrain.</h1>
+    <p class="lead">Villas, immeubles locatifs, rénovations, reprises de chantier — pilotés depuis Paris, Bruxelles ou Londres, exécutés en Afrique avec l'expertise SCI WeCare.</p>
+    <div class="page-meta"><span>8 pays</span><span>120+ projets</span><span>1 reprise sur 4</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="g-3" style="gap:18px;">
+      <a href="#villa-lome" id="villa-lome" class="card" style="padding:0;overflow:hidden;display:block;"><div class="imgph" style="border-radius:0;min-height:240px;"><span class="cap">[ VILLA OUÉDRAOGO · LOMÉ ]</span></div><div style="padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span class="tag"><span class="dot"></span> PRJ-0421 · TOGO</span><span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(69,201,191,0.12);color:var(--teal-dark);">Livré</span></div><h4>Villa familiale 280 m²</h4><p style="margin-top:8px;font-size:14px;color:var(--stone);">14 mois depuis Paris · livrée</p></div></a>
+      <a href="#duplex-abidjan" id="duplex-abidjan" class="card" style="padding:0;overflow:hidden;display:block;"><div class="imgph" style="border-radius:0;min-height:240px;"><span class="cap">[ DUPLEX · ABIDJAN ]</span></div><div style="padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span class="tag"><span class="dot"></span> PRJ-0388 · CÔTE D'IVOIRE</span><span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--teal-pale);color:var(--teal-dark);">En cours</span></div><h4>Duplex locatif 2 unités</h4><p style="margin-top:8px;font-size:14px;color:var(--stone);">Gros œuvre en cours</p></div></a>
+      <a href="#reno-douala" id="reno-douala" class="card" style="padding:0;overflow:hidden;display:block;"><div class="imgph" style="border-radius:0;min-height:240px;"><span class="cap">[ RÉNOVATION · DOUALA ]</span></div><div style="padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span class="tag"><span class="dot"></span> PRJ-0412 · CAMEROUN</span><span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--teal-pale);color:var(--teal-dark);">En cours</span></div><h4>Rénovation patrimoine</h4><p style="margin-top:8px;font-size:14px;color:var(--stone);">Reprise de chantier bloqué</p></div></a>
+      <a href="#compound-dakar" id="compound-dakar" class="card" style="padding:0;overflow:hidden;display:block;"><div class="imgph" style="border-radius:0;min-height:240px;"><span class="cap">[ R+2 · DAKAR ]</span></div><div style="padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span class="tag"><span class="dot"></span> PRJ-0344 · SÉNÉGAL</span><span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(69,201,191,0.12);color:var(--teal-dark);">Livré</span></div><h4>Compound R+2</h4><p style="margin-top:8px;font-size:14px;color:var(--stone);">Financement EUR &amp; CFA</p></div></a>
+      <a href="#etude-ouaga" id="etude-ouaga" class="card" style="padding:0;overflow:hidden;display:block;"><div class="imgph" style="border-radius:0;min-height:240px;"><span class="cap">[ ÉTUDE · OUAGADOUGOU ]</span></div><div style="padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span class="tag"><span class="dot"></span> PRJ-0301 · BURKINA FASO</span><span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(193,154,75,0.12);color:var(--gold);">Étude</span></div><h4>Acquisition + étude APS</h4><p style="margin-top:8px;font-size:14px;color:var(--stone);">Étude sans chantier</p></div></a>
+      <a href="#villa-cotonou" id="villa-cotonou" class="card" style="padding:0;overflow:hidden;display:block;"><div class="imgph" style="border-radius:0;min-height:240px;"><span class="cap">[ VILLA · COTONOU ]</span></div><div style="padding:20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span class="tag"><span class="dot"></span> PRJ-0356 · BÉNIN</span><span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--teal-pale);color:var(--teal-dark);">En cours</span></div><h4>Villa contemporaine 200 m²</h4><p style="margin-top:8px;font-size:14px;color:var(--stone);">Conception en cours</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec-alt">
+  <div class="container">
+    <div class="g-4" style="text-align:center;gap:32px;">
+      <div><div class="stat-big">120<span class="accent">+</span></div><div style="font-size:13px;color:var(--stone);margin-top:6px;font-weight:500;">Projets accompagnés</div></div>
+      <div><div class="stat-big">8</div><div style="font-size:13px;color:var(--stone);margin-top:6px;font-weight:500;">Pays couverts</div></div>
+      <div><div class="stat-big">1/4</div><div style="font-size:13px;color:var(--stone);margin-top:6px;font-weight:500;">Sont des reprises</div></div>
+      <div><div class="stat-big">98<span class="accent">%</span></div><div style="font-size:13px;color:var(--stone);margin-top:6px;font-weight:500;">Satisfaction client</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--teal-pale);border-top:1px solid var(--teal-soft);padding:clamp(64px,7vw,110px) 0;text-align:center;">
+  <div class="container">
+    <h2 style="max-width:24ch;margin:0 auto;">Votre projet sera le prochain.</h2>
+    <div style="display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:28px;"><a href="contact.html" class="btn btn-cta">Estimer mon projet <span class="arrow">→</span></a><a href="contact.html" class="btn btn-dark">Parler à un expert</a></div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="font-family:var(--f-display);font-weight:900;font-size:22px;letter-spacing:0.08em;color:white;">KOMA <span style="font-weight:500;font-size:14px;letter-spacing:0.2em;opacity:0.6;">EXPERTISE</span></div>
+        <p style="margin-top:16px;max-width:38ch;color:rgba(255,255,255,0.65);font-size:14px;">Construisez en Afrique depuis le monde entier — avec transparence, des experts vérifiés et un interlocuteur unique.</p>
+        <div class="wecare-badge">
+          <div class="wrow"><span class="dot"></span> Ingénierie SCI WeCare</div>
+          <p style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.5);">Entité technique sœur — études, coordination, exécution. <a href="partners.html#wecare" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px;">En savoir plus</a></p>
+        </div>
+      </div>
+      <div>
+        <h5>Pour les clients</h5>
+        <ul>
+          <li><a href="solutions.html">Nos solutions</a></li>
+          <li><a href="journey.html">Comment ça marche</a></li>
+          <li><a href="platform.html">Espace projet</a></li>
+          <li><a href="projects.html">Projets réalisés</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Pour les pros</h5>
+        <ul>
+          <li><a href="partners.html">Rejoindre le réseau</a></li>
+          <li><a href="partners.html#wecare">SCI WeCare</a></li>
+          <li><a href="about.html">À propos de KOMA</a></li>
+          <li><a href="contact.html">Devenir partenaire</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="contact.html">Estimer mon projet</a></li>
+          <li><a href="contact.html">Parler à un expert</a></li>
+          <li><a href="mailto:hello@koma.build">hello@koma.build</a></li>
+          <li><a href="tel:+33000000000">+33 (0) 00 00 00 00</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 KOMA Expertise · SCI WeCare Group</div>
+      <div style="display:flex;gap:20px;">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">EN / FR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
