@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KOMA — Vue d'ensemble du site</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>KOMA â€” Vue d'ensemble du site</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Inter',sans-serif;background:#0B1F23;color:#fff;}
@@ -33,13 +33,13 @@ body{font-family:'Inter',sans-serif;background:#0B1F23;color:#fff;}
 <body>
 <div class="bar">
   <div class="brand">KOMA <span>EXPERTISE</span></div>
-  <div class="meta">VUE D'ENSEMBLE · <b>8 pages</b> · v.3 · FR</div>
-  <button class="cta" onclick="window.open('home.html','_blank')">Ouvrir le site →</button>
+  <div class="meta">VUE D'ENSEMBLE Â· <b>8 pages</b> Â· v.3 Â· FR</div>
+  <button class="cta" onclick="window.open('home.html','_blank')">Ouvrir le site â†’</button>
 </div>
 <div class="wrap">
   <div class="head">
-    <h1>Site vitrine KOMA — toutes les pages</h1>
-    <p>Navbar style Uber · carte monde dans le hero · CSS intégré dans chaque page · cohérence complète.</p>
+    <h1>Site vitrine KOMA â€” toutes les pages</h1>
+    <p>Navbar style Uber Â· carte monde dans le hero Â· CSS intÃ©grÃ© dans chaque page Â· cohÃ©rence complÃ¨te.</p>
   </div>
   <div class="grid" id="grid"></div>
 </div>
@@ -47,11 +47,11 @@ body{font-family:'Inter',sans-serif;background:#0B1F23;color:#fff;}
 const pages=[
  {label:'Accueil',href:'home.html',h:5400},
  {label:'Solutions',href:'solutions.html',h:3400},
- {label:'Comment ça marche',href:'journey.html',h:3200},
+ {label:'Comment Ã§a marche',href:'journey.html',h:3200},
  {label:'Plateforme',href:'platform.html',h:3000},
  {label:'Projets',href:'projects.html',h:2800},
  {label:'Pour les pros',href:'partners.html',h:3800},
- {label:'À propos',href:'about.html',h:2800},
+ {label:'Ã€ propos',href:'about.html',h:2800},
  {label:'Contact',href:'contact.html',h:2200},
 ];
 const scale=340/1440;
@@ -63,10 +63,12 @@ pages.forEach((p,i)=>{
    <div class="frame">
      <iframe src="${p.href}" style="height:${p.h}px;transform:scale(${scale});" scrolling="no"></iframe>
      <a class="full" href="${p.href}" target="_blank"></a>
-     <a class="open" href="${p.href}" target="_blank">Ouvrir ↗</a>
+     <a class="open" href="${p.href}" target="_blank">Ouvrir â†—</a>
    </div>
  </div>`;
 });
 </script>
 </body>
 </html>
+
+
