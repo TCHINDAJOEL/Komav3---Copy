@@ -1,12 +1,13 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pour les professionnels â€” KOMA Expertise</title>
+<title>Pour les professionnels — KOMA Expertise</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>@font-face{font-family:'Fontastique';src:url('fontastique.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:swap;}</style>
 <style>
 :root{
   --teal:#45C9BF; --teal-dark:#2EAFA5; --teal-sky:#6DCEFC; --teal-mint:#69EBD1;
@@ -16,7 +17,7 @@
   --night:#0B1F23; --night-2:#0F2A2C;
   --gold:#C19A4B; --gold-soft:#D9BB7B;
   --grad-cta:linear-gradient(135deg,var(--teal-sky) 0%,var(--teal-mint) 100%);
-  --f-display:'Rubik',system-ui,sans-serif; --f-body:'Rubik',system-ui,sans-serif;
+  --f-display:'Fontastique','Georgia',serif; --f-body:'Rubik',system-ui,sans-serif;
   --maxw:1280px; --gut:clamp(20px,4vw,64px); --section-y:clamp(64px,8vw,120px);
   --r-pill:999px; --r-md:12px; --r-lg:20px; --r-xl:28px;
 }
@@ -27,10 +28,11 @@ img,svg{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
 button{font:inherit;cursor:pointer;border:none;background:none;}
 ul,ol{list-style:none;}
-h1{font-family:var(--f-display);font-size:clamp(40px,6vw,84px);font-weight:900;line-height:1.0;letter-spacing:-0.03em;color:var(--ink);text-wrap:balance;}
-h2{font-family:var(--f-display);font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.08;letter-spacing:-0.025em;color:var(--ink);text-wrap:balance;}
-h3{font-family:var(--f-display);font-size:clamp(20px,2vw,26px);font-weight:700;line-height:1.15;letter-spacing:-0.015em;color:var(--ink);}
-h4{font-family:var(--f-display);font-size:18px;font-weight:700;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);}
+h1{font-family:var(--f-display);font-size:clamp(44px,6.5vw,88px);font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--ink);text-wrap:balance;}
+h2{font-family:var(--f-display);font-size:clamp(30px,4vw,56px);font-weight:700;line-height:1.06;letter-spacing:-0.018em;color:var(--ink);text-wrap:balance;}
+h3{font-family:var(--f-body);font-size:clamp(20px,2vw,24px);font-weight:600;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);}
+h4{font-family:var(--f-body);font-size:17px;font-weight:600;line-height:1.25;letter-spacing:-0.005em;color:var(--ink);}
+blockquote{font-family:var(--f-display);font-weight:600;font-size:clamp(17px,1.6vw,20px);line-height:1.5;font-style:italic;color:var(--ink);}
 p{text-wrap:pretty;}
 .lead{font-size:clamp(16px,1.4vw,19px);color:var(--body);line-height:1.65;max-width:58ch;}
 .label{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-dark);}
@@ -46,65 +48,54 @@ section{padding:var(--section-y) 0;}
 .sec-head.centered{align-items:center;text-align:center;}
 .sec-head .label{margin-bottom:4px;}
 
-/* ===== NAVBAR â€” UBER STYLE ===== */
-.site-header{position:sticky;top:0;z-index:200;background:#111;border-bottom:1px solid rgba(255,255,255,0.08);}
-.nav-audience-bar{background:#111;border-bottom:1px solid rgba(255,255,255,0.07);height:46px;}
-.nav-audience-bar .container{display:flex;align-items:center;height:100%;}
+/* ===== NAVBAR — UNIFIED 64px ===== */
+.site-header{position:sticky;top:0;z-index:200;background:#0F0F0F;border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(12px);}
+.nav-unified{height:64px;display:flex;align-items:center;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);}
 .nav-brand{display:flex;flex-direction:column;justify-content:center;flex-shrink:0;}
-.nav-brand .koma-word{font-family:var(--f-display);font-weight:900;font-size:21px;letter-spacing:0.09em;color:#fff;line-height:1;}
-.nav-brand .koma-sub{font-size:8px;font-weight:500;letter-spacing:0.30em;color:rgba(255,255,255,0.45);text-transform:uppercase;margin-top:2px;}
-.audience-tabs{display:flex;align-items:center;height:100%;margin-left:36px;}
-.aud-tab{height:100%;display:flex;align-items:center;padding:0 20px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.55);border-bottom:2px solid transparent;transition:.15s;white-space:nowrap;}
-.aud-tab:hover{color:rgba(255,255,255,0.85);}
-.aud-tab.active{color:#fff;border-bottom-color:var(--teal);}
-.nav-audience-bar .nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
-.nav-wecare{font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);padding:5px 12px;border-radius:var(--r-pill);transition:.15s;}
-.nav-wecare:hover{background:rgba(255,255,255,0.12);color:#fff;}
-.lang-toggle{display:flex;border:1px solid rgba(255,255,255,0.2);border-radius:var(--r-pill);overflow:hidden;}
-.lang-toggle button{padding:5px 9px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:0.06em;}
-.lang-toggle button.on{background:rgba(255,255,255,0.18);color:#fff;}
-.nav-main-bar{background:#1A1A1A;height:54px;border-bottom:1px solid rgba(255,255,255,0.06);}
-.nav-main-bar .nav{display:flex;align-items:center;height:100%;}
-.nav-links{display:flex;align-items:center;flex:1;height:100%;}
-.nav-item{height:100%;display:flex;align-items:center;padding:0 18px;font-size:14px;font-weight:500;color:rgba(255,255,255,0.70);white-space:nowrap;transition:color .15s;position:relative;}
-.nav-item:hover,.nav-item.active{color:#fff;}
-.nav-item.active::after{content:'';position:absolute;bottom:0;left:18px;right:18px;height:2px;background:var(--teal);border-radius:2px 2px 0 0;}
-.nav-item.has-mega{position:relative;}
-.nav-item.has-mega>a{color:rgba(255,255,255,0.70);font-size:14px;font-weight:500;display:flex;align-items:center;gap:4px;height:100%;transition:color .15s;}
-.nav-item.has-mega:hover>a{color:#fff;}
-.chevron{font-size:16px;color:rgba(255,255,255,0.4);transition:transform .2s;display:inline-block;}
-.nav-item.has-mega:hover .chevron{transform:rotate(90deg);}
-.mega-panel{display:none;position:absolute;top:100%;left:-16px;background:#1E1E1E;border:1px solid rgba(255,255,255,0.10);border-radius:0 0 16px 16px;padding:16px;min-width:520px;box-shadow:0 16px 48px rgba(0,0,0,0.4);z-index:300;}
-.nav-item.has-mega:hover .mega-panel{display:block;}
-.mega-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
-.mega-link{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;transition:background .15s;}
-.mega-link:hover{background:rgba(255,255,255,0.06);}
-.mega-icon{width:36px;height:36px;border-radius:8px;background:rgba(69,201,191,0.14);display:grid;place-items:center;font-size:18px;flex-shrink:0;}
-.mega-link strong{display:block;font-size:13px;font-weight:600;color:#fff;margin-bottom:2px;}
-.mega-link span{display:block;font-size:12px;color:rgba(255,255,255,0.50);line-height:1.3;}
-.nav-ctas{display:flex;align-items:center;gap:8px;flex-shrink:0;padding-left:16px;}
+.nav-brand .koma-word{font-family:var(--f-body);font-weight:700;font-size:18px;letter-spacing:0.14em;color:#fff;line-height:1;}
+.nav-brand .koma-sub{font-size:7px;font-weight:500;letter-spacing:0.35em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:3px;}
+.nav-divider{width:1px;height:20px;background:rgba(255,255,255,0.12);margin:0 20px;flex-shrink:0;}
+.nav-links{display:flex;align-items:center;height:100%;flex:1;}
+.nav-item{height:100%;display:flex;align-items:center;padding:0 14px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.60);white-space:nowrap;transition:color 0.15s;position:relative;}
+.nav-item::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--teal);border-radius:2px 2px 0 0;transform:scaleX(0);transform-origin:left;transition:transform 0.2s ease;}
+.nav-item:hover{color:#fff;}
+.nav-item:hover::after,.nav-item.active::after{transform:scaleX(1);}
+.nav-item.active{color:#fff;}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0;padding-left:16px;}
+.nav-wecare{font-size:11px;font-weight:600;color:var(--gold-soft);background:rgba(193,154,75,0.08);border:1px solid rgba(193,154,75,0.25);padding:5px 12px;border-radius:var(--r-pill);transition:0.15s;letter-spacing:0.04em;}
+.nav-wecare:hover{background:rgba(193,154,75,0.16);color:var(--gold);}
+.nav-pros{font-size:12px;font-weight:600;color:rgba(255,255,255,0.55);padding:5px 12px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,0.15);transition:0.15s;}
+.nav-pros:hover{color:#fff;border-color:rgba(255,255,255,0.35);}
+.nav-mob{display:none;align-items:center;gap:12px;margin-left:auto;}
+.hamburger{width:36px;height:36px;display:flex;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;}
+.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.8);border-radius:2px;}
 .btn-outline-dark{background:transparent;color:rgba(255,255,255,0.80);border:1.5px solid rgba(255,255,255,0.25);transition:.15s;}
 .btn-outline-dark:hover{border-color:rgba(255,255,255,0.5);color:#fff;}
 
 /* ===== BUTTONS ===== */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:var(--r-pill);font-family:var(--f-display);font-weight:600;font-size:15px;border:none;cursor:pointer;transition:opacity .15s,transform .15s;white-space:nowrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:var(--r-pill);font-family:var(--f-body);font-weight:600;font-size:15px;border:none;cursor:pointer;transition:opacity .15s,transform .15s;white-space:nowrap;}
 .btn:hover{opacity:0.92;transform:translateY(-1px);}
-.btn-cta{background:var(--grad-cta);color:var(--ink);box-shadow:0 4px 18px rgba(105,235,209,0.35);font-weight:700;}
-.btn-dark{background:var(--black);color:var(--white);}
+.btn-cta{background:var(--grad-cta);color:var(--ink);box-shadow:0 4px 18px rgba(105,235,209,0.30);font-weight:700;transition:box-shadow 0.2s,transform 0.15s,filter 0.2s;}
+.btn-cta:hover{opacity:1;filter:brightness(1.06);box-shadow:0 8px 32px rgba(105,235,209,0.50);transform:translateY(-2px);}
+.btn-dark{background:var(--black);color:var(--white);transition:background 0.2s,transform 0.15s;}
+.btn-dark:hover{background:var(--teal-dark);opacity:1;transform:translateY(-1px);}
 .btn-outline{background:transparent;color:var(--ink);border:2px solid var(--rule);}
 .btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.4);}
 .btn-white{background:var(--white);color:var(--ink);font-weight:700;}
 .btn-sm{padding:9px 16px;font-size:13px;}
 .btn .arrow{font-size:15px;transition:transform .2s;}
 .btn:hover .arrow{transform:translateX(3px);}
+.btn:active{transform:scale(0.97) !important;}
 
 /* ===== CARDS ===== */
-.card{background:var(--white);border:1px solid var(--rule);border-radius:var(--r-lg);padding:28px;transition:box-shadow .2s,transform .2s;}
-.card:hover{box-shadow:0 4px 24px rgba(0,0,0,0.07);}
+.card{background:var(--white);border:1px solid var(--rule);border-radius:var(--r-lg);padding:28px;transition:box-shadow .25s,border-color .25s,transform .2s;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--teal);border-radius:var(--r-lg) 0 0 var(--r-lg);transform:scaleY(0);transform-origin:bottom;transition:transform 0.22s ease;}
+.card:hover{box-shadow:0 6px 28px rgba(0,0,0,0.08);border-color:rgba(69,201,191,0.25);transform:translateY(-2px);}
+.card:hover::before{transform:scaleY(1);}
 .card-teal{background:var(--teal-pale);border-color:var(--teal-soft);}
 .card-dark{background:var(--ink);border-color:rgba(255,255,255,0.08);color:var(--white);}
 .card-dark h3,.card-dark h4{color:var(--white);}
-.step-num{font-family:var(--f-display);font-weight:900;font-size:48px;line-height:1;letter-spacing:-0.04em;background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.step-num{font-family:var(--f-display);font-weight:900;font-size:42px;line-height:1;letter-spacing:-0.04em;background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .stat-big{font-family:var(--f-display);font-weight:900;font-size:clamp(36px,4vw,56px);letter-spacing:-0.03em;line-height:1;color:var(--ink);}
 .stat-big .accent{background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 
@@ -162,18 +153,20 @@ section{padding:var(--section-y) 0;}
 .wecare-section .lead{color:rgba(255,255,255,0.72);}
 
 /* ===== FOOTER ===== */
-.site-footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:72px 0 32px;}
+.site-footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:72px 0 32px;position:relative;}
+.site-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,var(--teal) 35%,var(--teal-mint) 65%,transparent 100%);opacity:0.4;}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:32px;}
 .footer-grid h5{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:16px;}
 .footer-grid ul{display:grid;gap:10px;}
-.footer-grid a{font-size:14px;color:rgba(255,255,255,0.75);transition:color .15s;}
-.footer-grid a:hover{color:#fff;}
+.footer-grid a{font-size:14px;color:rgba(255,255,255,0.65);transition:color .15s;}
+.footer-grid a:hover{color:var(--teal-mint);}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;letter-spacing:0.06em;color:rgba(255,255,255,0.35);flex-wrap:wrap;gap:12px;}
 .foot-bottom a{color:rgba(255,255,255,0.5);}
 .foot-bottom a:hover{color:#fff;}
-.wecare-badge{border:1px solid rgba(255,255,255,0.12);border-radius:var(--r-md);padding:14px 16px;margin-top:20px;background:rgba(255,255,255,0.03);}
+.wecare-badge{border:1px solid rgba(255,255,255,0.10);border-left:3px solid var(--gold);border-radius:0 var(--r-md) var(--r-md) 0;padding:14px 16px;margin-top:20px;background:rgba(193,154,75,0.04);}
 .wecare-badge .wrow{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase;}
-.wecare-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+@keyframes goldPulse{0%,100%{box-shadow:0 0 0 0 rgba(193,154,75,0.5);}50%{box-shadow:0 0 0 5px rgba(193,154,75,0);}}
+.wecare-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:goldPulse 3s ease-in-out infinite;}
 
 /* ===== HELPERS ===== */
 .g-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
@@ -192,9 +185,8 @@ section{padding:var(--section-y) 0;}
 @media(max-width:980px){
   .g-2,.g-3,.g-4{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr 1fr;}
-  .nav-main-bar{display:none;}
-  .audience-tabs{display:none;}
-  .nav-audience-bar{height:60px;}
+  .nav-links,.nav-right{display:none;}
+  .nav-mob{display:flex;}
   .tracker-stages{grid-template-columns:repeat(3,1fr);}
   .tracker-grid{grid-template-columns:1fr;}
   .hero-grid{grid-template-columns:1fr !important;}
@@ -204,51 +196,30 @@ section{padding:var(--section-y) 0;}
 </head>
 <body>
 <header class="site-header" id="site-header">
-  <div class="nav-audience-bar">
-    <div class="container">
-      <a href="home.html" class="nav-brand" aria-label="KOMA accueil">
-        <div class="koma-word">KOMA</div>
-        <div class="koma-sub">Expertise</div>
-      </a>
-      <div class="audience-tabs">
-        <a href="home.html" class="aud-tab">Pour les clients</a>
-        <a href="partners.html" class="aud-tab active">Pour les professionnels</a>
-      </div>
-      <div class="nav-right">
-        <a href="partners.html#wecare" class="nav-wecare">SCI WeCare</a>
-        <div class="lang-toggle"><button aria-pressed="false">EN</button><button class="on" aria-pressed="true">FR</button></div>
-        <a href="contact.html" class="btn btn-white btn-sm">Estimer mon projet</a>
-      </div>
+  <nav class="nav-unified" aria-label="Navigation principale">
+    <a href="home.html" class="nav-brand" aria-label="KOMA accueil">
+      <div class="koma-word">KOMA</div>
+      <div class="koma-sub">Expertise</div>
+    </a>
+    <div class="nav-divider"></div>
+    <div class="nav-links">
+      <a href="home.html" class="nav-item">Accueil</a>
+      <a href="solutions.html" class="nav-item">Solutions</a>
+      <a href="journey.html" class="nav-item">Comment ca marche</a>
+      <a href="platform.html" class="nav-item">Plateforme</a>
+      <a href="projects.html" class="nav-item">Projets</a>
+      <a href="about.html" class="nav-item">A propos</a>
     </div>
-  </div>
-  <div class="nav-main-bar">
-    <div class="container nav">
-      <nav class="nav-links" aria-label="Navigation principale">
-        <a href="home.html" class="nav-item">Accueil</a>
-        <div class="nav-item has-mega">
-          <a href="solutions.html">Solutions <span class="chevron">â€º</span></a>
-          <div class="mega-panel">
-            <div class="mega-grid">
-              <a href="solutions.html#conseil" class="mega-link"><div class="mega-icon">ðŸ—ï¸</div><div><strong>Conseil &amp; cadrage</strong><span>DÃ©finir et structurer votre projet</span></div></a>
-              <a href="solutions.html#amoa" class="mega-link"><div class="mega-icon">ðŸ“</div><div><strong>Assistance maÃ®trise d'ouvrage</strong><span>DÃ©fendre vos intÃ©rÃªts sur le terrain</span></div></a>
-              <a href="solutions.html#financement" class="mega-link"><div class="mega-icon">ðŸ’°</div><div><strong>Financement</strong><span>Structurer votre plan de financement</span></div></a>
-              <a href="solutions.html#coordination" class="mega-link"><div class="mega-icon">ðŸ¤</div><div><strong>Coordination chantier</strong><span>Architectes, entreprises, fournisseurs</span></div></a>
-              <a href="platform.html" class="mega-link"><div class="mega-icon">ðŸ“±</div><div><strong>Suivi digital</strong><span>Tableau de bord en temps rÃ©el</span></div></a>
-              <a href="partners.html" class="mega-link"><div class="mega-icon">ðŸŒ</div><div><strong>RÃ©seau de partenaires</strong><span>Experts &amp; entreprises vÃ©rifiÃ©s</span></div></a>
-            </div>
-          </div>
-        </div>
-        <a href="journey.html" class="nav-item">Comment Ã§a marche</a>
-        <a href="platform.html" class="nav-item">Plateforme</a>
-        <a href="projects.html" class="nav-item">Projets</a>
-        <a href="about.html" class="nav-item">Ã€ propos</a>
-      </nav>
-      <div class="nav-ctas">
-        <a href="contact.html" class="btn btn-outline-dark btn-sm">Parler Ã  un expert</a>
-        <a href="contact.html" class="btn btn-cta btn-sm">CrÃ©er mon espace <span class="arrow">â†’</span></a>
-      </div>
+    <div class="nav-right">
+      <a href="partners.html" class="nav-pros">Pour les pros</a>
+      <a href="partners.html#wecare" class="nav-wecare">SCI WeCare</a>
+      <a href="contact.html" class="btn btn-cta btn-sm">Estimer mon projet</a>
     </div>
-  </div>
+    <div class="nav-mob">
+      <a href="contact.html" class="btn btn-cta btn-sm">Estimer</a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 </header>
 
 <section class="sec-dark" style="padding:0;">
@@ -256,15 +227,15 @@ section{padding:var(--section-y) 0;}
     <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;" class="hero-grid">
       <div>
         <div class="tag dark" style="margin-bottom:20px;"><span class="dot" style="background:var(--teal-mint);"></span> Pour les professionnels</div>
-        <h1 style="color:#fff;">Rejoignez le rÃ©seau qui connecte la construction africaine.</h1>
-        <p class="lead" style="color:rgba(255,255,255,0.72);margin-top:24px;">IngÃ©nieurs, entreprises, fournisseurs : accÃ©dez Ã  des projets financÃ©s par la diaspora, avec des paiements sÃ©curisÃ©s par jalon et un cadre de travail clair.</p>
-        <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;"><a href="contact.html" class="btn btn-cta">Devenir partenaire <span class="arrow">â†’</span></a><a href="#wecare" class="btn btn-outline-white">DÃ©couvrir SCI WeCare</a></div>
+        <h1 style="color:#fff;">Rejoignez le réseau qui connecte la construction africaine.</h1>
+        <p class="lead" style="color:rgba(255,255,255,0.72);margin-top:24px;">Ingénieurs, entreprises, fournisseurs : accédez à des projets financés par la diaspora, avec des paiements sécurisés par jalon et un cadre de travail clair.</p>
+        <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;"><a href="contact.html" class="btn btn-cta">Devenir partenaire <span class="arrow">→</span></a><a href="#wecare" class="btn btn-outline-white">Découvrir SCI WeCare</a></div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div class="stat-big" style="color:#fff;">35+</div><div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:6px;">Experts vÃ©rifiÃ©s</div></div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div class="stat-big" style="color:#fff;">35+</div><div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:6px;">Experts vérifiés</div></div>
         <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div class="stat-big" style="color:#fff;">8</div><div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:6px;">Pays actifs</div></div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div class="stat-big" style="color:#fff;">â‚¬/jalon</div><div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:6px;">Paiements sÃ©curisÃ©s</div></div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div class="stat-big" style="color:#fff;">120+</div><div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:6px;">Projets accompagnÃ©s</div></div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div class="stat-big" style="color:#fff;">€/jalon</div><div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:6px;">Paiements sécurisés</div></div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div class="stat-big" style="color:#fff;">120+</div><div style="color:rgba(255,255,255,0.6);font-size:13px;margin-top:6px;">Projets accompagnés</div></div>
       </div>
     </div>
   </div>
@@ -272,11 +243,11 @@ section{padding:var(--section-y) 0;}
 
 <section>
   <div class="container">
-    <div class="sec-head centered"><div class="label">Pourquoi nous rejoindre</div><h2 style="max-width:24ch;">Des projets sÃ©rieux, un cadre de travail clair.</h2></div>
+    <div class="sec-head centered"><div class="label">Pourquoi nous rejoindre</div><h2 style="max-width:24ch;">Des projets sérieux, un cadre de travail clair.</h2></div>
     <div class="g-3">
-      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">ðŸ’¼</div><h4>Des projets financÃ©s</h4><p style="margin-top:10px;font-size:15px;">AccÃ©dez Ã  un flux de projets portÃ©s par une diaspora solvable et engagÃ©e.</p></div>
-      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">ðŸ”’</div><h4>Paiements sÃ©curisÃ©s</h4><p style="margin-top:10px;font-size:15px;">Vous Ãªtes payÃ© par jalon, sur livrable validÃ©. Plus de retards de trÃ©sorerie.</p></div>
-      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">â­</div><h4>RÃ©putation valorisÃ©e</h4><p style="margin-top:10px;font-size:15px;">Votre travail est documentÃ© et notÃ©. La qualitÃ© ouvre l'accÃ¨s Ã  plus de projets.</p></div>
+      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">💼</div><h4>Des projets financés</h4><p style="margin-top:10px;font-size:15px;">Accédez à un flux de projets portés par une diaspora solvable et engagée.</p></div>
+      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">🔒</div><h4>Paiements sécurisés</h4><p style="margin-top:10px;font-size:15px;">Vous êtes payé par jalon, sur livrable validé. Plus de retards de trésorerie.</p></div>
+      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">⭐</div><h4>Réputation valorisée</h4><p style="margin-top:10px;font-size:15px;">Votre travail est documenté et noté. La qualité ouvre l'accès à plus de projets.</p></div>
     </div>
   </div>
 </section>
@@ -286,17 +257,17 @@ section{padding:var(--section-y) 0;}
   <div class="container">
     <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:center;" class="hero-grid">
       <div>
-        <div class="label label-dark" style="margin-bottom:18px;">EntitÃ© sÅ“ur â€” Socle technique</div>
-        <h2>SCI WeCare, la rigueur d'exÃ©cution.</h2>
-        <p class="lead" style="margin-top:20px;">SCI WeCare est le bras technique de l'Ã©cosystÃ¨me : Ã©tudes, chiffrage, coordination et rÃ©ception. KOMA porte la relation client et le pilotage ; WeCare porte l'ingÃ©nierie et le terrain.</p>
-        <p style="color:rgba(255,255,255,0.6);margin-top:16px;font-size:14px;">Chaque dÃ©cision technique d'un projet KOMA passe par la revue WeCare, par dÃ©faut.</p>
-        <a href="https://wecare.deboston.space/" target="_blank" rel="noopener" class="btn btn-outline-white" style="margin-top:28px;">Visiter le site WeCare <span class="arrow">â†’</span></a>
+        <div class="label label-dark" style="margin-bottom:18px;">Entité sœur — Socle technique</div>
+        <h2>SCI WeCare, la rigueur d'exécution.</h2>
+        <p class="lead" style="margin-top:20px;">SCI WeCare est le bras technique de l'écosystème : études, chiffrage, coordination et réception. KOMA porte la relation client et le pilotage ; WeCare porte l'ingénierie et le terrain.</p>
+        <p style="color:rgba(255,255,255,0.6);margin-top:16px;font-size:14px;">Chaque décision technique d'un projet KOMA passe par la revue WeCare, par défaut.</p>
+        <a href="https://wecare.deboston.space/" target="_blank" rel="noopener" class="btn btn-outline-white" style="margin-top:28px;">Visiter le site WeCare <span class="arrow">→</span></a>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;">Expertise</div><h4 style="color:white;font-size:17px;">AMO Â· MOE Â· MOEX</h4><p style="color:rgba(255,255,255,0.65);font-size:14px;margin-top:8px;">De la faisabilitÃ© Ã  la rÃ©ception, aux normes APS / APD / PRO.</p></div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;">ExpÃ©rience</div><h4 style="color:white;font-size:17px;">10 ans de terrain</h4><p style="color:rgba(255,255,255,0.65);font-size:14px;margin-top:8px;">Villas, immeubles, rÃ©novations. Afrique de l'Ouest &amp; Centrale.</p></div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;">Couverture</div><h4 style="color:white;font-size:17px;">8 pays actifs</h4><p style="color:rgba(255,255,255,0.65);font-size:14px;margin-top:8px;">Togo, CÃ´te d'Ivoire, SÃ©nÃ©gal, Cameroun, BÃ©nin, Burkina, Ghana, Gabon.</p></div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;">Engagement</div><h4 style="color:white;font-size:17px;">100% contrÃ´lÃ©s</h4><p style="color:rgba(255,255,255,0.65);font-size:14px;margin-top:8px;">Chaque projet est revu par l'Ã©quipe WeCare.</p></div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;">Expertise</div><h4 style="color:white;font-size:17px;">AMO · MOE · MOEX</h4><p style="color:rgba(255,255,255,0.65);font-size:14px;margin-top:8px;">De la faisabilité à la réception, aux normes APS / APD / PRO.</p></div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;">Expérience</div><h4 style="color:white;font-size:17px;">10 ans de terrain</h4><p style="color:rgba(255,255,255,0.65);font-size:14px;margin-top:8px;">Villas, immeubles, rénovations. Afrique de l'Ouest &amp; Centrale.</p></div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;">Couverture</div><h4 style="color:white;font-size:17px;">8 pays actifs</h4><p style="color:rgba(255,255,255,0.65);font-size:14px;margin-top:8px;">Togo, Côte d'Ivoire, Sénégal, Cameroun, Bénin, Burkina, Ghana, Gabon.</p></div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);padding:24px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:10px;">Engagement</div><h4 style="color:white;font-size:17px;">100% contrôlés</h4><p style="color:rgba(255,255,255,0.65);font-size:14px;margin-top:8px;">Chaque projet est revu par l'équipe WeCare.</p></div>
       </div>
     </div>
   </div>
@@ -305,11 +276,11 @@ section{padding:var(--section-y) 0;}
 <!-- PARTNER LOGOS -->
 <section class="sec-alt">
   <div class="container">
-    <div class="sec-head centered"><div class="label">Ã‰cosystÃ¨me</div><h2>Un rÃ©seau de partenaires de confiance.</h2></div>
+    <div class="sec-head centered"><div class="label">Écosystème</div><h2>Un réseau de partenaires de confiance.</h2></div>
     <div style="display:flex;gap:48px;align-items:center;justify-content:center;flex-wrap:wrap;opacity:0.6;">
-      <span style="font-weight:800;font-size:16px;letter-spacing:0.12em;">DIASPORAÂ·CONSEIL</span>
+      <span style="font-weight:800;font-size:16px;letter-spacing:0.12em;">DIASPORA·CONSEIL</span>
       <span style="font-weight:600;font-size:16px;font-style:italic;">Banque Atlantique</span>
-      <span style="font-weight:800;font-size:16px;letter-spacing:0.16em;">CCIÂ·AFRICA</span>
+      <span style="font-weight:800;font-size:16px;letter-spacing:0.16em;">CCI·AFRICA</span>
       <span style="font-weight:600;font-size:16px;">Notaires &amp; Cie</span>
       <span style="font-weight:800;font-size:16px;letter-spacing:0.12em;color:var(--teal-dark);">SCI WECARE</span>
     </div>
@@ -319,8 +290,8 @@ section{padding:var(--section-y) 0;}
 <section style="background:var(--teal-pale);border-top:1px solid var(--teal-soft);padding:clamp(64px,7vw,110px) 0;text-align:center;">
   <div class="container">
     <h2 style="max-width:24ch;margin:0 auto;">Construisons l'avenir de la construction africaine.</h2>
-    <p class="lead" style="margin:18px auto 32px;text-align:center;">Rejoignez le rÃ©seau KOMA en tant qu'ingÃ©nieur, entreprise ou fournisseur.</p>
-    <div style="display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;"><a href="contact.html" class="btn btn-cta">Devenir partenaire <span class="arrow">â†’</span></a><a href="contact.html" class="btn btn-dark">Nous contacter</a></div>
+    <p class="lead" style="margin:18px auto 32px;text-align:center;">Rejoignez le réseau KOMA en tant qu'ingénieur, entreprise ou fournisseur.</p>
+    <div style="display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;"><a href="contact.html" class="btn btn-cta">Devenir partenaire <span class="arrow">→</span></a><a href="contact.html" class="btn btn-dark">Nous contacter</a></div>
   </div>
 </section>
 <footer class="site-footer">
@@ -328,27 +299,27 @@ section{padding:var(--section-y) 0;}
     <div class="footer-grid">
       <div>
         <div style="font-family:var(--f-display);font-weight:900;font-size:22px;letter-spacing:0.08em;color:white;">KOMA <span style="font-weight:500;font-size:14px;letter-spacing:0.2em;opacity:0.6;">EXPERTISE</span></div>
-        <p style="margin-top:16px;max-width:38ch;color:rgba(255,255,255,0.65);font-size:14px;">Construisez en Afrique depuis le monde entier â€” avec transparence, des experts vÃ©rifiÃ©s et un interlocuteur unique.</p>
+        <p style="margin-top:16px;max-width:38ch;color:rgba(255,255,255,0.65);font-size:14px;">Construisez en Afrique depuis le monde entier — avec transparence, des experts vérifiés et un interlocuteur unique.</p>
         <div class="wecare-badge">
-          <div class="wrow"><span class="dot"></span> IngÃ©nierie SCI WeCare</div>
-          <p style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.5);">EntitÃ© technique sÅ“ur â€” Ã©tudes, coordination, exÃ©cution. <a href="partners.html#wecare" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px;">En savoir plus</a></p>
+          <div class="wrow"><span class="dot"></span> Ingénierie SCI WeCare</div>
+          <p style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.5);">Entité technique sœur — études, coordination, exécution. <a href="partners.html#wecare" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px;">En savoir plus</a></p>
         </div>
       </div>
       <div>
         <h5>Pour les clients</h5>
         <ul>
           <li><a href="solutions.html">Nos solutions</a></li>
-          <li><a href="journey.html">Comment Ã§a marche</a></li>
+          <li><a href="journey.html">Comment ça marche</a></li>
           <li><a href="platform.html">Espace projet</a></li>
-          <li><a href="projects.html">Projets rÃ©alisÃ©s</a></li>
+          <li><a href="projects.html">Projets réalisés</a></li>
         </ul>
       </div>
       <div>
         <h5>Pour les pros</h5>
         <ul>
-          <li><a href="partners.html">Rejoindre le rÃ©seau</a></li>
+          <li><a href="partners.html">Rejoindre le réseau</a></li>
           <li><a href="partners.html#wecare">SCI WeCare</a></li>
-          <li><a href="about.html">Ã€ propos de KOMA</a></li>
+          <li><a href="about.html">À propos de KOMA</a></li>
           <li><a href="contact.html">Devenir partenaire</a></li>
         </ul>
       </div>
@@ -356,22 +327,39 @@ section{padding:var(--section-y) 0;}
         <h5>Contact</h5>
         <ul>
           <li><a href="contact.html">Estimer mon projet</a></li>
-          <li><a href="contact.html">Parler Ã  un expert</a></li>
+          <li><a href="contact.html">Parler à un expert</a></li>
           <li><a href="mailto:hello@koma.build">hello@koma.build</a></li>
           <li><a href="tel:+33000000000">+33 (0) 00 00 00 00</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <div>Â© 2026 KOMA Expertise Â· SCI WeCare Group</div>
+      <div>© 2026 KOMA Expertise · SCI WeCare Group</div>
       <div style="display:flex;gap:20px;">
-        <a href="#">Mentions lÃ©gales</a>
-        <a href="#">ConfidentialitÃ©</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
         <a href="#">EN / FR</a>
       </div>
     </div>
   </div>
 </footer>
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var s=document.createElement('style');
+  s.textContent='.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease;}.reveal.visible{opacity:1;transform:translateY(0);}';
+  document.head.appendChild(s);
+  var els=document.querySelectorAll('.card,.sec-head,.tracker,figure,.imgph,.kpi,.stage,.feed-item,.wecare-section .lead,.wecare-section h2,.step-num,.stat-big');
+  els.forEach(function(el){
+    el.classList.add('reveal');
+    var p=el.parentElement,sibs=[].slice.call(p.children).filter(function(c){return c.classList.contains('reveal');});
+    el.style.transitionDelay=(sibs.indexOf(el)*80)+'ms';
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();
+</script>
 </body>
 </html>
-
