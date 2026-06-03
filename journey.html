@@ -4,362 +4,327 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Comment ça marche — KOMA Expertise</title>
+<meta name="description" content="Découvrez le parcours client KOMA : de la première prise de contact à la réception des travaux, chaque étape documentée et validée."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-:root{
-  --teal:#18B7D2; --teal-dark:#0E8FA6; --teal-sky:#6DCEFC; --teal-mint:#6BC0AA;
-  --teal-pale:#EBF6FF; --teal-soft:#B8DEF0;
-  --white:#FFFFFF; --paper:#F7FFFE; --light:#F4F4F4; --rule:#E8E8E8;
-  --stone:#888888; --body:#4A4A4A; --ink:#0F0F0F; --black:#111111;
-  --night:#0F172A; --night-2:#1A1A2E;
-  --gold:#C19A4B; --gold-soft:#D9BB7B;
-  --grad-cta:linear-gradient(135deg,var(--teal-sky) 0%,var(--teal-mint) 100%);
-  --f-display:'DM Sans',system-ui,sans-serif; --f-body:'DM Sans',system-ui,sans-serif;
-  --maxw:1280px; --gut:clamp(20px,4vw,64px); --section-y:clamp(64px,8vw,120px);
-  --r-pill:999px; --r-md:12px; --r-lg:20px; --r-xl:28px;
+/* ── PAGE HERO (light) ── */
+.page-hero-light {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(72px,9vw,110px) 0 clamp(52px,6vw,80px);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--f-body);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:16px;line-height:1.6;}
-img,svg{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-button{font:inherit;cursor:pointer;border:none;background:none;}
-ul,ol{list-style:none;}
-h1{font-family:var(--f-display);font-size:clamp(44px,6.5vw,88px);font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--ink);text-wrap:balance;}
-h2{font-family:var(--f-display);font-size:clamp(30px,4vw,56px);font-weight:700;line-height:1.06;letter-spacing:-0.018em;color:var(--ink);text-wrap:balance;}
-h3{font-family:var(--f-body);font-size:clamp(20px,2vw,24px);font-weight:600;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);}
-h4{font-family:var(--f-body);font-size:17px;font-weight:600;line-height:1.25;letter-spacing:-0.005em;color:var(--ink);}
-blockquote{font-family:var(--f-display);font-weight:600;font-size:clamp(17px,1.6vw,20px);line-height:1.5;font-style:italic;color:var(--ink);}
-p{text-wrap:pretty;}
-.lead{font-size:clamp(16px,1.4vw,19px);color:var(--body);line-height:1.65;max-width:58ch;}
-.label{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-dark);}
-.label-dark{color:rgba(255,255,255,0.7);}
-.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);}
-section{padding:var(--section-y) 0;}
-.sec-alt{background:var(--paper);}
-.sec-teal{background:var(--teal-pale);}
-.sec-dark{background:var(--ink);color:var(--white);}
-.sec-dark h2,.sec-dark h3,.sec-dark h4{color:var(--white);}
-.sec-dark .lead,.sec-dark p{color:rgba(255,255,255,0.72);}
-.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:52px;}
-.sec-head.centered{align-items:center;text-align:center;}
-.sec-head .label{margin-bottom:4px;}
 
-/* ===== NAVBAR — UNIFIED 64px ===== */
-.site-header{position:sticky;top:0;z-index:200;background:#0F0F0F;border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(12px);}
-.nav-unified{height:64px;display:flex;align-items:center;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);}
-.nav-brand{display:flex;flex-direction:column;justify-content:center;flex-shrink:0;}
-.nav-brand .koma-word{font-family:var(--f-body);font-weight:700;font-size:18px;letter-spacing:0.14em;color:#fff;line-height:1;}
-.nav-brand .koma-sub{font-size:7px;font-weight:500;letter-spacing:0.35em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:3px;}
-.nav-divider{width:1px;height:20px;background:rgba(255,255,255,0.12);margin:0 20px;flex-shrink:0;}
-.nav-links{display:flex;align-items:center;height:100%;flex:1;}
-.nav-item{height:100%;display:flex;align-items:center;padding:0 14px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.60);white-space:nowrap;transition:color 0.15s;position:relative;}
-.nav-item::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--teal);border-radius:2px 2px 0 0;transform:scaleX(0);transform-origin:left;transition:transform 0.2s ease;}
-.nav-item:hover{color:#fff;}
-.nav-item:hover::after,.nav-item.active::after{transform:scaleX(1);}
-.nav-item.active{color:#fff;}
-.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0;padding-left:16px;}
-.nav-wecare{font-size:11px;font-weight:600;color:var(--gold-soft);background:rgba(193,154,75,0.08);border:1px solid rgba(193,154,75,0.25);padding:5px 12px;border-radius:var(--r-pill);transition:0.15s;letter-spacing:0.04em;}
-.nav-wecare:hover{background:rgba(193,154,75,0.16);color:var(--gold);}
-.nav-pros{font-size:12px;font-weight:600;color:rgba(255,255,255,0.55);padding:5px 12px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,0.15);transition:0.15s;}
-.nav-pros:hover{color:#fff;border-color:rgba(255,255,255,0.35);}
-.nav-mob{display:none;align-items:center;gap:12px;margin-left:auto;}
-.hamburger{width:36px;height:36px;display:flex;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;}
-.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.8);border-radius:2px;}
-.btn-outline-dark{background:transparent;color:rgba(255,255,255,0.80);border:1.5px solid rgba(255,255,255,0.25);transition:.15s;}
-.btn-outline-dark:hover{border-color:rgba(255,255,255,0.5);color:#fff;}
-
-/* ===== BUTTONS ===== */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:var(--r-pill);font-family:var(--f-body);font-weight:600;font-size:15px;border:none;cursor:pointer;transition:opacity .15s,transform .15s;white-space:nowrap;}
-.btn:hover{opacity:0.92;transform:translateY(-1px);}
-.btn-cta{background:var(--grad-cta);color:var(--ink);box-shadow:0 4px 18px rgba(105,235,209,0.30);font-weight:700;transition:box-shadow 0.2s,transform 0.15s,filter 0.2s;}
-.btn-cta:hover{opacity:1;filter:brightness(1.06);box-shadow:0 8px 32px rgba(105,235,209,0.50);transform:translateY(-2px);}
-.btn-dark{background:var(--black);color:var(--white);transition:background 0.2s,transform 0.15s;}
-.btn-dark:hover{background:var(--teal-dark);opacity:1;transform:translateY(-1px);}
-.btn-outline{background:transparent;color:var(--ink);border:2px solid var(--rule);}
-.btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.4);}
-.btn-white{background:var(--white);color:var(--ink);font-weight:700;}
-.btn-sm{padding:9px 16px;font-size:13px;}
-.btn .arrow{font-size:15px;transition:transform .2s;}
-.btn:hover .arrow{transform:translateX(3px);}
-.btn:active{transform:scale(0.97) !important;}
-
-/* ===== CARDS ===== */
-.card{background:var(--white);border:1px solid var(--rule);border-radius:var(--r-lg);padding:28px;transition:box-shadow .25s,border-color .25s,transform .2s;position:relative;overflow:hidden;}
-.card::before{content:'';position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--teal);border-radius:var(--r-lg) 0 0 var(--r-lg);transform:scaleY(0);transform-origin:bottom;transition:transform 0.22s ease;}
-.card:hover{box-shadow:0 6px 28px rgba(0,0,0,0.08);border-color:rgba(69,201,191,0.25);transform:translateY(-2px);}
-.card:hover::before{transform:scaleY(1);}
-.card-teal{background:var(--teal-pale);border-color:var(--teal-soft);}
-.card-dark{background:var(--ink);border-color:rgba(255,255,255,0.08);color:var(--white);}
-.card-dark h3,.card-dark h4{color:var(--white);}
-.step-num{font-family:var(--f-display);font-weight:900;font-size:42px;line-height:1;letter-spacing:-0.04em;background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.stat-big{font-family:var(--f-display);font-weight:900;font-size:clamp(36px,4vw,56px);letter-spacing:-0.03em;line-height:1;color:var(--ink);}
-.stat-big .accent{background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-
-/* ===== TRACKER ===== */
-.tracker{background:var(--white);border:1px solid var(--rule);border-radius:var(--r-xl);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.08);}
-.tracker-header{background:var(--teal);padding:20px 24px;display:flex;justify-content:space-between;align-items:center;}
-.tracker-title{font-weight:700;font-size:17px;color:var(--white);}
-.tracker-sub{font-size:12px;color:rgba(255,255,255,0.8);margin-top:3px;}
-.tracker-body{padding:22px;}
-.tracker-stages{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:22px;}
-.stage{padding:12px;border-radius:10px;background:var(--light);border:1px solid var(--rule);}
-.stage.done{background:rgba(69,201,191,0.10);border-color:rgba(69,201,191,0.30);}
-.stage.now{background:linear-gradient(135deg,rgba(109,206,252,0.12),rgba(105,235,209,0.15));border-color:rgba(69,201,191,0.45);}
-.stage .st-n{font-size:10px;font-weight:600;color:var(--stone);letter-spacing:0.1em;}
-.stage .st-name{font-weight:700;font-size:13px;color:var(--ink);margin-top:6px;}
-.stage .st-status{font-size:10px;margin-top:5px;color:var(--stone);}
-.stage.done .st-status{color:var(--teal-dark);}
-.stage.now .st-status{color:var(--teal-dark);font-weight:600;}
-.tracker-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;}
-.feed{display:grid;gap:8px;}
-.feed-item{display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:10px 14px;border:1px solid var(--rule);border-radius:8px;align-items:center;background:var(--light);}
-.feed-item .ic{width:32px;height:32px;border-radius:8px;background:var(--grad-cta);display:grid;place-items:center;font-size:14px;}
-.feed-item .lbl{font-size:13px;font-weight:500;}
-.feed-item .when{font-size:11px;color:var(--stone);white-space:nowrap;}
-.kpis{display:grid;gap:8px;}
-.kpi{padding:14px;border-radius:10px;background:var(--light);border:1px solid var(--rule);}
-.kpi .v{font-family:var(--f-display);font-weight:800;font-size:24px;color:var(--ink);letter-spacing:-0.02em;}
-.kpi .l{font-size:11px;font-weight:600;color:var(--stone);letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;}
-
-/* ===== TAGS ===== */
-.tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:var(--r-pill);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;background:var(--teal-pale);color:var(--teal-dark);border:1px solid var(--teal-soft);}
-.tag .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);}
-.tag.dark{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.2);}
-
-/* ===== IMAGE PLACEHOLDERS ===== */
-.imgph{position:relative;border-radius:var(--r-lg);overflow:hidden;background:repeating-linear-gradient(135deg,rgba(69,201,191,0.04) 0,rgba(69,201,191,0.04) 1px,transparent 1px,transparent 10px),linear-gradient(180deg,#E6F4F1 0%,#D4ECEA 100%);display:flex;align-items:flex-end;padding:14px;min-height:220px;}
-.imgph .cap{background:rgba(255,255,255,0.90);border:1px solid var(--rule);border-radius:6px;padding:6px 10px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--stone);}
-
-/* ===== HERO MAP (real image) ===== */
-.hero-map{position:relative;border-radius:var(--r-xl);overflow:hidden;border:1px solid rgba(69,201,191,0.20);box-shadow:0 18px 56px rgba(11,31,35,0.32);aspect-ratio:4/3;background:var(--night);}
-.hero-map img{width:100%;height:100%;object-fit:cover;display:block;}
-.hero-map .map-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,31,35,0) 40%,rgba(11,31,35,0.55) 100%);}
-.hero-map .live-chip{position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(11,31,35,0.78);border:1px solid rgba(105,235,209,0.3);color:var(--teal-mint);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 12px;border-radius:var(--r-pill);backdrop-filter:blur(6px);}
-.hero-map .live-chip .pulse{width:8px;height:8px;border-radius:50%;background:var(--teal-mint);box-shadow:0 0 0 0 rgba(105,235,209,0.6);animation:livep 2s infinite;}
-@keyframes livep{0%{box-shadow:0 0 0 0 rgba(105,235,209,0.55);}70%{box-shadow:0 0 0 9px rgba(105,235,209,0);}100%{box-shadow:0 0 0 0 rgba(105,235,209,0);}}
-.hero-map .map-cards{position:absolute;bottom:16px;left:16px;right:16px;display:flex;gap:10px;flex-wrap:wrap;}
-.map-card{background:rgba(11,31,35,0.80);border:1px solid rgba(105,235,209,0.22);border-radius:12px;padding:10px 14px;backdrop-filter:blur(6px);flex:1;min-width:120px;}
-.map-card .mc-route{font-size:10px;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.55);text-transform:uppercase;}
-.map-card .mc-name{font-size:13px;font-weight:700;color:#fff;margin-top:3px;}
-.map-card .mc-status{font-size:11px;color:var(--teal-mint);margin-top:3px;font-weight:600;}
-
-/* ===== WECARE ===== */
-.wecare-section{background:linear-gradient(135deg,#0F2A2C 0%,#0B1F23 100%);color:var(--white);}
-.wecare-section h2{color:var(--white);}
-.wecare-section .lead{color:rgba(255,255,255,0.72);}
-
-/* ===== FOOTER ===== */
-.site-footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:72px 0 32px;position:relative;}
-.site-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,var(--teal) 35%,var(--teal-mint) 65%,transparent 100%);opacity:0.4;}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:32px;}
-.footer-grid h5{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:16px;}
-.footer-grid ul{display:grid;gap:10px;}
-.footer-grid a{font-size:14px;color:rgba(255,255,255,0.65);transition:color .15s;}
-.footer-grid a:hover{color:var(--teal-mint);}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;letter-spacing:0.06em;color:rgba(255,255,255,0.35);flex-wrap:wrap;gap:12px;}
-.foot-bottom a{color:rgba(255,255,255,0.5);}
-.foot-bottom a:hover{color:#fff;}
-.wecare-badge{border:1px solid rgba(255,255,255,0.10);border-left:3px solid var(--gold);border-radius:0 var(--r-md) var(--r-md) 0;padding:14px 16px;margin-top:20px;background:rgba(193,154,75,0.04);}
-.wecare-badge .wrow{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase;}
-@keyframes goldPulse{0%,100%{box-shadow:0 0 0 0 rgba(193,154,75,0.5);}50%{box-shadow:0 0 0 5px rgba(193,154,75,0);}}
-.wecare-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:goldPulse 3s ease-in-out infinite;}
-
-/* ===== HELPERS ===== */
-.g-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-.g-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.g-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-.row-sb{display:flex;align-items:center;justify-content:space-between;gap:24px;}
-.hr{height:1px;background:var(--rule);border:none;}
-.page-hero{padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(48px,6vw,72px);border-bottom:1px solid var(--rule);}
-.page-hero h1{max-width:18ch;}
-.page-hero .lead{margin-top:20px;max-width:56ch;}
-.page-meta{display:flex;gap:28px;margin-top:28px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone);flex-wrap:wrap;}
-.page-meta span{display:flex;align-items:center;gap:8px;}
-.page-meta span::before{content:"";width:16px;height:1px;background:var(--teal);}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:980px){
-  .g-2,.g-3,.g-4{grid-template-columns:1fr;}
-  .footer-grid{grid-template-columns:1fr 1fr;}
-  .nav-links,.nav-right{display:none;}
-  .nav-mob{display:flex;}
-  .tracker-stages{grid-template-columns:repeat(3,1fr);}
-  .tracker-grid{grid-template-columns:1fr;}
-  .hero-grid{grid-template-columns:1fr !important;}
+/* ── TYPE SELECTOR ── */
+.type-selector { display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px; }
+.type-btn {
+  display:flex;align-items:center;gap:8px;padding:11px 18px;border-radius:var(--r-lg);
+  background:var(--white);border:1.5px solid var(--rule);cursor:pointer;
+  font-size:13.5px;font-weight:600;color:var(--body);font-family:var(--f-body);
+  transition:all var(--dur-base) var(--ease-expo);
 }
-@media(max-width:600px){.footer-grid{grid-template-columns:1fr;}}
+.type-btn:hover { border-color:var(--teal);color:var(--teal-dark);background:var(--teal-pale); }
+.type-btn.active { border-color:var(--teal);background:var(--teal-pale);color:var(--teal-dark); }
+.type-btn .tb-icon { font-size:16px; }
+
+/* ── STEP PANEL ── */
+.step-panel { display:none; }
+.step-panel.active { display:block; }
+
+.step-intro { margin-bottom:28px;padding:20px 24px;background:var(--paper);border-radius:var(--r-lg);border:1px solid var(--rule);border-left:4px solid var(--teal); }
+.step-intro p { font-size:14.5px;color:var(--body);line-height:1.7; }
+
+/* Steps accordion */
+.steps-list { display:grid;gap:8px; }
+.step-item { background:var(--white);border:1px solid var(--rule);border-radius:var(--r-lg);overflow:hidden; }
+.step-trigger {
+  width:100%;display:flex;align-items:center;gap:16px;padding:16px 20px;
+  cursor:pointer;background:var(--white);transition:background var(--dur-fast);border:none;font-family:var(--f-body);
+}
+.step-trigger:hover { background:var(--paper); }
+.step-num-circle {
+  width:40px;height:40px;border-radius:50%;background:var(--grad-cta);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:800;color:var(--ink);flex-shrink:0;
+}
+.step-header-text { flex:1;text-align:left; }
+.step-name { font-size:15.5px;font-weight:700;color:var(--ink); }
+.step-sub  { font-size:12.5px;color:var(--stone);margin-top:2px; }
+.step-cost {
+  font-size:11px;font-weight:700;padding:4px 10px;border-radius:var(--r-pill);flex-shrink:0;
+}
+.cost-free  { background:rgba(16,185,129,.08);color:var(--success); }
+.cost-paid  { background:rgba(245,158,11,.08);color:var(--orange); }
+.cost-incl  { background:rgba(24,183,210,.08);color:var(--teal-dark); }
+.cost-var   { background:rgba(100,116,139,.08);color:var(--stone); }
+.step-chevron { color:var(--stone);font-size:18px;transition:transform var(--dur-base) var(--ease-expo);flex-shrink:0; }
+.step-item.open .step-chevron { transform:rotate(180deg); }
+.step-item.open .step-trigger { background:var(--paper); }
+.step-item.open .step-num-circle { background:var(--night); }
+.step-item.open .step-num-circle span { color:#fff; }
+
+.step-body { max-height:0;overflow:hidden;transition:max-height .4s var(--ease-expo); }
+.step-body-inner { padding:0 20px 20px; }
+.step-detail-grid { display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px; }
+.sdg-box { background:var(--paper);border-radius:var(--r-md);padding:14px;border:1px solid var(--rule); }
+.sdg-label { font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin-bottom:8px;display:flex;align-items:center;gap:5px; }
+.sdg-content { font-size:13.5px;color:var(--body);line-height:1.6; }
+.sdg-who { display:flex;flex-wrap:wrap;gap:5px;margin-top:8px; }
+.sdg-who span { font-size:11px;font-weight:600;padding:3px 9px;border-radius:var(--r-pill);background:var(--light);color:var(--body);border:1px solid var(--rule); }
+
+/* ── GUARANTEE SECTION ── */
+.guarantee-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:18px; }
+.guar-card { text-align:center;padding:28px 20px; }
+.guar-icon { font-size:36px;margin-bottom:14px; }
+.guar-title { font-size:16px;font-weight:700;color:#fff;margin-bottom:8px; }
+.guar-desc  { font-size:14px;color:rgba(255,255,255,.55);line-height:1.6; }
+
+@media(max-width:768px) {
+  .step-detail-grid { grid-template-columns:1fr; }
+  .guarantee-grid  { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
+
 <header class="site-header" id="site-header">
-  <nav class="nav-unified" aria-label="Navigation principale">
-    <a href="home.html" class="nav-brand" aria-label="KOMA accueil">
-      <div class="koma-word">KOMA</div>
-      <div class="koma-sub">Expertise</div>
-    </a>
+  <nav class="nav-unified">
+    <a href="home.html" class="nav-brand"><div class="koma-word">KOMA</div><div class="koma-sub">Expertise</div></a>
     <div class="nav-divider"></div>
     <div class="nav-links">
-      <a href="home.html" class="nav-item">Accueil</a>
-      <a href="solutions.html" class="nav-item">Solutions</a>
-      <a href="journey.html" class="nav-item active">Comment ca marche</a>
-      <a href="platform.html" class="nav-item">Plateforme</a>
-      <a href="projects.html" class="nav-item">Projets</a>
-      <a href="about.html" class="nav-item">A propos</a>
+      <a href="home.html"      class="nav-item">Accueil</a>
+      <a href="solutions.html" class="nav-item">Services</a>
+      <a href="journey.html"   class="nav-item active">Comment ça marche</a>
+      <a href="platform.html"  class="nav-item">Plateforme</a>
+      <a href="projects.html"  class="nav-item">Projets</a>
+      <a href="about.html"     class="nav-item">À propos</a>
     </div>
     <div class="nav-right">
       <a href="partners.html" class="nav-partner">Devenir partenaire</a>
       <a href="contact.html"  class="btn btn-cta btn-sm">Commencer mon projet</a>
-      <a href="partners.html#wecare" class="nav-wecare">SCI WeCare</a>
-      <a href="contact.html" class="btn btn-cta btn-sm">Estimer mon projet</a>
     </div>
     <div class="nav-mob">
-      <a href="contact.html" class="btn btn-cta btn-sm">Estimer</a>
-      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="contact.html" class="btn btn-cta btn-sm" style="padding:8px 14px;font-size:12.5px;">Commencer</a>
+      <button class="hamburger" id="burger-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 </header>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="tag" style="margin-bottom:20px;"><span class="dot"></span> Parcours client</div>
-    <h1>Un parcours structuré, adapté à votre projet.</h1>
-    <p class="lead">De la première prise de contact à la réception, chaque étape est documentée, chiffrée, validée et suivie. Chaque décision client est tracée.</p>
-  </div>
-</section>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="home.html" class="mob-item">Accueil</a>
+  <a href="solutions.html" class="mob-item">Services</a>
+  <a href="journey.html" class="mob-item active">Comment ça marche</a>
+  <a href="platform.html" class="mob-item">Plateforme</a>
+  <a href="projects.html" class="mob-item">Projets</a>
+  <a href="about.html" class="mob-item">À propos</a>
+  <div class="mob-divider"></div>
+  <a href="partners.html" class="mob-item" style="color:var(--gold-soft);">Devenir partenaire</a>
+  <div style="padding:12px 16px 4px;"><a href="contact.html" class="btn btn-cta" style="width:100%;justify-content:center;">Commencer →</a></div>
+</div>
 
-<section>
+<!-- HERO -->
+<section class="page-hero-light">
   <div class="container">
-    <div style="display:grid;gap:0;">
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:center;padding:36px 0;border-bottom:1px solid var(--rule);">
-        <div class="step-num">01</div>
-        <div style="display:flex;gap:20px;align-items:center;">
-          <div style="width:56px;height:56px;border-radius:14px;background:var(--grad-cta);display:grid;place-items:center;font-size:26px;flex-shrink:0;">📝</div>
-          <div><h3>Décrivez votre projet</h3><p style="margin-top:8px;max-width:60ch;">Idée vague, terrain, plan ou chantier en cours — vous arrivez comme vous êtes. Un formulaire de 12 minutes suffit pour démarrer.</p></div>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:center;padding:36px 0;border-bottom:1px solid var(--rule);background:var(--paper);">
-        <div class="step-num">02</div>
-        <div style="display:flex;gap:20px;align-items:center;">
-          <div style="width:56px;height:56px;border-radius:14px;background:var(--grad-cta);display:grid;place-items:center;font-size:26px;flex-shrink:0;">🧭</div>
-          <div><h3>Orientation</h3><p style="margin-top:8px;max-width:60ch;">Un conseiller analyse votre situation et vous oriente vers le bon parcours. Sans jargon, sans engagement.</p></div>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:center;padding:36px 0;border-bottom:1px solid var(--rule);">
-        <div class="step-num">03</div>
-        <div style="display:flex;gap:20px;align-items:center;">
-          <div style="width:56px;height:56px;border-radius:14px;background:var(--grad-cta);display:grid;place-items:center;font-size:26px;flex-shrink:0;">📊</div>
-          <div><h3>Estimation</h3><p style="margin-top:8px;max-width:60ch;">Vous recevez un premier cadrage budgétaire clair sous 48 heures, avec les hypothèses détaillées.</p></div>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:center;padding:36px 0;border-bottom:1px solid var(--rule);background:var(--paper);">
-        <div class="step-num">04</div>
-        <div style="display:flex;gap:20px;align-items:center;">
-          <div style="width:56px;height:56px;border-radius:14px;background:var(--grad-cta);display:grid;place-items:center;font-size:26px;flex-shrink:0;">🤝</div>
-          <div><h3>Connexion aux experts</h3><p style="margin-top:8px;max-width:60ch;">Ingénieurs, entreprises et fournisseurs vérifiés du réseau KOMA sont mobilisés — supervisés par SCI WeCare.</p></div>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:center;padding:36px 0;border-bottom:1px solid var(--rule);">
-        <div class="step-num">05</div>
-        <div style="display:flex;gap:20px;align-items:center;">
-          <div style="width:56px;height:56px;border-radius:14px;background:var(--grad-cta);display:grid;place-items:center;font-size:26px;flex-shrink:0;">📱</div>
-          <div><h3>Suivi en temps réel</h3><p style="margin-top:8px;max-width:60ch;">Photos géolocalisées, documents signés, budget ligne par ligne, alertes. Votre espace projet est accessible 24h/24.</p></div>
-        </div>
-      </div>
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:center;padding:36px 0;border-bottom:1px solid var(--rule);background:var(--paper);">
-        <div class="step-num">06</div>
-        <div style="display:flex;gap:20px;align-items:center;">
-          <div style="width:56px;height:56px;border-radius:14px;background:var(--grad-cta);display:grid;place-items:center;font-size:26px;flex-shrink:0;">🔑</div>
-          <div><h3>Remise des clés</h3><p style="margin-top:8px;max-width:60ch;">Réception des travaux, levée des réserves, transfert de la documentation complète. Le projet est à vous.</p></div>
-        </div>
-      </div>
+    <div class="reveal" style="max-width:680px;">
+      <div class="tag" style="margin-bottom:20px;"><span class="dot"></span> Parcours client</div>
+      <h1>Un parcours structuré,<br>adapté à votre projet.</h1>
+      <p class="lead" style="margin-top:18px;">De la première prise de contact à la réception des travaux, chaque étape est documentée, chiffrée, validée et suivie. Sélectionnez votre type de projet pour voir le parcours adapté.</p>
+    </div>
+    <div style="display:flex;gap:24px;margin-top:36px;flex-wrap:wrap;" class="reveal reveal-d1">
+      <div><div style="font-size:28px;font-weight:800;color:var(--ink);">100<span style="background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">%</span></div><div style="font-size:13px;color:var(--stone);margin-top:3px;">des étapes documentées</div></div>
+      <div><div style="font-size:28px;font-weight:800;color:var(--ink);">5<span style="background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"> types</span></div><div style="font-size:13px;color:var(--stone);margin-top:3px;">de projets couverts</div></div>
+      <div><div style="font-size:28px;font-weight:800;color:var(--ink);">48<span style="background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">h</span></div><div style="font-size:13px;color:var(--stone);margin-top:3px;">premier retour garanti</div></div>
     </div>
   </div>
 </section>
 
-<section class="wecare-section">
-  <div class="container" style="text-align:center;">
-    <div class="label label-dark" style="justify-content:center;display:flex;margin-bottom:18px;">À chaque étape</div>
-    <h2 style="max-width:24ch;margin:0 auto;">Chaque décision documentée, validée, accessible.</h2>
-    <p class="lead" style="margin:20px auto 0;text-align:center;">Tout est tracé dans votre espace projet KOMA et revu par SCI WeCare. Vous gardez le contrôle, même à 6000 km.</p>
-    <a href="platform.html" class="btn btn-outline-white" style="margin-top:32px;">Découvrir la plateforme <span class="arrow">→</span></a>
+<!-- INTERACTIVE STEPS -->
+<section>
+  <div class="container">
+    <!-- Type selector -->
+    <div class="type-selector reveal" data-tabs id="journey-tabs">
+      <button class="type-btn active" data-tab="construction"><span class="tb-icon">🏗️</span> Construction neuve</button>
+      <button class="type-btn" data-tab="renovation"><span class="tb-icon">🔨</span> Rénovation</button>
+      <button class="type-btn" data-tab="reprise"><span class="tb-icon">🚧</span> Reprise de chantier</button>
+      <button class="type-btn" data-tab="etudes"><span class="tb-icon">📐</span> Études & expertise</button>
+      <button class="type-btn" data-tab="foncier"><span class="tb-icon">🗺️</span> Foncier & investissement</button>
+    </div>
+
+    <!-- CONSTRUCTION -->
+    <div class="step-panel active" data-panel="construction">
+      <div class="step-intro reveal">
+        <p>Vous voulez construire une villa, une maison familiale ou un immeuble depuis l'étranger. Voici les 8 étapes structurées par KOMA, de votre premier contact à la remise des clés.</p>
+      </div>
+      <div class="steps-list faq-list">
+        <div class="faq-item step-item reveal">
+          <button class="faq-trigger step-trigger"><div class="step-num-circle"><span>1</span></div><div class="step-header-text"><div class="step-name">Découverte & brief</div><div class="step-sub">Comprendre le besoin, le budget, le pays et le programme</div></div><span class="cost-free step-cost">Gratuit</span><span class="step-chevron">›</span></button>
+          <div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid">
+            <div class="sdg-box"><div class="sdg-label">🎯 Objectif</div><div class="sdg-content">Qualifier votre projet, comprendre votre vision et évaluer la cohérence besoin/budget.</div></div>
+            <div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Entretien, questionnaire, scoring projet, premières recommandations.</div></div>
+            <div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Fiche de besoin + première orientation stratégique écrite.</div></div>
+            <div class="sdg-box"><div class="sdg-label">✅ Votre décision</div><div class="sdg-content">Valider ou non la poursuite de l'accompagnement.</div><div class="sdg-who"><span>KOMA SPOC</span><span>Vous</span></div></div>
+          </div></div></div>
+        </div>
+        <div class="faq-item step-item reveal reveal-d1">
+          <button class="faq-trigger step-trigger"><div class="step-num-circle"><span>2</span></div><div class="step-header-text"><div class="step-name">Analyse foncière</div><div class="step-sub">Vérification ou recherche de terrain</div></div><span class="cost-var step-cost">Sur devis</span><span class="step-chevron">›</span></button>
+          <div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid">
+            <div class="sdg-box"><div class="sdg-label">🎯 Objectif</div><div class="sdg-content">Vérifier la viabilité du terrain ou en trouver un adapté à votre programme.</div></div>
+            <div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Visite terrain, analyse titre foncier, photos, contraintes urbanistiques, recommandation.</div></div>
+            <div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Fiche terrain détaillée + rapport de visite + photos géolocalisées.</div></div>
+            <div class="sdg-box"><div class="sdg-label">✅ Votre décision</div><div class="sdg-content">Valider ou écarter le terrain et décider de la suite.</div><div class="sdg-who"><span>KOMA</span><span>Partenaires fonciers</span></div></div>
+          </div></div></div>
+        </div>
+        <div class="faq-item step-item reveal reveal-d2">
+          <button class="faq-trigger step-trigger"><div class="step-num-circle"><span>3</span></div><div class="step-header-text"><div class="step-name">Préfaisabilité</div><div class="step-sub">Cohérence programme / budget / terrain</div></div><span class="cost-var step-cost">Sur devis</span><span class="step-chevron">›</span></button>
+          <div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid">
+            <div class="sdg-box"><div class="sdg-label">🎯 Objectif</div><div class="sdg-content">Vérifier que votre programme est réaliste avec votre budget et votre terrain.</div></div>
+            <div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Estimation sommaire, analyse des contraintes, ratios coût/surface, GO/NO GO.</div></div>
+            <div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Note de faisabilité + estimation indicative + recommandations.</div></div>
+            <div class="sdg-box"><div class="sdg-label">✅ Votre décision</div><div class="sdg-content">GO / NO GO pour lancer les études techniques.</div><div class="sdg-who"><span>KOMA</span><span>SCI WeCare</span><span>MOE</span></div></div>
+          </div></div></div>
+        </div>
+        <div class="faq-item step-item reveal reveal-d1">
+          <button class="faq-trigger step-trigger"><div class="step-num-circle"><span>4</span></div><div class="step-header-text"><div class="step-name">Conception technique</div><div class="step-sub">APS, APD, plans, notes de calcul</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button>
+          <div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid">
+            <div class="sdg-box"><div class="sdg-label">🎯 Objectif</div><div class="sdg-content">Produire les études techniques nécessaires à la consultation des entreprises.</div></div>
+            <div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Coordination avec architectes, MOE et bureaux d'études. Vérification des plans.</div></div>
+            <div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Plans APS/APD, notes de calcul structure, programme technique validé.</div></div>
+            <div class="sdg-box"><div class="sdg-label">✅ Votre décision</div><div class="sdg-content">Valider les études avant lancement de la consultation.</div><div class="sdg-who"><span>Architectes</span><span>SCI WeCare</span><span>KOMA</span></div></div>
+          </div></div></div>
+        </div>
+        <div class="faq-item step-item reveal reveal-d2">
+          <button class="faq-trigger step-trigger"><div class="step-num-circle"><span>5</span></div><div class="step-header-text"><div class="step-name">Devis & chiffrage</div><div class="step-sub">Consultation, analyse et comparaison</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button>
+          <div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid">
+            <div class="sdg-box"><div class="sdg-label">🎯 Objectif</div><div class="sdg-content">Obtenir des devis fiables et choisir les meilleures offres partenaires.</div></div>
+            <div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">DQE, BQE, consultation des partenaires, analyse des écarts, recommandation motivée.</div></div>
+            <div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Devis détaillé comparatif + planning prévisionnel + budget final.</div></div>
+            <div class="sdg-box"><div class="sdg-label">✅ Votre décision</div><div class="sdg-content">Valider ou ajuster le devis avant contractualisation.</div><div class="sdg-who"><span>KOMA</span><span>MOE</span><span>Fournisseurs</span></div></div>
+          </div></div></div>
+        </div>
+        <div class="faq-item step-item reveal reveal-d1">
+          <button class="faq-trigger step-trigger"><div class="step-num-circle"><span>6</span></div><div class="step-header-text"><div class="step-name">Financement & transferts</div><div class="step-sub">Structuration + CEYNA PAY</div></div><span class="cost-var step-cost">Selon projet</span><span class="step-chevron">›</span></button>
+          <div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid">
+            <div class="sdg-box"><div class="sdg-label">🎯 Objectif</div><div class="sdg-content">Organiser les flux financiers, les transferts et les jalons de paiement.</div></div>
+            <div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Budget consolidé, échéancier, paiements par jalons avec CEYNA PAY.</div></div>
+            <div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Échéancier de paiement + justificatifs + suivi financier temps réel.</div></div>
+            <div class="sdg-box"><div class="sdg-label">✅ Votre décision</div><div class="sdg-content">Valider les décaissements avant chaque transfert.</div><div class="sdg-who"><span>KOMA</span><span>CEYNA PAY</span></div></div>
+          </div></div></div>
+        </div>
+        <div class="faq-item step-item reveal reveal-d2">
+          <button class="faq-trigger step-trigger"><div class="step-num-circle"><span>7</span></div><div class="step-header-text"><div class="step-name">Construction & suivi</div><div class="step-sub">Exécution avec supervision terrain</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button>
+          <div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid">
+            <div class="sdg-box"><div class="sdg-label">🎯 Objectif</div><div class="sdg-content">Superviser l'exécution, contrôler la qualité et vous tenir informé à chaque étape.</div></div>
+            <div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Visites régulières, rapports photo, checklists qualité, alertes, réserves et corrections.</div></div>
+            <div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Rapports de visite hebdomadaires + galerie photos + PV d'étapes.</div></div>
+            <div class="sdg-box"><div class="sdg-label">✅ Votre décision</div><div class="sdg-content">Valider chaque jalon avant le passage à la phase suivante.</div><div class="sdg-who"><span>MOEX</span><span>Techniciens</span><span>AMOA</span><span>KOMA</span></div></div>
+          </div></div></div>
+        </div>
+        <div class="faq-item step-item reveal reveal-d1">
+          <button class="faq-trigger step-trigger"><div class="step-num-circle"><span>8</span></div><div class="step-header-text"><div class="step-name">Réception & livraison</div><div class="step-sub">PV, réserves, DOE et remise des clés</div></div><span class="cost-incl step-cost">Inclus</span><span class="step-chevron">›</span></button>
+          <div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid">
+            <div class="sdg-box"><div class="sdg-label">🎯 Objectif</div><div class="sdg-content">Réceptionner les travaux en bonne et due forme avec levée de toutes les réserves.</div></div>
+            <div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Visite de réception, liste des réserves, suivi des corrections, PV définitif, DOE.</div></div>
+            <div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">PV de réception + DOE complet + archive projet + remise des clés.</div></div>
+            <div class="sdg-box"><div class="sdg-label">✅ Votre décision</div><div class="sdg-content">Signer la réception définitive une fois toutes les réserves levées.</div><div class="sdg-who"><span>KOMA</span><span>AMOA</span><span>Vous</span></div></div>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RÉNOVATION -->
+    <div class="step-panel" data-panel="renovation">
+      <div class="step-intro reveal"><p>Vous avez un bien à rénover — maison familiale, appartement locatif ou bâtiment dégradé. KOMA structure la rénovation en 5 étapes claires.</p></div>
+      <div class="steps-list faq-list">
+        <div class="faq-item step-item reveal"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>1</span></div><div class="step-header-text"><div class="step-name">Découverte & diagnostic initial</div><div class="step-sub">Comprendre le besoin de rénovation</div></div><span class="cost-free step-cost">Gratuit</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Entretien, relevé des besoins, état des lieux. Évaluation du périmètre de rénovation.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Fiche de besoin + rapport d'état des lieux + premières recommandations.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d1"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>2</span></div><div class="step-header-text"><div class="step-name">Diagnostic technique approfondi</div><div class="step-sub">Évaluation de l'état du bien</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Expertise terrain avec SCI WeCare, relevé des pathologies, photos, diagnostic structure.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Rapport de diagnostic avec photos + liste des travaux prioritaires + estimation.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d2"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>3</span></div><div class="step-header-text"><div class="step-name">Programme & conception</div><div class="step-sub">Plans et descriptif des travaux</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Mobilisation architecte/MOE, plans de rénovation, descriptif détaillé des travaux.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Dossier de rénovation + planning + descriptif des lots de travaux.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d1"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>4</span></div><div class="step-header-text"><div class="step-name">Chiffrage & consultation</div><div class="step-sub">Devis et sélection des entreprises</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Consultation des partenaires, comparaison des offres, recommandation motivée.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Devis comparatif + sélection recommandée + budget final validé.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d2"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>5</span></div><div class="step-header-text"><div class="step-name">Travaux & réception</div><div class="step-sub">Exécution supervisée et livraison</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Supervision terrain, rapports, photos avant/après, PV de réception et levée des réserves.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Photos avant/après + rapports + PV de réception définitif.</div></div></div></div></div></div>
+      </div>
+    </div>
+
+    <!-- REPRISE -->
+    <div class="step-panel" data-panel="reprise">
+      <div class="step-intro reveal"><p>Votre chantier est bloqué, mal suivi ou à l'arrêt depuis un moment. KOMA audite l'existant et organise la reprise en 6 étapes.</p></div>
+      <div class="steps-list faq-list">
+        <div class="faq-item step-item reveal"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>1</span></div><div class="step-header-text"><div class="step-name">Prise de contact & état des lieux initial</div><div class="step-sub">Comprendre la situation et le blocage</div></div><span class="cost-free step-cost">Gratuit</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Entretien, collecte des documents disponibles, évaluation du niveau d'urgence.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Pré-diagnostic + recommandation d'audit complet.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d1"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>2</span></div><div class="step-header-text"><div class="step-name">Audit complet du chantier</div><div class="step-sub">Expertise de l'existant</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Visite terrain, diagnostic structural, relevé des non-conformités, évaluation des travaux réalisés.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Rapport d'audit détaillé + photos + liste des non-conformités + évaluation financière.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d2"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>3</span></div><div class="step-header-text"><div class="step-name">Plan de reprise</div><div class="step-sub">Stratégie et chiffrage de reprise</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Plans de reprise, mise à jour DQE, consultation d'entreprises qualifiées pour la reprise.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Plan de reprise + devis actualisé + planning de relance.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d1"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>4</span></div><div class="step-header-text"><div class="step-name">Remobilisation & contractualisation</div><div class="step-sub">Choix des nouvelles équipes</div></div><span class="cost-incl step-cost">Inclus</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Sélection des entreprises de reprise, contractualisation, mise en place du cadre de travail.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Contrats signés + équipes mobilisées + espace projet configuré.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d2"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>5</span></div><div class="step-header-text"><div class="step-name">Exécution & supervision</div><div class="step-sub">Reprise des travaux supervisée</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Supervision terrain intensive, points d'arrêt, checklists, rapports réguliers.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Rapports de reprise + photos + PV d'étapes validées.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d1"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>6</span></div><div class="step-header-text"><div class="step-name">Réception & clôture</div><div class="step-sub">Remise du bien réceptionné</div></div><span class="cost-incl step-cost">Inclus</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Visite de réception, levée des réserves, DOE et rapport final de reprise.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">PV de réception + DOE + archive complète du projet.</div></div></div></div></div></div>
+      </div>
+    </div>
+
+    <!-- ÉTUDES -->
+    <div class="step-panel" data-panel="etudes">
+      <div class="step-intro reveal"><p>Vous avez besoin d'une expertise technique, d'études de sol, d'un diagnostic ou d'une analyse avant de prendre une décision. KOMA cadre la mission en 4 étapes.</p></div>
+      <div class="steps-list faq-list">
+        <div class="faq-item step-item reveal"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>1</span></div><div class="step-header-text"><div class="step-name">Prise de contact & cadrage</div><div class="step-sub">Définir la demande d'étude</div></div><span class="cost-free step-cost">Gratuit</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Entretien, analyse des documents fournis, clarification des besoins et du périmètre de l'étude.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Fiche de cadrage + proposition de mission + délai et tarif.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d1"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>2</span></div><div class="step-header-text"><div class="step-name">Mission de terrain</div><div class="step-sub">Visite, relevés et analyses</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Mobilisation de l'expert adapté (architecte, ingénieur, géologue), visite et collecte des données.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Données brutes, photos, mesures et observations terrain.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d2"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>3</span></div><div class="step-header-text"><div class="step-name">Analyse & rédaction</div><div class="step-sub">Rapport et recommandations</div></div><span class="cost-incl step-cost">Inclus</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Synthèse des données, analyse technique, rédaction du rapport illustré et des recommandations.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Rapport d'étude complet + recommandations + fichiers sources.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d1"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>4</span></div><div class="step-header-text"><div class="step-name">Restitution & suite</div><div class="step-sub">Présentation et décision</div></div><span class="cost-incl step-cost">Inclus</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Présentation des résultats, échanges, archivage GED, orientation vers les prochaines étapes.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Synthèse client + documents GED + proposition d'étapes suivantes.</div></div></div></div></div></div>
+      </div>
+    </div>
+
+    <!-- FONCIER -->
+    <div class="step-panel" data-panel="foncier">
+      <div class="step-intro reveal"><p>Vous cherchez un terrain pour construire ou investir. KOMA vous aide à identifier, analyser et sécuriser le bon foncier en 5 étapes.</p></div>
+      <div class="steps-list faq-list">
+        <div class="faq-item step-item reveal"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>1</span></div><div class="step-header-text"><div class="step-name">Brief foncier</div><div class="step-sub">Définir les critères de recherche</div></div><span class="cost-free step-cost">Gratuit</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Entretien pour définir zone, superficie, budget, programme futur et contraintes.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Cahier des charges foncier + périmètre de recherche.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d1"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>2</span></div><div class="step-header-text"><div class="step-name">Identification & propositions</div><div class="step-sub">Recherche et sélection de terrains</div></div><span class="cost-var step-cost">Sur devis</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Recherche via le réseau foncier KOMA, identification des terrains répondant aux critères.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Fiches terrain + photos + carte de localisation + prix marché.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d2"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>3</span></div><div class="step-header-text"><div class="step-name">Visite & analyse terrain</div><div class="step-sub">Due diligence foncière</div></div><span class="cost-paid step-cost">Payant</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Visite terrain avec partenaire foncier, vérification titre, contraintes, accès, réseaux.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Rapport de visite + vérification titre + recommandation validée.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d1"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>4</span></div><div class="step-header-text"><div class="step-name">Accompagnement juridique</div><div class="step-sub">Sécurisation de l'acquisition</div></div><span class="cost-var step-cost">Selon projet</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Mise en relation notaire, suivi des démarches juridiques, archivage des titres.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Acte d'acquisition + titre sécurisé + archive GED.</div></div></div></div></div></div>
+        <div class="faq-item step-item reveal reveal-d2"><button class="faq-trigger step-trigger"><div class="step-num-circle"><span>5</span></div><div class="step-header-text"><div class="step-name">Orientation vers la construction</div><div class="step-sub">Lancement du projet immobilier</div></div><span class="cost-incl step-cost">Inclus</span><span class="step-chevron">›</span></button><div class="faq-body step-body"><div class="faq-body-inner step-body-inner"><div class="step-detail-grid"><div class="sdg-box"><div class="sdg-label">⚙️ KOMA fait</div><div class="sdg-content">Cadrage du programme constructif, préfaisabilité et lancement du parcours construction.</div></div><div class="sdg-box"><div class="sdg-label">📋 Livrables</div><div class="sdg-content">Note de cadrage projet + transition vers parcours construction.</div></div></div></div></div></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section style="background:var(--teal-pale);border-top:1px solid var(--teal-soft);padding:clamp(64px,7vw,110px) 0;text-align:center;">
+<!-- GARANTIES -->
+<section class="sec-dark">
   <div class="container">
-    <h2 style="max-width:24ch;margin:0 auto;">Prêt à commencer ? Étape 01 prend 12 minutes.</h2>
-    <div style="display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:28px;"><a href="contact.html" class="btn btn-cta">Estimer mon projet <span class="arrow">→</span></a><a href="contact.html" class="btn btn-dark">Parler à un expert</a></div>
+    <div class="sec-head centered reveal">
+      <span class="label label-light">Nos engagements</span>
+      <h2>Ce que KOMA garantit à chaque étape.</h2>
+    </div>
+    <div class="guarantee-grid">
+      <div class="glass-card guar-card reveal reveal-d1">
+        <div class="guar-icon">🔒</div>
+        <div class="guar-title">Aucune étape sans validation</div>
+        <p class="guar-desc">Chaque passage de phase requiert votre accord explicite. Rien n'avance sans votre décision documentée.</p>
+      </div>
+      <div class="glass-card guar-card reveal reveal-d2">
+        <div class="guar-icon">📋</div>
+        <div class="guar-title">Tout est tracé et documenté</div>
+        <p class="guar-desc">Chaque action, rapport, décision et paiement est archivé dans votre espace projet avec horodatage.</p>
+      </div>
+      <div class="glass-card guar-card reveal reveal-d3">
+        <div class="guar-icon">🤝</div>
+        <div class="guar-title">Vous gardez la main</div>
+        <p class="guar-desc">KOMA supervise, coordonne et conseille. La décision finale vous appartient toujours.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="contact.html" class="btn btn-cta">Commencer mon projet <span class="arrow">→</span></a>
+    </div>
   </div>
 </section>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <div style="font-family:var(--f-display);font-weight:900;font-size:22px;letter-spacing:0.08em;color:white;">KOMA <span style="font-weight:500;font-size:14px;letter-spacing:0.2em;opacity:0.6;">EXPERTISE</span></div>
-        <p style="margin-top:16px;max-width:38ch;color:rgba(255,255,255,0.65);font-size:14px;">Construisez en Afrique depuis le monde entier — avec transparence, des experts vérifiés et un interlocuteur unique.</p>
-        <div class="wecare-badge">
-          <div class="wrow"><span class="dot"></span> Ingénierie SCI WeCare</div>
-          <p style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.5);">Entité technique sœur — études, coordination, exécution. <a href="partners.html#wecare" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px;">En savoir plus</a></p>
-        </div>
-      </div>
-      <div>
-        <h5>Pour les clients</h5>
-        <ul>
-          <li><a href="solutions.html">Nos solutions</a></li>
-          <li><a href="journey.html">Comment ça marche</a></li>
-          <li><a href="platform.html">Espace projet</a></li>
-          <li><a href="projects.html">Projets réalisés</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Pour les pros</h5>
-        <ul>
-          <li><a href="partners.html">Rejoindre le réseau</a></li>
-          <li><a href="partners.html#wecare">SCI WeCare</a></li>
-          <li><a href="about.html">À propos de KOMA</a></li>
-          <li><a href="contact.html">Devenir partenaire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="contact.html">Estimer mon projet</a></li>
-          <li><a href="contact.html">Parler à un expert</a></li>
-          <li><a href="mailto:hello@koma.build">hello@koma.build</a></li>
-          <li><a href="tel:+33000000000">+33 (0) 00 00 00 00</a></li>
-        </ul>
-      </div>
+      <div><div style="font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.1em;color:#fff;margin-bottom:14px;">KOMA <span style="font-weight:400;font-size:13px;letter-spacing:.2em;opacity:.5;">EXPERTISE</span></div><p style="font-size:14px;max-width:34ch;line-height:1.7;">Construire, rénover ou investir en Afrique depuis l'étranger.</p><div class="wecare-badge"><div class="wrow"><span class="wdot"></span> Appui technique : SCI WeCare</div></div></div>
+      <div><h5>Services</h5><ul><li><a href="solutions.html">Tous les services</a></li><li><a href="journey.html">Parcours client</a></li><li><a href="contact.html">Diagnostic gratuit</a></li></ul></div>
+      <div><h5>Partenaires</h5><ul><li><a href="partners.html">Devenir partenaire</a></li></ul></div>
+      <div><h5>KOMA</h5><ul><li><a href="about.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     </div>
-    <div class="foot-bottom">
-      <div>© 2026 KOMA Expertise · SCI WeCare Group</div>
-      <div style="display:flex;gap:20px;">
-        <a href="#">Mentions légales</a>
-        <a href="#">Confidentialité</a>
-        <a href="#">EN / FR</a>
-      </div>
-    </div>
+    <div class="foot-bottom"><span>© 2025 KOMA Expertise. SAS basée en France.</span><div style="display:flex;gap:16px;"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div></div>
   </div>
 </footer>
-<script>
-(function(){
-  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var s=document.createElement('style');
-  s.textContent='.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease;}.reveal.visible{opacity:1;transform:translateY(0);}';
-  document.head.appendChild(s);
-  var els=document.querySelectorAll('.card,.sec-head,.tracker,figure,.imgph,.kpi,.stage,.feed-item,.wecare-section .lead,.wecare-section h2,.step-num,.stat-big');
-  els.forEach(function(el){
-    el.classList.add('reveal');
-    var p=el.parentElement,sibs=[].slice.call(p.children).filter(function(c){return c.classList.contains('reveal');});
-    el.style.transitionDelay=(sibs.indexOf(el)*80)+'ms';
-  });
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(function(el){io.observe(el);});
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>

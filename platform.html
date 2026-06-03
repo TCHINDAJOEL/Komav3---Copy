@@ -4,353 +4,458 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>La plateforme — KOMA Expertise</title>
+<meta name="description" content="Découvrez la plateforme KOMA : tableau de bord projet, gestion budgétaire, GED, suivi chantier, paiements jalons et IA — tout en un pour piloter votre projet depuis l'étranger."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
-:root{
-  --teal:#18B7D2; --teal-dark:#0E8FA6; --teal-sky:#6DCEFC; --teal-mint:#6BC0AA;
-  --teal-pale:#EBF6FF; --teal-soft:#B8DEF0;
-  --white:#FFFFFF; --paper:#F7FFFE; --light:#F4F4F4; --rule:#E8E8E8;
-  --stone:#888888; --body:#4A4A4A; --ink:#0F0F0F; --black:#111111;
-  --night:#0F172A; --night-2:#1A1A2E;
-  --gold:#C19A4B; --gold-soft:#D9BB7B;
-  --grad-cta:linear-gradient(135deg,var(--teal-sky) 0%,var(--teal-mint) 100%);
-  --f-display:'DM Sans',system-ui,sans-serif; --f-body:'DM Sans',system-ui,sans-serif;
-  --maxw:1280px; --gut:clamp(20px,4vw,64px); --section-y:clamp(64px,8vw,120px);
-  --r-pill:999px; --r-md:12px; --r-lg:20px; --r-xl:28px;
+/* ── HERO ── */
+.pf-hero {
+  background: var(--grad-hero); position:relative; overflow:hidden;
+  padding: clamp(80px,10vw,120px) 0 clamp(64px,8vw,96px);
+  text-align: center;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--f-body);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:16px;line-height:1.6;}
-img,svg{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-button{font:inherit;cursor:pointer;border:none;background:none;}
-ul,ol{list-style:none;}
-h1{font-family:var(--f-display);font-size:clamp(44px,6.5vw,88px);font-weight:700;line-height:1.02;letter-spacing:-0.02em;color:var(--ink);text-wrap:balance;}
-h2{font-family:var(--f-display);font-size:clamp(30px,4vw,56px);font-weight:700;line-height:1.06;letter-spacing:-0.018em;color:var(--ink);text-wrap:balance;}
-h3{font-family:var(--f-body);font-size:clamp(20px,2vw,24px);font-weight:600;line-height:1.2;letter-spacing:-0.01em;color:var(--ink);}
-h4{font-family:var(--f-body);font-size:17px;font-weight:600;line-height:1.25;letter-spacing:-0.005em;color:var(--ink);}
-blockquote{font-family:var(--f-display);font-weight:600;font-size:clamp(17px,1.6vw,20px);line-height:1.5;font-style:italic;color:var(--ink);}
-p{text-wrap:pretty;}
-.lead{font-size:clamp(16px,1.4vw,19px);color:var(--body);line-height:1.65;max-width:58ch;}
-.label{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal-dark);}
-.label-dark{color:rgba(255,255,255,0.7);}
-.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);}
-section{padding:var(--section-y) 0;}
-.sec-alt{background:var(--paper);}
-.sec-teal{background:var(--teal-pale);}
-.sec-dark{background:var(--ink);color:var(--white);}
-.sec-dark h2,.sec-dark h3,.sec-dark h4{color:var(--white);}
-.sec-dark .lead,.sec-dark p{color:rgba(255,255,255,0.72);}
-.sec-head{display:flex;flex-direction:column;gap:16px;margin-bottom:52px;}
-.sec-head.centered{align-items:center;text-align:center;}
-.sec-head .label{margin-bottom:4px;}
+.pf-hero .orb1 { position:absolute;top:-160px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(24,183,210,.13),transparent 65%);pointer-events:none; }
+.pf-hero .orb2 { position:absolute;bottom:-100px;left:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(107,192,170,.09),transparent 65%);pointer-events:none; }
+.pf-hero h1 { color:#fff; margin:0 auto; max-width:800px; }
+.pf-hero .lead { color:rgba(255,255,255,.6); margin:18px auto 0; text-align:center; }
 
-/* ===== NAVBAR — UNIFIED 64px ===== */
-.site-header{position:sticky;top:0;z-index:200;background:#0F0F0F;border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(12px);}
-.nav-unified{height:64px;display:flex;align-items:center;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);}
-.nav-brand{display:flex;flex-direction:column;justify-content:center;flex-shrink:0;}
-.nav-brand .koma-word{font-family:var(--f-body);font-weight:700;font-size:18px;letter-spacing:0.14em;color:#fff;line-height:1;}
-.nav-brand .koma-sub{font-size:7px;font-weight:500;letter-spacing:0.35em;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-top:3px;}
-.nav-divider{width:1px;height:20px;background:rgba(255,255,255,0.12);margin:0 20px;flex-shrink:0;}
-.nav-links{display:flex;align-items:center;height:100%;flex:1;}
-.nav-item{height:100%;display:flex;align-items:center;padding:0 14px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.60);white-space:nowrap;transition:color 0.15s;position:relative;}
-.nav-item::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--teal);border-radius:2px 2px 0 0;transform:scaleX(0);transform-origin:left;transition:transform 0.2s ease;}
-.nav-item:hover{color:#fff;}
-.nav-item:hover::after,.nav-item.active::after{transform:scaleX(1);}
-.nav-item.active{color:#fff;}
-.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0;padding-left:16px;}
-.nav-wecare{font-size:11px;font-weight:600;color:var(--gold-soft);background:rgba(193,154,75,0.08);border:1px solid rgba(193,154,75,0.25);padding:5px 12px;border-radius:var(--r-pill);transition:0.15s;letter-spacing:0.04em;}
-.nav-wecare:hover{background:rgba(193,154,75,0.16);color:var(--gold);}
-.nav-pros{font-size:12px;font-weight:600;color:rgba(255,255,255,0.55);padding:5px 12px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,0.15);transition:0.15s;}
-.nav-pros:hover{color:#fff;border-color:rgba(255,255,255,0.35);}
-.nav-mob{display:none;align-items:center;gap:12px;margin-left:auto;}
-.hamburger{width:36px;height:36px;display:flex;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;}
-.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.8);border-radius:2px;}
-.btn-outline-dark{background:transparent;color:rgba(255,255,255,0.80);border:1.5px solid rgba(255,255,255,0.25);transition:.15s;}
-.btn-outline-dark:hover{border-color:rgba(255,255,255,0.5);color:#fff;}
+/* ── PROMISES ── */
+.promise-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.promise-card { text-align:center; padding:28px 20px; }
+.promise-icon { font-size:36px; margin-bottom:14px; }
+.promise-title { font-size:16px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.promise-desc { font-size:13.5px; color:var(--body); line-height:1.6; }
 
-/* ===== BUTTONS ===== */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:var(--r-pill);font-family:var(--f-body);font-weight:600;font-size:15px;border:none;cursor:pointer;transition:opacity .15s,transform .15s;white-space:nowrap;}
-.btn:hover{opacity:0.92;transform:translateY(-1px);}
-.btn-cta{background:var(--grad-cta);color:var(--ink);box-shadow:0 4px 18px rgba(105,235,209,0.30);font-weight:700;transition:box-shadow 0.2s,transform 0.15s,filter 0.2s;}
-.btn-cta:hover{opacity:1;filter:brightness(1.06);box-shadow:0 8px 32px rgba(105,235,209,0.50);transform:translateY(-2px);}
-.btn-dark{background:var(--black);color:var(--white);transition:background 0.2s,transform 0.15s;}
-.btn-dark:hover{background:var(--teal-dark);opacity:1;transform:translateY(-1px);}
-.btn-outline{background:transparent;color:var(--ink);border:2px solid var(--rule);}
-.btn-outline-white{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.4);}
-.btn-white{background:var(--white);color:var(--ink);font-weight:700;}
-.btn-sm{padding:9px 16px;font-size:13px;}
-.btn .arrow{font-size:15px;transition:transform .2s;}
-.btn:hover .arrow{transform:translateX(3px);}
-.btn:active{transform:scale(0.97) !important;}
+/* ── MODULES ── */
+.module-row { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding:48px 0; border-bottom:1px solid var(--rule); }
+.module-row:last-child { border-bottom:none; }
+.module-row.reverse { direction:rtl; }
+.module-row.reverse > * { direction:ltr; }
+.mod-badge { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--teal-dark); margin-bottom:14px; }
+.mod-num { width:26px;height:26px;border-radius:50%;background:var(--grad-cta);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--ink); }
+.mod-features { display:grid; gap:10px; margin-top:18px; }
+.mod-feat { display:flex; gap:12px; align-items:flex-start; }
+.mod-feat-dot { width:8px;height:8px;border-radius:50%;background:var(--teal);margin-top:7px;flex-shrink:0; }
+.mod-feat-text { font-size:14.5px; color:var(--body); line-height:1.6; }
+.mod-feat-text strong { color:var(--ink); }
 
-/* ===== CARDS ===== */
-.card{background:var(--white);border:1px solid var(--rule);border-radius:var(--r-lg);padding:28px;transition:box-shadow .25s,border-color .25s,transform .2s;position:relative;overflow:hidden;}
-.card::before{content:'';position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--teal);border-radius:var(--r-lg) 0 0 var(--r-lg);transform:scaleY(0);transform-origin:bottom;transition:transform 0.22s ease;}
-.card:hover{box-shadow:0 6px 28px rgba(0,0,0,0.08);border-color:rgba(69,201,191,0.25);transform:translateY(-2px);}
-.card:hover::before{transform:scaleY(1);}
-.card-teal{background:var(--teal-pale);border-color:var(--teal-soft);}
-.card-dark{background:var(--ink);border-color:rgba(255,255,255,0.08);color:var(--white);}
-.card-dark h3,.card-dark h4{color:var(--white);}
-.step-num{font-family:var(--f-display);font-weight:900;font-size:42px;line-height:1;letter-spacing:-0.04em;background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.stat-big{font-family:var(--f-display);font-weight:900;font-size:clamp(36px,4vw,56px);letter-spacing:-0.03em;line-height:1;color:var(--ink);}
-.stat-big .accent{background:var(--grad-cta);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+/* Module visual mockup */
+.mod-visual { background:var(--paper); border-radius:var(--r-xl); padding:24px; border:1px solid var(--rule); box-shadow:var(--sh-md); }
+.mv-header { display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--rule); }
+.mv-title { font-size:13px;font-weight:700;color:var(--ink); }
+.mv-tag { font-size:10px;font-weight:700;padding:3px 9px;border-radius:var(--r-pill);background:rgba(24,183,210,.1);color:var(--teal-dark); }
 
-/* ===== TRACKER ===== */
-.tracker{background:var(--white);border:1px solid var(--rule);border-radius:var(--r-xl);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.08);}
-.tracker-header{background:var(--teal);padding:20px 24px;display:flex;justify-content:space-between;align-items:center;}
-.tracker-title{font-weight:700;font-size:17px;color:var(--white);}
-.tracker-sub{font-size:12px;color:rgba(255,255,255,0.8);margin-top:3px;}
-.tracker-body{padding:22px;}
-.tracker-stages{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:22px;}
-.stage{padding:12px;border-radius:10px;background:var(--light);border:1px solid var(--rule);}
-.stage.done{background:rgba(69,201,191,0.10);border-color:rgba(69,201,191,0.30);}
-.stage.now{background:linear-gradient(135deg,rgba(109,206,252,0.12),rgba(105,235,209,0.15));border-color:rgba(69,201,191,0.45);}
-.stage .st-n{font-size:10px;font-weight:600;color:var(--stone);letter-spacing:0.1em;}
-.stage .st-name{font-weight:700;font-size:13px;color:var(--ink);margin-top:6px;}
-.stage .st-status{font-size:10px;margin-top:5px;color:var(--stone);}
-.stage.done .st-status{color:var(--teal-dark);}
-.stage.now .st-status{color:var(--teal-dark);font-weight:600;}
-.tracker-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;}
-.feed{display:grid;gap:8px;}
-.feed-item{display:grid;grid-template-columns:32px 1fr auto;gap:12px;padding:10px 14px;border:1px solid var(--rule);border-radius:8px;align-items:center;background:var(--light);}
-.feed-item .ic{width:32px;height:32px;border-radius:8px;background:var(--grad-cta);display:grid;place-items:center;font-size:14px;}
-.feed-item .lbl{font-size:13px;font-weight:500;}
-.feed-item .when{font-size:11px;color:var(--stone);white-space:nowrap;}
-.kpis{display:grid;gap:8px;}
-.kpi{padding:14px;border-radius:10px;background:var(--light);border:1px solid var(--rule);}
-.kpi .v{font-family:var(--f-display);font-weight:800;font-size:24px;color:var(--ink);letter-spacing:-0.02em;}
-.kpi .l{font-size:11px;font-weight:600;color:var(--stone);letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;}
+/* ── PORTAILS ── */
+.portal-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.portal-card { padding:24px; text-align:center; }
+.portal-icon { font-size:32px; margin-bottom:14px; }
+.portal-title { font-size:16px; font-weight:700; color:var(--ink); margin-bottom:6px; }
+.portal-role { font-size:12px; font-weight:600; color:var(--teal-dark); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px; }
+.portal-desc { font-size:13.5px; color:var(--body); line-height:1.6; }
 
-/* ===== TAGS ===== */
-.tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:var(--r-pill);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;background:var(--teal-pale);color:var(--teal-dark);border:1px solid var(--teal-soft);}
-.tag .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);}
-.tag.dark{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);border-color:rgba(255,255,255,0.2);}
+/* ── SECURITY ── */
+.sec-badges { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:28px; }
+.sec-badge { display:flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:var(--r-pill); font-size:13px; font-weight:600; color:rgba(255,255,255,.72); }
 
-/* ===== IMAGE PLACEHOLDERS ===== */
-.imgph{position:relative;border-radius:var(--r-lg);overflow:hidden;background:repeating-linear-gradient(135deg,rgba(69,201,191,0.04) 0,rgba(69,201,191,0.04) 1px,transparent 1px,transparent 10px),linear-gradient(180deg,#E6F4F1 0%,#D4ECEA 100%);display:flex;align-items:flex-end;padding:14px;min-height:220px;}
-.imgph .cap{background:rgba(255,255,255,0.90);border:1px solid var(--rule);border-radius:6px;padding:6px 10px;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--stone);}
-
-/* ===== HERO MAP (real image) ===== */
-.hero-map{position:relative;border-radius:var(--r-xl);overflow:hidden;border:1px solid rgba(69,201,191,0.20);box-shadow:0 18px 56px rgba(11,31,35,0.32);aspect-ratio:4/3;background:var(--night);}
-.hero-map img{width:100%;height:100%;object-fit:cover;display:block;}
-.hero-map .map-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,31,35,0) 40%,rgba(11,31,35,0.55) 100%);}
-.hero-map .live-chip{position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(11,31,35,0.78);border:1px solid rgba(105,235,209,0.3);color:var(--teal-mint);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 12px;border-radius:var(--r-pill);backdrop-filter:blur(6px);}
-.hero-map .live-chip .pulse{width:8px;height:8px;border-radius:50%;background:var(--teal-mint);box-shadow:0 0 0 0 rgba(105,235,209,0.6);animation:livep 2s infinite;}
-@keyframes livep{0%{box-shadow:0 0 0 0 rgba(105,235,209,0.55);}70%{box-shadow:0 0 0 9px rgba(105,235,209,0);}100%{box-shadow:0 0 0 0 rgba(105,235,209,0);}}
-.hero-map .map-cards{position:absolute;bottom:16px;left:16px;right:16px;display:flex;gap:10px;flex-wrap:wrap;}
-.map-card{background:rgba(11,31,35,0.80);border:1px solid rgba(105,235,209,0.22);border-radius:12px;padding:10px 14px;backdrop-filter:blur(6px);flex:1;min-width:120px;}
-.map-card .mc-route{font-size:10px;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.55);text-transform:uppercase;}
-.map-card .mc-name{font-size:13px;font-weight:700;color:#fff;margin-top:3px;}
-.map-card .mc-status{font-size:11px;color:var(--teal-mint);margin-top:3px;font-weight:600;}
-
-/* ===== WECARE ===== */
-.wecare-section{background:linear-gradient(135deg,#0F2A2C 0%,#0B1F23 100%);color:var(--white);}
-.wecare-section h2{color:var(--white);}
-.wecare-section .lead{color:rgba(255,255,255,0.72);}
-
-/* ===== FOOTER ===== */
-.site-footer{background:var(--ink);color:rgba(255,255,255,0.6);padding:72px 0 32px;position:relative;}
-.site-footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,var(--teal) 35%,var(--teal-mint) 65%,transparent 100%);opacity:0.4;}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:32px;}
-.footer-grid h5{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:16px;}
-.footer-grid ul{display:grid;gap:10px;}
-.footer-grid a{font-size:14px;color:rgba(255,255,255,0.65);transition:color .15s;}
-.footer-grid a:hover{color:var(--teal-mint);}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:500;letter-spacing:0.06em;color:rgba(255,255,255,0.35);flex-wrap:wrap;gap:12px;}
-.foot-bottom a{color:rgba(255,255,255,0.5);}
-.foot-bottom a:hover{color:#fff;}
-.wecare-badge{border:1px solid rgba(255,255,255,0.10);border-left:3px solid var(--gold);border-radius:0 var(--r-md) var(--r-md) 0;padding:14px 16px;margin-top:20px;background:rgba(193,154,75,0.04);}
-.wecare-badge .wrow{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-transform:uppercase;}
-@keyframes goldPulse{0%,100%{box-shadow:0 0 0 0 rgba(193,154,75,0.5);}50%{box-shadow:0 0 0 5px rgba(193,154,75,0);}}
-.wecare-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:goldPulse 3s ease-in-out infinite;}
-
-/* ===== HELPERS ===== */
-.g-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-.g-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.g-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-.row-sb{display:flex;align-items:center;justify-content:space-between;gap:24px;}
-.hr{height:1px;background:var(--rule);border:none;}
-.page-hero{padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(48px,6vw,72px);border-bottom:1px solid var(--rule);}
-.page-hero h1{max-width:18ch;}
-.page-hero .lead{margin-top:20px;max-width:56ch;}
-.page-meta{display:flex;gap:28px;margin-top:28px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--stone);flex-wrap:wrap;}
-.page-meta span{display:flex;align-items:center;gap:8px;}
-.page-meta span::before{content:"";width:16px;height:1px;background:var(--teal);}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:980px){
-  .g-2,.g-3,.g-4{grid-template-columns:1fr;}
-  .footer-grid{grid-template-columns:1fr 1fr;}
-  .nav-links,.nav-right{display:none;}
-  .nav-mob{display:flex;}
-  .tracker-stages{grid-template-columns:repeat(3,1fr);}
-  .tracker-grid{grid-template-columns:1fr;}
-  .hero-grid{grid-template-columns:1fr !important;}
+@media(max-width:1024px) {
+  .promise-grid { grid-template-columns:1fr 1fr; }
+  .portal-grid { grid-template-columns:1fr 1fr; }
 }
-@media(max-width:600px){.footer-grid{grid-template-columns:1fr;}}
+@media(max-width:768px) {
+  .module-row, .module-row.reverse { grid-template-columns:1fr; direction:ltr; gap:24px; }
+  .promise-grid { grid-template-columns:1fr; }
+  .portal-grid { grid-template-columns:1fr; }
+}
 </style>
 </head>
 <body>
+
 <header class="site-header" id="site-header">
-  <nav class="nav-unified" aria-label="Navigation principale">
-    <a href="home.html" class="nav-brand" aria-label="KOMA accueil">
-      <div class="koma-word">KOMA</div>
-      <div class="koma-sub">Expertise</div>
-    </a>
+  <nav class="nav-unified">
+    <a href="home.html" class="nav-brand"><div class="koma-word">KOMA</div><div class="koma-sub">Expertise</div></a>
     <div class="nav-divider"></div>
     <div class="nav-links">
-      <a href="home.html" class="nav-item">Accueil</a>
-      <a href="solutions.html" class="nav-item">Solutions</a>
-      <a href="journey.html" class="nav-item">Comment ca marche</a>
-      <a href="platform.html" class="nav-item active">Plateforme</a>
-      <a href="projects.html" class="nav-item">Projets</a>
-      <a href="about.html" class="nav-item">A propos</a>
+      <a href="home.html"      class="nav-item">Accueil</a>
+      <a href="solutions.html" class="nav-item">Services</a>
+      <a href="journey.html"   class="nav-item">Comment ça marche</a>
+      <a href="platform.html"  class="nav-item active">Plateforme</a>
+      <a href="projects.html"  class="nav-item">Projets</a>
+      <a href="about.html"     class="nav-item">À propos</a>
     </div>
     <div class="nav-right">
       <a href="partners.html" class="nav-partner">Devenir partenaire</a>
       <a href="contact.html"  class="btn btn-cta btn-sm">Commencer mon projet</a>
-      <a href="partners.html#wecare" class="nav-wecare">SCI WeCare</a>
-      <a href="contact.html" class="btn btn-cta btn-sm">Estimer mon projet</a>
     </div>
     <div class="nav-mob">
-      <a href="contact.html" class="btn btn-cta btn-sm">Estimer</a>
-      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="contact.html" class="btn btn-cta btn-sm" style="padding:8px 14px;font-size:12.5px;">Commencer</a>
+      <button class="hamburger" id="burger-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 </header>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="home.html" class="mob-item">Accueil</a>
+  <a href="solutions.html" class="mob-item">Services</a>
+  <a href="journey.html" class="mob-item">Comment ça marche</a>
+  <a href="platform.html" class="mob-item active">Plateforme</a>
+  <a href="projects.html" class="mob-item">Projets</a>
+  <a href="about.html" class="mob-item">À propos</a>
+  <div class="mob-divider"></div>
+  <a href="partners.html" class="mob-item" style="color:var(--gold-soft);">Devenir partenaire</a>
+  <div style="padding:12px 16px 4px;"><a href="contact.html" class="btn btn-cta" style="width:100%;justify-content:center;">Commencer →</a></div>
+</div>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="tag" style="margin-bottom:20px;"><span class="dot"></span> La plateforme</div>
-    <h1>Une plateforme unique pour suivre votre projet, vos décisions, vos partenaires et vos paiements.</h1>
-    <p class="lead">Chaque rôle dispose d'un portail adapté. Chaque action importante est tracée. Chaque décision est documentée et justifiée.</p>
+<!-- HERO -->
+<section class="pf-hero">
+  <div class="orb1"></div><div class="orb2"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="reveal">
+      <div class="tag dark" style="margin-bottom:20px;display:inline-flex;"><span class="dot"></span> La plateforme KOMA</div>
+      <h1>Votre projet immobilier,<br>piloté depuis n'importe où.</h1>
+      <p class="lead" style="max-width:580px;">Une interface unique pour voir, décider et contrôler chaque dimension de votre projet — budget, documents, chantier, paiements et partenaires.</p>
+      <div style="display:flex;gap:12px;justify-content:center;margin-top:32px;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-cta">Demander une démonstration <span class="arrow">→</span></a>
+        <a href="#modules" class="btn btn-outline-white">Explorer les modules</a>
+      </div>
+    </div>
+    <!-- Mini stats bar -->
+    <div style="display:flex;gap:32px;justify-content:center;margin-top:48px;flex-wrap:wrap;" class="reveal reveal-d2">
+      <div style="text-align:center;"><div style="font-size:26px;font-weight:800;color:#fff;">7</div><div style="font-size:12px;color:rgba(255,255,255,.42);margin-top:3px;">modules intégrés</div></div>
+      <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+      <div style="text-align:center;"><div style="font-size:26px;font-weight:800;color:#fff;">6</div><div style="font-size:12px;color:rgba(255,255,255,.42);margin-top:3px;">portails rôles</div></div>
+      <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+      <div style="text-align:center;"><div style="font-size:26px;font-weight:800;color:#fff;">22+</div><div style="font-size:12px;color:rgba(255,255,255,.42);margin-top:3px;">checklists qualité</div></div>
+      <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+      <div style="text-align:center;"><div style="font-size:26px;font-weight:800;color:#fff;">100%</div><div style="font-size:12px;color:rgba(255,255,255,.42);margin-top:3px;">des actions tracées</div></div>
+    </div>
   </div>
 </section>
 
+<!-- PROMISES -->
 <section>
   <div class="container">
-    <div class="tracker">
-      <div class="tracker-header"><div><div class="tracker-title">Villa Ouédraogo — Lomé, Togo</div><div class="tracker-sub">PRJ-0421-LOM · Client : Y.O. (Paris)</div></div><div style="display:flex;gap:8px;"><span class="tag dark">● Étape 04/06</span><span class="tag dark">Dans les délais</span></div></div>
-      <div class="tracker-body">
-        <div class="tracker-stages">
-          <div class="stage done"><div class="st-n">01</div><div class="st-name">Brief</div><div class="st-status">✓ Terminé</div></div>
-          <div class="stage done"><div class="st-n">02</div><div class="st-name">Estimation</div><div class="st-status">✓ Terminé</div></div>
-          <div class="stage done"><div class="st-n">03</div><div class="st-name">Conception</div><div class="st-status">✓ Terminé</div></div>
-          <div class="stage now"><div class="st-n">04</div><div class="st-name">Fondations</div><div class="st-status">◐ En cours 62%</div></div>
-          <div class="stage"><div class="st-n">05</div><div class="st-name">Structure</div><div class="st-status">◯ M+04</div></div>
-          <div class="stage"><div class="st-n">06</div><div class="st-name">Livraison</div><div class="st-status">◯ M+11</div></div>
+    <div class="sec-head centered reveal">
+      <span class="label">4 promesses produit</span>
+      <h2>Ce que la plateforme vous apporte.</h2>
+    </div>
+    <div class="promise-grid">
+      <div class="card promise-card reveal reveal-d1">
+        <div class="promise-icon">👁</div>
+        <div class="promise-title">Visibilité totale</div>
+        <p class="promise-desc">Voyez l'état réel de votre projet en temps réel, quel que soit votre pays de résidence.</p>
+      </div>
+      <div class="card promise-card reveal reveal-d2">
+        <div class="promise-icon">✅</div>
+        <div class="promise-title">Contrôle des décisions</div>
+        <p class="promise-desc">Chaque décision importante passe par vous. Validez, rejetez ou commentez depuis votre téléphone.</p>
+      </div>
+      <div class="card promise-card reveal reveal-d3">
+        <div class="promise-icon">🔒</div>
+        <div class="promise-title">Traçabilité complète</div>
+        <p class="promise-desc">Chaque action, paiement, document et décision est horodaté et conservé dans un audit trail permanent.</p>
+      </div>
+      <div class="card promise-card reveal reveal-d4">
+        <div class="promise-icon">🤝</div>
+        <div class="promise-title">Collaboration structurée</div>
+        <p class="promise-desc">Client, KOMA, AMOA, MOE, MOEX et Admin travaillent dans la même plateforme avec des rôles clairs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="sec-alt" id="modules">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="label">7 modules intégrés</span>
+      <h2>Une plateforme complète,<br>pas un outil de plus.</h2>
+      <p class="lead">Chaque module est pensé pour une réalité terrain. Ensemble, ils couvrent l'intégralité du cycle de votre projet.</p>
+    </div>
+
+    <!-- Module 1: Dashboard -->
+    <div class="module-row reveal">
+      <div>
+        <div class="mod-badge"><div class="mod-num">1</div> Tableau de bord</div>
+        <h3>Vue d'ensemble en un coup d'œil.</h3>
+        <p style="font-size:15px;color:var(--body);margin-top:12px;line-height:1.7;">Dès la connexion, vous voyez l'état global de votre projet : phase active, jalons à venir, alertes en attente et indicateurs clés. Rien à chercher.</p>
+        <div class="mod-features">
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Phase active et progression</strong> — visualisation 8 phases</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Alertes priorisées</strong> — urgences, validations, retards</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Historique des décisions</strong> — chaque action horodatée</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Multi-projets</strong> — gérez plusieurs projets depuis un seul espace</div></div>
         </div>
-        <div class="tracker-grid">
-          <div><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:var(--stone);text-transform:uppercase;margin-bottom:8px;">Flux cette semaine</div>
-            <div class="feed">
-              <div class="feed-item"><div class="ic">📷</div><div class="lbl">38 photos géolocalisées — Kwesi A. (chef de chantier)</div><div class="when">Il y a 2h</div></div>
-              <div class="feed-item"><div class="ic">€</div><div class="lbl">Paiement jalon #3 libéré — Fondations 60%</div><div class="when">Hier</div></div>
-              <div class="feed-item"><div class="ic">⚑</div><div class="lbl">Note WeCare — portance sol confirmée à 1,8 bar</div><div class="when">Lundi</div></div>
-              <div class="feed-item"><div class="ic">✓</div><div class="lbl">Rapport hebdo #14 signé — conseiller &amp; client</div><div class="when">Lundi</div></div>
+      </div>
+      <div>
+        <div class="mod-visual">
+          <div class="mv-header"><span class="mv-title">Villa Nkoabang — Yaoundé</span><span class="mv-tag">Phase 5/8</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+            <div style="background:rgba(24,183,210,.07);border-radius:10px;padding:12px;border:1px solid rgba(24,183,210,.15);"><div style="font-size:9.5px;font-weight:600;color:var(--stone);">Avancement global</div><div style="font-size:22px;font-weight:800;color:var(--ink);margin-top:3px;">62%</div></div>
+            <div style="background:rgba(245,158,11,.07);border-radius:10px;padding:12px;border:1px solid rgba(245,158,11,.15);"><div style="font-size:9.5px;font-weight:600;color:var(--orange);">Alertes actives</div><div style="font-size:22px;font-weight:800;color:var(--orange);margin-top:3px;">3</div></div>
+          </div>
+          <div style="background:var(--light);border-radius:10px;padding:12px;border:1px solid var(--rule);">
+            <div style="font-size:10px;font-weight:700;color:var(--stone);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;">Prochains jalons</div>
+            <div style="display:grid;gap:6px;">
+              <div style="display:flex;justify-content:space-between;font-size:12.5px;"><span style="color:var(--body);">Coulage toiture</span><span style="color:var(--orange);font-weight:600;">15 jours</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:12.5px;"><span style="color:var(--body);">Paiement lot 4</span><span style="color:var(--teal-dark);font-weight:600;">Validation</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:12.5px;"><span style="color:var(--body);">Rapport S.23</span><span style="color:var(--success);font-weight:600;">Disponible</span></div>
             </div>
           </div>
-          <div class="kpis">
-            <div class="kpi"><div class="v">€ 42 800 <span style="font-size:13px;color:var(--teal-dark);">±0%</span></div><div class="l">Budget — vs. enveloppe</div></div>
-            <div class="kpi"><div class="v">+14 jours</div><div class="l">Planning — avance</div></div>
-            <div class="kpi"><div class="v">3</div><div class="l">Décisions en attente</div></div>
-            <div class="kpi"><div class="v">A. · Y.O.</div><div class="l">Conseiller — appel lundi</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 2: Budget -->
+    <div class="module-row reverse reveal">
+      <div>
+        <div class="mod-badge"><div class="mod-num">2</div> Budget & coûts</div>
+        <h3>Trois colonnes, zéro surprise financière.</h3>
+        <p style="font-size:15px;color:var(--body);margin-top:12px;line-height:1.7;">Budget prévu, engagé et payé : chaque ligne est transparente, chaque écart est signalé automatiquement avant qu'il devienne un problème.</p>
+        <div class="mod-features">
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>DQE / BQE</strong> — devis comparés ligne par ligne</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Écarts signalés</strong> — alerte automatique si dépassement</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Justificatifs liés</strong> — facture et BL rattachés à chaque ligne</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Reste à dépenser</strong> — projection en temps réel</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="mod-visual">
+          <div class="mv-header"><span class="mv-title">Budget &amp; coûts</span><span class="mv-tag">Actif</span></div>
+          <div style="display:grid;gap:8px;">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-size:11px;font-weight:600;color:var(--stone);">Budget prévu</span><span style="font-size:12px;font-weight:700;color:var(--ink);">32.8M FCFA</span></div>
+              <div style="height:6px;background:var(--rule);border-radius:4px;overflow:hidden;"><div style="height:100%;width:100%;background:linear-gradient(90deg,var(--teal),var(--teal-mint));border-radius:4px;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-size:11px;font-weight:600;color:var(--stone);">Budget engagé</span><span style="font-size:12px;font-weight:700;color:var(--orange);">18.2M FCFA</span></div>
+              <div style="height:6px;background:var(--rule);border-radius:4px;overflow:hidden;"><div style="height:100%;width:55%;background:linear-gradient(90deg,var(--orange),#d97706);border-radius:4px;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px;"><span style="font-size:11px;font-weight:600;color:var(--stone);">Budget payé</span><span style="font-size:12px;font-weight:700;color:var(--success);">12.6M FCFA</span></div>
+              <div style="height:6px;background:var(--rule);border-radius:4px;overflow:hidden;"><div style="height:100%;width:38%;background:linear-gradient(90deg,var(--success),#059669);border-radius:4px;"></div></div>
+            </div>
           </div>
+          <div style="margin-top:14px;background:rgba(239,68,68,.06);border-radius:9px;padding:10px 12px;border:1px solid rgba(239,68,68,.15);"><span style="font-size:12px;font-weight:600;color:var(--danger);">⚠ Écart détecté : +1.2M sur lot maçonnerie</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 3: GED -->
+    <div class="module-row reveal">
+      <div>
+        <div class="mod-badge"><div class="mod-num">3</div> Documents / GED</div>
+        <h3>Tous vos documents. Une seule adresse.</h3>
+        <p style="font-size:15px;color:var(--body);margin-top:12px;line-height:1.7;">14 dossiers structurés, nommage automatique, versioning et circuit de validation intégré. Plus jamais de document perdu ou de version introuvable.</p>
+        <div class="mod-features">
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>14 dossiers normés</strong> — structure identique pour tous les projets</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Circuit de validation</strong> — brouillon → soumis → validé → rejeté</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Génération PDF KOMA</strong> — rapports et PV au format officiel</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Pièces manquantes</strong> — signalement automatique avant chaque phase</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="mod-visual">
+          <div class="mv-header"><span class="mv-title">GED Projet</span><span class="mv-tag">52 fichiers</span></div>
+          <div style="display:grid;gap:6px;">
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--light);border-radius:8px;border:1px solid var(--rule);"><span style="font-size:14px;">📁</span><span style="font-size:13px;flex:1;color:var(--body);">01 — Études techniques</span><span style="font-size:10px;font-weight:700;color:var(--success);">8 ✓</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--light);border-radius:8px;border:1px solid var(--rule);"><span style="font-size:14px;">📁</span><span style="font-size:13px;flex:1;color:var(--body);">02 — Devis &amp; contrats</span><span style="font-size:10px;font-weight:700;color:var(--success);">12 ✓</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:rgba(245,158,11,.06);border-radius:8px;border:1px solid rgba(245,158,11,.2);"><span style="font-size:14px;">📁</span><span style="font-size:13px;flex:1;color:var(--body);">03 — Rapports de visite</span><span style="font-size:10px;font-weight:700;color:var(--orange);">2 en attente</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--light);border-radius:8px;border:1px solid var(--rule);"><span style="font-size:14px;">📁</span><span style="font-size:13px;flex:1;color:var(--body);">04 — Paiements &amp; factures</span><span style="font-size:10px;font-weight:700;color:var(--success);">18 ✓</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 4: Chantier -->
+    <div class="module-row reverse reveal">
+      <div>
+        <div class="mod-badge"><div class="mod-num">4</div> Suivi chantier</div>
+        <h3>Le terrain dans votre téléphone.</h3>
+        <p style="font-size:15px;color:var(--body);margin-top:12px;line-height:1.7;">Photos géolocalisées, rapports hebdomadaires, checklists qualité et points d'arrêt : vous voyez exactement ce qui se passe sur votre chantier, où que vous soyez.</p>
+        <div class="mod-features">
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Photos horodatées</strong> — galerie classée par étape et lot</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>22+ checklists qualité</strong> — ferraillage, béton, électricité, plomberie…</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Non-conformités</strong> — signalement, suivi et correction documentés</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Stock & appro</strong> — entrées, sorties et alertes rupture</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="mod-visual">
+          <div class="mv-header"><span class="mv-title">Rapport semaine 22</span><span class="mv-tag">Nouveau</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;">
+            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#c8e8ef,#a8d8e0);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;">🏗️</div>
+            <div style="aspect-ratio:4/3;background:linear-gradient(135deg,#d4e8c8,#b8d8a0);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:22px;">🧱</div>
+          </div>
+          <div style="background:rgba(239,68,68,.06);border-radius:9px;padding:10px 12px;border:1px solid rgba(239,68,68,.15);margin-bottom:8px;font-size:12.5px;color:var(--danger);font-weight:600;">⚠ Non-conformité : espacement ferraillage lot B</div>
+          <div style="background:rgba(16,185,129,.06);border-radius:9px;padding:10px 12px;border:1px solid rgba(16,185,129,.15);font-size:12.5px;color:var(--success);font-weight:600;">✓ Checklist fondations : 100% validée</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 5: Paiements -->
+    <div class="module-row reveal">
+      <div>
+        <div class="mod-badge"><div class="mod-num">5</div> Paiements & transferts</div>
+        <h3>Chaque centime tracé, chaque virement justifié.</h3>
+        <p style="font-size:15px;color:var(--body);margin-top:12px;line-height:1.7;">Les décaissements sont conditionnés à vos validations. CEYNA PAY facilite les transferts internationaux. Aucun paiement sans jalon validé.</p>
+        <div class="mod-features">
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Paiements par jalons</strong> — conditionnés à vos validations</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>CEYNA PAY intégré</strong> — transferts sécurisés et tracés</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Rapprochement automatique</strong> — facture / bon de commande / paiement</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Historique complet</strong> — chaque virement avec bénéficiaire et justificatif</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="mod-visual">
+          <div class="mv-header"><span class="mv-title">Paiements &amp; transferts</span><span class="mv-tag">CEYNA PAY</span></div>
+          <div style="display:grid;gap:8px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:rgba(16,185,129,.06);border-radius:9px;border:1px solid rgba(16,185,129,.15);"><span style="font-size:12.5px;color:var(--body);">Versement initial</span><span style="font-size:12.5px;font-weight:700;color:var(--success);">✓ 5.0M</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:rgba(16,185,129,.06);border-radius:9px;border:1px solid rgba(16,185,129,.15);"><span style="font-size:12.5px;color:var(--body);">Fondations validées</span><span style="font-size:12.5px;font-weight:700;color:var(--success);">✓ 4.2M</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:rgba(245,158,11,.06);border-radius:9px;border:1px solid rgba(245,158,11,.15);"><span style="font-size:12.5px;color:var(--body);">Gros œuvre — lot 3</span><span style="font-size:12.5px;font-weight:700;color:var(--orange);">⏳ Validation</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--light);border-radius:9px;border:1px solid var(--rule);"><span style="font-size:12.5px;color:var(--stone);">Toiture</span><span style="font-size:12.5px;font-weight:600;color:var(--stone);">À venir</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 6: Partenaires -->
+    <div class="module-row reverse reveal">
+      <div>
+        <div class="mod-badge"><div class="mod-num">6</div> Partenaires</div>
+        <h3>Votre équipe projet, visible en permanence.</h3>
+        <p style="font-size:15px;color:var(--body);margin-top:12px;line-height:1.7;">Chaque intervenant est référencé, évalué et visible dans votre espace. Vous savez qui fait quoi, depuis quand et avec quels résultats.</p>
+        <div class="mod-features">
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Fiche partenaire</strong> — références, évaluations et historique</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Missions actives</strong> — suivi des tâches par intervenant</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Évaluation continue</strong> — notation après chaque mission</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot"></div><div class="mod-feat-text"><strong>Portail dédié</strong> — chaque partenaire voit son périmètre uniquement</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="mod-visual">
+          <div class="mv-header"><span class="mv-title">Équipe projet</span><span class="mv-tag">7 actifs</span></div>
+          <div style="display:grid;gap:7px;">
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 11px;background:var(--light);border-radius:9px;border:1px solid var(--rule);"><div style="width:32px;height:32px;border-radius:8px;background:rgba(24,183,210,.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--teal-dark);">S</div><div><div style="font-size:13px;font-weight:600;color:var(--ink);">SCI WeCare</div><div style="font-size:10.5px;color:var(--stone);">AMOA / Contrôle technique</div></div><div style="margin-left:auto;font-size:10.5px;font-weight:700;color:var(--success);">★ 4.9</div></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 11px;background:var(--light);border-radius:9px;border:1px solid var(--rule);"><div style="width:32px;height:32px;border-radius:8px;background:rgba(107,192,170,.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#3d9a7e;">G</div><div><div style="font-size:13px;font-weight:600;color:var(--ink);">GNT Building</div><div style="font-size:10.5px;color:var(--stone);">Maçonnerie / Gros œuvre</div></div><div style="margin-left:auto;font-size:10.5px;font-weight:700;color:var(--success);">★ 4.7</div></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 11px;background:var(--light);border-radius:9px;border:1px solid var(--rule);"><div style="width:32px;height:32px;border-radius:8px;background:rgba(245,158,11,.15);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--orange);">T</div><div><div style="font-size:13px;font-weight:600;color:var(--ink);">TSAGUE Élec.</div><div style="font-size:10.5px;color:var(--stone);">Électricité / Lots techniques</div></div><div style="margin-left:auto;font-size:10.5px;font-weight:700;color:var(--success);">★ 4.8</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module 7: IA -->
+    <div class="module-row reveal">
+      <div>
+        <div class="mod-badge"><div class="mod-num">7</div><span style="color:#8B5CF6;">IA KOMA</span></div>
+        <h3>L'intelligence au service du pilotage.</h3>
+        <p style="font-size:15px;color:var(--body);margin-top:12px;line-height:1.7;">L'IA KOMA assiste les équipes et synthétise l'information pour vous. Elle n'agit jamais seule : chaque contenu généré est validé par un humain qualifié avant toute action.</p>
+        <div class="mod-features">
+          <div class="mod-feat"><div class="mod-feat-dot" style="background:#8B5CF6;"></div><div class="mod-feat-text"><strong>Synthèse des rapports</strong> — résumé automatique hebdomadaire</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot" style="background:#8B5CF6;"></div><div class="mod-feat-text"><strong>Alertes prédictives</strong> — retards, dépassements, documents manquants</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot" style="background:#8B5CF6;"></div><div class="mod-feat-text"><strong>Analyse photos chantier</strong> — détection assistée d'écarts visuels</div></div>
+          <div class="mod-feat"><div class="mod-feat-dot" style="background:#8B5CF6;"></div><div class="mod-feat-text"><strong>Rapprochement devis/facture</strong> — incohérences détectées automatiquement</div></div>
+        </div>
+        <div style="margin-top:18px;padding:14px 16px;background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.18);border-radius:var(--r-md);">
+          <p style="font-size:13px;color:var(--body);line-height:1.65;">🤖 Chaque contenu généré par IA porte un badge visible et doit être validé par un humain qualifié avant d'être pris en compte.</p>
+        </div>
+      </div>
+      <div>
+        <div class="mod-visual" style="background:linear-gradient(135deg,#1e1b4b,#312e81);border:1px solid rgba(139,92,246,.2);">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;">IA KOMA — Synthèse semaine 22</div>
+          <div style="display:grid;gap:10px;">
+            <div style="background:rgba(255,255,255,.06);border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,.1);"><div style="font-size:11px;font-weight:600;color:rgba(255,255,255,.45);margin-bottom:5px;">Résumé automatique</div><p style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;">Semaine productive : coulage dalle R+1 terminé. 2 réserves levées. Retard prévu de 5 jours sur lot menuiserie.</p></div>
+            <div style="background:rgba(139,92,246,.1);border-radius:10px;padding:12px;border:1px solid rgba(139,92,246,.25);"><div style="font-size:11px;font-weight:700;color:#a78bfa;margin-bottom:5px;">⚡ Alerte prédictive</div><p style="font-size:12.5px;color:rgba(255,255,255,.65);">Approvisionnement ciment insuffisant pour semaine 24. Commander avant jeudi.</p></div>
+          </div>
+          <div style="margin-top:12px;font-size:10.5px;color:rgba(255,255,255,.3);">🤖 IA · En attente de validation humaine</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec-alt">
+<!-- PORTAILS -->
+<section>
   <div class="container">
-    <div class="sec-head centered"><div class="label">Fonctionnalités</div><h2 style="max-width:22ch;">Tout votre projet, dans une seule application.</h2></div>
-    <div class="g-3">
-      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">📷</div><h4>Photos géolocalisées</h4><p style="margin-top:10px;font-size:15px;">Chaque étape documentée par le chef de chantier, horodatée et localisée.</p></div>
-      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">📄</div><h4>Documents signés</h4><p style="margin-top:10px;font-size:15px;">Contrats, devis, rapports — accessibles et signés électroniquement 24h/24.</p></div>
-      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">💶</div><h4>Budget en temps réel</h4><p style="margin-top:10px;font-size:15px;">Suivi ligne par ligne. Aucune surprise, aucune commission cachée.</p></div>
-      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">🔔</div><h4>Alertes intelligentes</h4><p style="margin-top:10px;font-size:15px;">Vous êtes notifié dès qu'une décision ou une validation vous attend.</p></div>
-      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">📅</div><h4>Prise de rendez-vous</h4><p style="margin-top:10px;font-size:15px;">Planifiez un appel avec votre conseiller en deux clics.</p></div>
-      <div class="card"><div style="width:48px;height:48px;border-radius:12px;background:var(--grad-cta);display:grid;place-items:center;font-size:22px;margin-bottom:18px;">📈</div><h4>Rapports hebdomadaires</h4><p style="margin-top:10px;font-size:15px;">Un point clair chaque lundi, signé par votre conseiller et le terrain.</p></div>
+    <div class="sec-head centered reveal">
+      <span class="label">6 portails de rôles</span>
+      <h2>Chaque acteur voit ce qui le concerne.</h2>
+      <p class="lead" style="text-align:center;margin:0 auto;">Pas de surcharge d'information. Chaque rôle dispose d'une interface adaptée à ses responsabilités.</p>
+    </div>
+    <div class="portal-grid">
+      <div class="card portal-card reveal reveal-d1">
+        <div class="portal-icon">👤</div>
+        <div class="portal-role">Portail Client</div>
+        <div class="portal-title">Votre espace projet</div>
+        <p class="portal-desc">Tableau de bord, validations, documents, historique et échanges avec l'équipe KOMA.</p>
+      </div>
+      <div class="card portal-card reveal reveal-d2">
+        <div class="portal-icon">🎯</div>
+        <div class="portal-role">Portail SPOC / KOMA</div>
+        <div class="portal-title">Coordination centrale</div>
+        <p class="portal-desc">Vue globale, arbitrages, alertes, contrôle qualité et communication client.</p>
+      </div>
+      <div class="card portal-card reveal reveal-d3">
+        <div class="portal-icon">📐</div>
+        <div class="portal-role">Portail AMOA / MOE</div>
+        <div class="portal-title">Pilotage technique</div>
+        <p class="portal-desc">Études, contrôle des exigences, exécution et remontées terrain structurées.</p>
+      </div>
+      <div class="card portal-card reveal reveal-d1">
+        <div class="portal-icon">👷</div>
+        <div class="portal-role">Portail MOEX</div>
+        <div class="portal-title">Exécution terrain</div>
+        <p class="portal-desc">Checklists, rapports photo, réserves, non-conformités et validations d'étapes.</p>
+      </div>
+      <div class="card portal-card reveal reveal-d2">
+        <div class="portal-icon">🔧</div>
+        <div class="portal-role">Portail Admin</div>
+        <div class="portal-title">Gestion droits & logs</div>
+        <p class="portal-desc">Gestion des accès, logs de connexion, configuration et audit trail complet.</p>
+      </div>
+      <div class="card portal-card reveal reveal-d3">
+        <div class="portal-icon">📦</div>
+        <div class="portal-role">Portail Supply</div>
+        <div class="portal-title">Approvisionnement</div>
+        <p class="portal-desc">Commandes, réceptions, stock, fournisseurs et traçabilité des matériaux.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="background:var(--teal-pale);border-top:1px solid var(--teal-soft);padding:clamp(64px,7vw,110px) 0;text-align:center;">
-  <div class="container">
-    <h2 style="max-width:24ch;margin:0 auto;">Créez votre espace projet aujourd'hui.</h2>
-    <p class="lead" style="margin:18px auto 32px;text-align:center;">Disponible sur iOS, Android et navigateur. Gratuit jusqu'au lancement de votre chantier.</p>
-    <div style="display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;"><a href="contact.html" class="btn btn-cta">Créer mon espace projet <span class="arrow">→</span></a><a href="journey.html" class="btn btn-dark">Voir comment ça marche</a></div>
+<!-- SECURITE -->
+<section class="sec-dark">
+  <div class="container" style="text-align:center;">
+    <div class="reveal">
+      <span class="label label-light">Sécurité & données</span>
+      <h2 style="color:#fff;margin-top:12px;max-width:560px;margin-left:auto;margin-right:auto;">Vos données sont protégées. Votre historique est permanent.</h2>
+      <p class="lead" style="color:rgba(255,255,255,.58);text-align:center;margin:16px auto 0;">La plateforme KOMA est conçue pour la durabilité et la confidentialité des données de vos projets.</p>
+      <div class="sec-badges">
+        <div class="sec-badge">🔒 Chiffrement TLS/HTTPS</div>
+        <div class="sec-badge">🏛️ Données hébergées en Europe</div>
+        <div class="sec-badge">📋 Audit trail immuable</div>
+        <div class="sec-badge">👤 Contrôle des accès par rôle</div>
+        <div class="sec-badge">🔑 Authentification sécurisée</div>
+        <div class="sec-badge">💾 Sauvegardes automatiques</div>
+      </div>
+      <div style="margin-top:40px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-cta">Demander une démo <span class="arrow">→</span></a>
+        <a href="contact.html" class="btn btn-outline-white">Nous contacter</a>
+      </div>
+    </div>
   </div>
 </section>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <div style="font-family:var(--f-display);font-weight:900;font-size:22px;letter-spacing:0.08em;color:white;">KOMA <span style="font-weight:500;font-size:14px;letter-spacing:0.2em;opacity:0.6;">EXPERTISE</span></div>
-        <p style="margin-top:16px;max-width:38ch;color:rgba(255,255,255,0.65);font-size:14px;">Construisez en Afrique depuis le monde entier — avec transparence, des experts vérifiés et un interlocuteur unique.</p>
-        <div class="wecare-badge">
-          <div class="wrow"><span class="dot"></span> Ingénierie SCI WeCare</div>
-          <p style="margin-top:8px;font-size:13px;color:rgba(255,255,255,0.5);">Entité technique sœur — études, coordination, exécution. <a href="partners.html#wecare" style="color:rgba(255,255,255,0.75);text-decoration:underline;text-underline-offset:3px;">En savoir plus</a></p>
-        </div>
-      </div>
-      <div>
-        <h5>Pour les clients</h5>
-        <ul>
-          <li><a href="solutions.html">Nos solutions</a></li>
-          <li><a href="journey.html">Comment ça marche</a></li>
-          <li><a href="platform.html">Espace projet</a></li>
-          <li><a href="projects.html">Projets réalisés</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Pour les pros</h5>
-        <ul>
-          <li><a href="partners.html">Rejoindre le réseau</a></li>
-          <li><a href="partners.html#wecare">SCI WeCare</a></li>
-          <li><a href="about.html">À propos de KOMA</a></li>
-          <li><a href="contact.html">Devenir partenaire</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <ul>
-          <li><a href="contact.html">Estimer mon projet</a></li>
-          <li><a href="contact.html">Parler à un expert</a></li>
-          <li><a href="mailto:hello@koma.build">hello@koma.build</a></li>
-          <li><a href="tel:+33000000000">+33 (0) 00 00 00 00</a></li>
-        </ul>
-      </div>
+      <div><div style="font-family:var(--f-display);font-weight:800;font-size:20px;letter-spacing:.1em;color:#fff;margin-bottom:14px;">KOMA <span style="font-weight:400;font-size:13px;letter-spacing:.2em;opacity:.5;">EXPERTISE</span></div><p style="font-size:14px;max-width:34ch;line-height:1.7;">Construire, rénover ou investir en Afrique depuis l'étranger.</p><div class="wecare-badge"><div class="wrow"><span class="wdot"></span> Appui technique : SCI WeCare</div></div></div>
+      <div><h5>Plateforme</h5><ul><li><a href="platform.html">Modules</a></li><li><a href="platform.html#portails">Portails</a></li><li><a href="contact.html">Demander une démo</a></li></ul></div>
+      <div><h5>Services</h5><ul><li><a href="solutions.html">Tous les services</a></li><li><a href="journey.html">Comment ça marche</a></li></ul></div>
+      <div><h5>KOMA</h5><ul><li><a href="about.html">À propos</a></li><li><a href="contact.html">Contact</a></li><li><a href="partners.html">Partenaires</a></li></ul></div>
     </div>
-    <div class="foot-bottom">
-      <div>© 2026 KOMA Expertise · SCI WeCare Group</div>
-      <div style="display:flex;gap:20px;">
-        <a href="#">Mentions légales</a>
-        <a href="#">Confidentialité</a>
-        <a href="#">EN / FR</a>
-      </div>
-    </div>
+    <div class="foot-bottom"><span>© 2025 KOMA Expertise. SAS basée en France.</span><div style="display:flex;gap:16px;"><a href="#">Mentions légales</a><a href="#">Confidentialité</a></div></div>
   </div>
 </footer>
-<script>
-(function(){
-  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var s=document.createElement('style');
-  s.textContent='.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease;}.reveal.visible{opacity:1;transform:translateY(0);}';
-  document.head.appendChild(s);
-  var els=document.querySelectorAll('.card,.sec-head,.tracker,figure,.imgph,.kpi,.stage,.feed-item,.wecare-section .lead,.wecare-section h2,.step-num,.stat-big');
-  els.forEach(function(el){
-    el.classList.add('reveal');
-    var p=el.parentElement,sibs=[].slice.call(p.children).filter(function(c){return c.classList.contains('reveal');});
-    el.style.transitionDelay=(sibs.indexOf(el)*80)+'ms';
-  });
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(function(el){io.observe(el);});
-})();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
