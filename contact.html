@@ -127,13 +127,13 @@ textarea.form-control { min-height: 110px; resize: vertical; }
 <!-- ═══ NAVBAR ═══ -->
 <header class="site-header" id="site-header">
   <nav class="nav-unified" aria-label="Navigation principale">
-    <a href="home.html" class="nav-brand" aria-label="KOMA Accueil">
+    <a href="index.html" class="nav-brand" aria-label="KOMA Accueil">
       <div class="koma-word">KOMA</div>
       <div class="koma-sub">Expertise</div>
     </a>
     <div class="nav-divider"></div>
     <div class="nav-links">
-      <a href="home.html"      class="nav-item">Accueil</a>
+      <a href="index.html"      class="nav-item">Accueil</a>
       <a href="solutions.html" class="nav-item">Services</a>
       <a href="journey.html"   class="nav-item">Comment ça marche</a>
       <a href="platform.html"  class="nav-item">Plateforme</a>
@@ -154,7 +154,7 @@ textarea.form-control { min-height: 110px; resize: vertical; }
 </header>
 
 <div class="mobile-menu" id="mobile-menu">
-  <a href="home.html"      class="mob-item">Accueil</a>
+  <a href="index.html"      class="mob-item">Accueil</a>
   <a href="solutions.html" class="mob-item">Services</a>
   <a href="journey.html"   class="mob-item">Comment ça marche</a>
   <a href="platform.html"  class="mob-item">Plateforme</a>
@@ -178,14 +178,14 @@ textarea.form-control { min-height: 110px; resize: vertical; }
     <!-- Path selector -->
     <div class="path-selector" role="group" aria-label="Choisissez votre parcours">
       <button class="path-btn active" data-path="client" aria-pressed="true">
-        <span class="path-icon">🏗️</span>
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(24,183,210,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17V8l7-6 7 6v9" stroke="var(--teal)" stroke-width="1.5" stroke-linejoin="round" fill="none"/><path d="M7 17v-5h6v5" stroke="var(--teal)" stroke-width="1.4" fill="none"/></svg></div>
         <div>
           <div class="path-label">Je veux commencer ou reprendre un projet</div>
           <div class="path-sub">Client, diaspora, investisseur</div>
         </div>
       </button>
       <button class="path-btn" data-path="partner" aria-pressed="false">
-        <span class="path-icon">🤝</span>
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(193,154,75,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="3" stroke="var(--gold)" stroke-width="1.5" fill="none"/><circle cx="14" cy="7" r="3" stroke="var(--gold)" stroke-width="1.5" fill="none" opacity=".5"/><path d="M1 17c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
         <div>
           <div class="path-label">Je veux rejoindre le réseau KOMA</div>
           <div class="path-sub">Professionnel BTP, partenaire</div>
@@ -202,10 +202,10 @@ textarea.form-control { min-height: 110px; resize: vertical; }
 
           <!-- SUCCESS STATE -->
           <div class="form-success" id="form-success">
-            <div class="success-icon">✅</div>
+            <div style="width:72px;height:72px;border-radius:50%;background:rgba(16,185,129,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M7 17l7 7 14-14" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="17" r="15" stroke="var(--success)" stroke-width="1.5" fill="none" opacity=".3"/></svg></div>
             <div class="success-title">Votre demande a bien été envoyée !</div>
             <p class="success-sub">Un expert KOMA vous contacte sous 48 heures pour un premier diagnostic. Pensez à vérifier vos spams.</p>
-            <a href="home.html" class="btn btn-cta">Retour à l'accueil <span class="arrow">→</span></a>
+            <a href="index.html" class="btn btn-cta">Retour à l'accueil <span class="arrow">→</span></a>
           </div>
 
           <!-- CLIENT FORM -->
@@ -214,21 +214,21 @@ textarea.form-control { min-height: 110px; resize: vertical; }
             <div class="form-grid-2">
               <div class="form-group">
                 <label for="c-prenom">Prénom <span>*</span></label>
-                <input type="text" id="c-prenom" name="prenom" class="form-control" placeholder="Votre prénom" required>
+                <input type="text" id="c-prenom" name="prenom" class="form-control" placeholder="Votre prénom" autocomplete="given-name" required>
               </div>
               <div class="form-group">
                 <label for="c-nom">Nom <span>*</span></label>
-                <input type="text" id="c-nom" name="nom" class="form-control" placeholder="Votre nom" required>
+                <input type="text" id="c-nom" name="nom" class="form-control" placeholder="Votre nom" autocomplete="family-name" required>
               </div>
             </div>
             <div class="form-grid-2">
               <div class="form-group">
                 <label for="c-email">Email <span>*</span></label>
-                <input type="email" id="c-email" name="email" class="form-control" placeholder="votre@email.com" required>
+                <input type="email" id="c-email" name="email" class="form-control" placeholder="votre@email.com" autocomplete="email" required>
               </div>
               <div class="form-group">
                 <label for="c-phone">Téléphone / WhatsApp <span>*</span></label>
-                <input type="tel" id="c-phone" name="phone" class="form-control" placeholder="+33 6 xx xx xx xx" required>
+                <input type="tel" id="c-phone" name="phone" class="form-control" placeholder="+33 6 xx xx xx xx" autocomplete="tel" required>
               </div>
             </div>
             <div class="form-group">
@@ -432,18 +432,17 @@ textarea.form-control { min-height: 110px; resize: vertical; }
           <h4>Une question avant de commencer ?</h4>
           <p>Contactez directement l'équipe KOMA par WhatsApp ou email.</p>
           <div style="display:grid;gap:8px;margin-top:14px;">
-            <a href="mailto:contact@koma-expertise.fr" class="btn btn-outline btn-sm" style="justify-content:center;">✉ contact@koma-expertise.fr</a>
-            <a href="#" class="btn btn-outline btn-sm" style="justify-content:center;">💬 WhatsApp KOMA</a>
+            <a href="mailto:contact@koma-expertise.fr" class="btn btn-outline btn-sm" style="justify-content:center;">contact@koma-expertise.fr</a>
+            <a href="#" class="btn btn-outline btn-sm" style="justify-content:center;">WhatsApp KOMA</a>
           </div>
         </div>
 
         <div class="sidebar-card card-teal" style="border:none;">
           <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:10px;">Rassurez-vous</div>
           <div style="display:grid;gap:8px;">
-            <div style="display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:var(--body);"><span style="color:var(--success);font-weight:700;">✓</span> Premier diagnostic gratuit</div>
-            <div style="display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:var(--body);"><span style="color:var(--success);font-weight:700;">✓</span> Aucun engagement avant accord</div>
-            <div style="display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:var(--body);"><span style="color:var(--success);font-weight:700;">✓</span> Réponse sous 48h ouvrées</div>
-            <div style="display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:var(--body);"><span style="color:var(--success);font-weight:700;">✓</span> Données confidentielles et sécurisées</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--body);"><span class="sb sb-valid" style="flex-shrink:0;">Gratuit</span> Premier diagnostic, sans engagement</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--body);"><span class="sb sb-valid" style="flex-shrink:0;">48h</span> Réponse garantie sous 48h ouvrées</div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--body);"><span class="sb sb-valid" style="flex-shrink:0;">Confidentiel</span> Données protégées et non partagées</div>
           </div>
         </div>
       </aside>

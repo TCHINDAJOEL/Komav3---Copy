@@ -48,7 +48,7 @@
 /* ── VALUES ── */
 .values-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
 .value-card { padding:32px; }
-.value-num { font-family:var(--f-display); font-size:48px; font-weight:900; line-height:1; background:var(--grad-cta); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:14px; }
+.value-num { font-family:var(--f-display); font-size:36px; font-weight:700; line-height:1; background:var(--grad-cta); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:14px; }
 .value-title { font-size:20px; font-weight:700; color:var(--ink); margin-bottom:10px; }
 .value-desc { font-size:14.5px; color:var(--body); line-height:1.7; }
 
@@ -84,10 +84,10 @@
 
 <header class="site-header" id="site-header">
   <nav class="nav-unified">
-    <a href="home.html" class="nav-brand"><div class="koma-word">KOMA</div><div class="koma-sub">Expertise</div></a>
+    <a href="index.html" class="nav-brand"><div class="koma-word">KOMA</div><div class="koma-sub">Expertise</div></a>
     <div class="nav-divider"></div>
     <div class="nav-links">
-      <a href="home.html"      class="nav-item">Accueil</a>
+      <a href="index.html"      class="nav-item">Accueil</a>
       <a href="solutions.html" class="nav-item">Services</a>
       <a href="journey.html"   class="nav-item">Comment ça marche</a>
       <a href="platform.html"  class="nav-item">Plateforme</a>
@@ -105,7 +105,7 @@
   </nav>
 </header>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="home.html" class="mob-item">Accueil</a>
+  <a href="index.html" class="mob-item">Accueil</a>
   <a href="solutions.html" class="mob-item">Services</a>
   <a href="journey.html" class="mob-item">Comment ça marche</a>
   <a href="platform.html" class="mob-item">Plateforme</a>
@@ -188,23 +188,35 @@
     <div class="values-grid">
       <div class="card value-card reveal reveal-d1">
         <div class="value-num">01</div>
-        <div class="value-title">Transparence totale</div>
+        <div class="value-title">Transparence</div>
         <p class="value-desc">Chaque coût, chaque décision, chaque action est documenté et visible. Aucune commission cachée, aucun arrangement en coulisses. La confiance ne se décrète pas — elle se prouve par les actes.</p>
+        <div class="callout" style="margin-top:16px;padding:10px 14px;">
+          <p style="font-size:12.5px;"><strong>Concrètement :</strong> un paiement n'est jamais isolé — il est lié à un jalon, un justificatif et une validation client.</p>
+        </div>
       </div>
       <div class="card value-card reveal reveal-d2">
         <div class="value-num">02</div>
-        <div class="value-title">Méthode avant tout</div>
+        <div class="value-title">Méthode</div>
         <p class="value-desc">Improviser sur un chantier, c'est risquer de tout perdre. KOMA impose une méthode à chaque étape : cadrage, checklists, points d'arrêt, livrables définis. La rigueur n'est pas une contrainte, c'est une protection.</p>
+        <div class="callout" style="margin-top:16px;padding:10px 14px;">
+          <p style="font-size:12.5px;"><strong>Concrètement :</strong> le ferraillage est contrôlé sur checklist avant coulage du béton. Un technicien valide. Vous signez.</p>
+        </div>
       </div>
       <div class="card value-card reveal reveal-d1">
         <div class="value-num">03</div>
-        <div class="value-title">Le client décide toujours</div>
+        <div class="value-title">Décision client</div>
         <p class="value-desc">KOMA supervise, coordonne et conseille. Mais la décision finale appartient toujours au client. Notre rôle est de rendre les choix éclairés, pas de les substituer. Chaque validation est un acte libre et documenté.</p>
+        <div class="callout" style="margin-top:16px;padding:10px 14px;">
+          <p style="font-size:12.5px;"><strong>Concrètement :</strong> aucun devis n'est signé, aucun paiement n'est effectué sans votre accord explicite depuis votre espace projet.</p>
+        </div>
       </div>
       <div class="card value-card reveal reveal-d2">
         <div class="value-num">04</div>
         <div class="value-title">Humain d'abord</div>
         <p class="value-desc">La technologie, les processus et les données sont au service des personnes — pas l'inverse. Chaque projet représente une famille, un rêve, un investissement de vie. Nous le traitons comme tel.</p>
+        <div class="callout" style="margin-top:16px;padding:10px 14px;">
+          <p style="font-size:12.5px;"><strong>Concrètement :</strong> votre interlocuteur KOMA vous répond en moins de 24h. Pas un chatbot. Une personne qui connaît votre projet.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -253,19 +265,19 @@
     </div>
     <div class="vision-cards">
       <div class="card vision-card reveal reveal-d1">
-        <div class="vision-icon">🗺️</div>
+        <div style="width:48px;height:48px;border-radius:14px;background:rgba(24,183,210,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="2" stroke="var(--teal)" stroke-width="1.5" fill="none"/><path d="M3 9h16M9 3v16M3 15h16" stroke="var(--teal)" stroke-width="1.2"/><circle cx="12" cy="12" r="3" stroke="var(--teal)" stroke-width="1.3" fill="none"/></svg></div>
         <div class="vision-year">Aujourd'hui</div>
-        <div class="vision-title">Cameroun & Afrique centrale</div>
+        <div class="vision-title">Cameroun &amp; Afrique centrale</div>
         <p class="vision-desc">Focus Cameroun avec couverture progressive vers Côte d'Ivoire, Sénégal, Gabon et Congo.</p>
       </div>
       <div class="card vision-card reveal reveal-d2">
-        <div class="vision-icon">🌍</div>
+        <div style="width:48px;height:48px;border-radius:14px;background:rgba(107,192,170,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="var(--teal-mint)" stroke-width="1.5" fill="none"/><path d="M2 11h18M11 2C8.5 5 7 8.5 7 11s1.5 6 4 9M11 2c2.5 3 4 6.5 4 9s-1.5 6-4 9" stroke="var(--teal-mint)" stroke-width="1.3"/></svg></div>
         <div class="vision-year">Demain</div>
         <div class="vision-title">Couverture 15 pays</div>
         <p class="vision-desc">Réseau de partenaires qualifiés dans 15 pays d'Afrique subsaharienne. Plateforme multilingue.</p>
       </div>
       <div class="card vision-card reveal reveal-d3">
-        <div class="vision-icon">🏛️</div>
+        <div style="width:48px;height:48px;border-radius:14px;background:rgba(193,154,75,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L4 6v6c0 4.8 3 8.5 7 10 4-1.5 7-5.2 7-10V6L11 2z" stroke="var(--gold)" stroke-width="1.5" stroke-linejoin="round" fill="none"/><path d="M7.5 11l2.5 2.5 5-5" stroke="var(--gold)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="vision-year">Vision</div>
         <div class="vision-title">Standard de confiance</div>
         <p class="vision-desc">KOMA comme marque de confiance reconnue pour la qualité, la méthode et la transparence en immobilier africain.</p>

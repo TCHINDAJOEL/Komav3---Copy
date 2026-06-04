@@ -45,7 +45,7 @@
 .hero-content > *:nth-child(4) { animation-delay:.35s; }
 .hero-content > *:nth-child(5) { animation-delay:.45s; }
 .hero-content h1 {
-  font-size: clamp(38px, 5.5vw, 72px); color:#fff; margin-top:20px;
+  font-size: clamp(32px, 4.6vw, 60px); color:#fff; margin-top:20px;
 }
 .hero-content h1 .accent-grad {
   background: linear-gradient(90deg, var(--teal-sky), var(--teal-mint));
@@ -86,8 +86,9 @@
 }
 .dev-icon {
   width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:13px;
+  color: #94A3B8; transition: color .2s, background .2s;
 }
-.dev-icon.act { background:rgba(24,183,210,.12); }
+.dev-icon.act { background:rgba(24,183,210,.12); color: #18B7D2; }
 .device-main { flex:1; padding:16px; background:#fff; overflow:hidden; }
 .dev-proj-head { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; }
 .dev-proj-name { font-size:13px; font-weight:800; color:#0F172A; }
@@ -350,13 +351,13 @@
 <!-- ═══ NAVBAR ═══ -->
 <header class="site-header" id="site-header">
   <nav class="nav-unified" aria-label="Navigation principale">
-    <a href="home.html" class="nav-brand" aria-label="KOMA Accueil">
+    <a href="index.html" class="nav-brand" aria-label="KOMA Accueil">
       <div class="koma-word">KOMA</div>
       <div class="koma-sub">Expertise</div>
     </a>
     <div class="nav-divider"></div>
     <div class="nav-links">
-      <a href="home.html"       class="nav-item active">Accueil</a>
+      <a href="index.html"       class="nav-item active">Accueil</a>
       <a href="solutions.html"  class="nav-item">Services</a>
       <a href="journey.html"    class="nav-item">Comment ça marche</a>
       <a href="platform.html"   class="nav-item">Plateforme</a>
@@ -378,7 +379,7 @@
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-  <a href="home.html"       class="mob-item active">Accueil</a>
+  <a href="index.html"       class="mob-item active">Accueil</a>
   <a href="solutions.html"  class="mob-item">Services</a>
   <a href="journey.html"    class="mob-item">Comment ça marche</a>
   <a href="platform.html"   class="mob-item">Plateforme</a>
@@ -431,12 +432,24 @@
         </div>
         <div class="device-body">
           <div class="device-sidebar">
-            <div class="dev-icon act">📊</div>
-            <div class="dev-icon">💰</div>
-            <div class="dev-icon">📁</div>
-            <div class="dev-icon">📷</div>
-            <div class="dev-icon">👥</div>
-            <div class="dev-icon">🔔</div>
+            <div class="dev-icon act" title="Tableau de bord" aria-label="Tableau de bord">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="6" height="6" rx="1.5" fill="currentColor" opacity=".9"/><rect x="9" y="1" width="6" height="6" rx="1.5" fill="currentColor" opacity=".4"/><rect x="1" y="9" width="6" height="6" rx="1.5" fill="currentColor" opacity=".4"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="currentColor" opacity=".4"/></svg>
+            </div>
+            <div class="dev-icon" title="Budget" aria-label="Budget">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v8a1 1 0 01-1 1H3a1 1 0 01-1-1V4z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M2 4V3a1 1 0 011-1h10a1 1 0 011 1v1" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8.5" r="1.5" fill="currentColor" opacity=".7"/></svg>
+            </div>
+            <div class="dev-icon" title="Documents" aria-label="Documents">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 2h6l3 3v9a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M10 2v3h3" stroke="currentColor" stroke-width="1.4"/><path d="M6 8h4M6 11h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </div>
+            <div class="dev-icon" title="Photos terrain" aria-label="Photos terrain">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="4" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4" fill="none"/><circle cx="8" cy="9" r="2.2" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M5.5 4l1-2h3l1 2" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="dev-icon" title="Partenaires" aria-label="Partenaires">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5" r="2" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M2 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/><circle cx="11" cy="5" r="2" stroke="currentColor" stroke-width="1.4" fill="none" opacity=".5"/><path d="M12 13c0-1.1-.45-2.1-1.17-2.83" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".5"/></svg>
+            </div>
+            <div class="dev-icon" title="Alertes" aria-label="Alertes">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L2 13h12L8 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/><path d="M8 7v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.5" r=".8" fill="currentColor"/></svg>
+            </div>
           </div>
           <div class="device-main">
             <div class="dev-proj-head">
@@ -514,39 +527,80 @@
   <div class="container">
     <div class="sec-head centered reveal">
       <span class="label">Le problème</span>
-      <h2>Construire à distance en Afrique<br>ne devrait pas être une source d'angoisse.</h2>
-      <p class="lead" style="text-align:center;margin:0 auto;">Pourtant, des milliers de personnes de la diaspora vivent les mêmes situations difficiles en essayant de construire ou investir au pays.</p>
+      <h2>Construire à distance en Afrique<br>est souvent anxiogène.</h2>
+      <p class="lead" style="text-align:center;margin:0 auto;">Pas parce que c'est impossible — mais parce qu'il manque un cadre, des preuves et un tiers fiable entre vous et le terrain.</p>
     </div>
+
+    <!-- 3 familles de problèmes -->
     <div class="g-3">
       <div class="card pain-card reveal reveal-d1">
-        <div class="pain-icon">📊</div>
-        <div class="pain-title">Budget flou et incontrôlable</div>
-        <p style="font-size:14px;color:var(--body);">Les coûts changent, les devis ne correspondent pas aux factures, l'argent part sans traçabilité.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:10px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 13V5l6-3 6 3v8" stroke="#EF4444" stroke-width="1.4" stroke-linejoin="round" fill="none"/><rect x="6" y="8" width="4" height="5" rx=".5" stroke="#EF4444" stroke-width="1.3" fill="none"/></svg>
+          </div>
+          <span style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#EF4444;">Argent incontrôlable</span>
+        </div>
+        <div class="pain-title">Les coûts dérivent. L'argent part.</div>
+        <p style="font-size:14px;color:var(--body);line-height:1.65;margin-top:8px;">Les devis ne correspondent pas aux factures. Les virements partent sans justificatif. Il devient impossible de savoir où est allé l'argent — ni ce qu'il reste.</p>
+        <div class="callout" style="margin-top:14px;padding:12px 14px;">
+          <p style="font-size:12.5px;color:var(--teal-dark);"><strong>KOMA :</strong> budget prévu, engagé et payé suivis séparément. Chaque paiement est conditionné à une validation.</p>
+        </div>
       </div>
+
       <div class="card pain-card reveal reveal-d2">
-        <div class="pain-icon">👁</div>
-        <div class="pain-title">Avancement impossible à vérifier</div>
-        <p style="font-size:14px;color:var(--body);">On vous dit que ça avance. Mais vous ne voyez rien, ne recevez pas de rapports et devez faire confiance.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#F59E0B" stroke-width="1.4" fill="none"/><circle cx="8" cy="8" r="2" fill="#F59E0B" opacity=".4"/><path d="M8 2v2M8 12v2M2 8h2M12 8h2" stroke="#F59E0B" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <span style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#b45309;">Chantier invisible</span>
+        </div>
+        <div class="pain-title">On vous dit que ça avance.</div>
+        <p style="font-size:14px;color:var(--body);line-height:1.65;margin-top:8px;">Vous ne voyez pas le chantier. Vous ne recevez pas de rapports. Vous dépendez de ce que les uns et les autres acceptent de vous dire — souvent trop peu, trop tard.</p>
+        <div class="callout" style="margin-top:14px;padding:12px 14px;">
+          <p style="font-size:12.5px;color:var(--teal-dark);"><strong>KOMA :</strong> rapports horodatés, photos terrain classées, checklists qualité et points d'arrêt à chaque étape clé.</p>
+        </div>
       </div>
+
       <div class="card pain-card reveal reveal-d3">
-        <div class="pain-icon">💸</div>
-        <div class="pain-title">Paiements peu ou pas tracés</div>
-        <p style="font-size:14px;color:var(--body);">Les virements partent. Les justificatifs n'arrivent pas. Il est impossible de savoir où est allé l'argent.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:10px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="5" cy="5" r="2" stroke="#EF4444" stroke-width="1.3" fill="none"/><circle cx="11" cy="5" r="2" stroke="#EF4444" stroke-width="1.3" fill="none"/><circle cx="8" cy="11" r="2" stroke="#EF4444" stroke-width="1.3" fill="none"/><path d="M7 5h2M6.5 7l-1 2.5M9.5 7l1 2.5" stroke="#EF4444" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          <span style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c53030;">Acteurs dispersés</span>
+        </div>
+        <div class="pain-title">Trop d'intermédiaires. Pas de méthode.</div>
+        <p style="font-size:14px;color:var(--body);line-height:1.65;margin-top:8px;">Entreprise, maçon, agent, cousin, notaire — chacun a sa version. Rien n'est coordonné, rien n'est écrit. En cas de problème, personne n'est responsable de rien.</p>
+        <div class="callout" style="margin-top:14px;padding:12px 14px;">
+          <p style="font-size:12.5px;color:var(--teal-dark);"><strong>KOMA :</strong> un seul interlocuteur côté client. Chaque partenaire est référencé, évalué et suivi dans la plateforme.</p>
+        </div>
       </div>
-      <div class="card pain-card reveal reveal-d1">
-        <div class="pain-icon">📂</div>
-        <div class="pain-title">Documents dispersés et perdus</div>
-        <p style="font-size:14px;color:var(--body);">Plans, permis, devis, factures, contrats : chacun a sa version, rien n'est centralisé, rien n'est retrouvable.</p>
-      </div>
-      <div class="card pain-card reveal reveal-d2">
-        <div class="pain-icon">🔄</div>
-        <div class="pain-title">Intermédiaires multiples et peu fiables</div>
-        <p style="font-size:14px;color:var(--body);">Trop d'acteurs, trop de promesses, pas de méthode commune. Le client ne sait plus à qui s'adresser.</p>
-      </div>
-      <div class="card pain-card reveal reveal-d3">
-        <div class="pain-icon">🚧</div>
-        <div class="pain-title">Chantier bloqué sans explication</div>
-        <p style="font-size:14px;color:var(--body);">Les travaux s'arrêtent. On ne sait pas pourquoi. Un reprise coûte plus cher que prévu et prend des mois.</p>
+    </div>
+
+    <!-- Accordion "autres risques" -->
+    <div style="margin-top:20px;text-align:center;" class="reveal">
+      <button class="pain-more-trigger btn btn-outline btn-sm" data-target="#pain-more" data-label-closed="Voir les autres risques fréquents" aria-expanded="false">
+        <span class="pain-more-label">Voir les autres risques fréquents</span>
+        <svg class="arrow" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div id="pain-more" style="max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(0.16,1,0.3,1);">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px 0 4px;max-width:640px;margin:0 auto;text-align:left;">
+          <div style="padding:14px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-md);">
+            <div style="font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:4px;">Documents dispersés</div>
+            <p style="font-size:13px;color:var(--body);line-height:1.55;">Plans, permis, devis, factures : chacun a sa version, rien n'est retrouvable.</p>
+          </div>
+          <div style="padding:14px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-md);">
+            <div style="font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:4px;">Chantier bloqué</div>
+            <p style="font-size:13px;color:var(--body);line-height:1.55;">Les travaux s'arrêtent sans explication. La reprise coûte plus cher que prévu.</p>
+          </div>
+          <div style="padding:14px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-md);">
+            <div style="font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:4px;">Mauvaise qualité passée inaperçue</div>
+            <p style="font-size:13px;color:var(--body);line-height:1.55;">Ferraillage non conforme, béton sous-dosé : sans contrôle, les erreurs restent cachées.</p>
+          </div>
+          <div style="padding:14px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-md);">
+            <div style="font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:4px;">Dérapage des délais</div>
+            <p style="font-size:13px;color:var(--body);line-height:1.55;">6 mois annoncés, 2 ans de chantier. Sans planning ni jalons, les délais s'évaporent.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -560,52 +614,88 @@
       <h2>KOMA remet de l'ordre dans votre projet.</h2>
       <p class="lead">Du premier appel à la remise des clés, KOMA structure chaque étape avec méthode, traçabilité et transparence — quel que soit l'état d'avancement de votre projet.</p>
     </div>
+    <!-- 4 piliers -->
+    <div class="pillars-grid reveal">
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-verb">Cadrer</div>
+        <p class="pillar-desc">Faisabilité, budget prévisionnel, programme, terrain — avant tout engagement.</p>
+        <div class="pillar-badge"><span class="sb sb-valid">Fiche de cadrage</span></div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <div class="pillar-verb">Vérifier</div>
+        <p class="pillar-desc">Partenaires qualifiés, devis comparés, plans validés, qualité contrôlée à chaque étape.</p>
+        <div class="pillar-badge"><span class="sb sb-report">Rapport terrain</span></div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-verb">Suivre</div>
+        <p class="pillar-desc">Photos, alertes, rapports horodatés, avancement et budget consultables 24h/24.</p>
+        <div class="pillar-badge"><span class="sb sb-wait">Rapport semaine</span></div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">04</div>
+        <div class="pillar-verb">Valider</div>
+        <p class="pillar-desc">Vous approuvez chaque paiement, chaque étape. Aucune décision sans votre accord.</p>
+        <div class="pillar-badge"><span class="sb sb-action">Action requise</span></div>
+      </div>
+    </div>
+
     <div class="sol-grid">
       <div class="card sol-card reveal reveal-d1">
-        <div class="sol-icon">🔍</div>
-        <h4>Diagnostic &amp; cadrage</h4>
-        <p style="font-size:14px;color:var(--body);margin-top:8px;line-height:1.6;">Analyse de votre situation, de vos besoins et de la faisabilité avant tout engagement. Vous savez où vous en êtes.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="ib ib-teal" style="width:36px;height:36px;border-radius:9px;font-size:14px;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6" stroke="var(--teal)" stroke-width="1.4"/><path d="M5 7.5l2 2 3-3.5" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="sol-num">Diagnostic</div></div>
+        <h4>Cadrage initial</h4>
+        <p style="font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.6;">Analyse de votre situation, de vos besoins et de la faisabilité avant tout engagement.</p>
+        <div style="margin-top:10px;"><span class="sb sb-valid">Fiche de cadrage</span></div>
       </div>
       <div class="card sol-card reveal reveal-d2">
-        <div class="sol-icon">📐</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="ib ib-teal" style="width:36px;height:36px;border-radius:9px;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="11" width="11" height="2" rx="1" fill="var(--teal)" opacity=".3"/><rect x="2" y="7.5" width="8" height="2" rx="1" fill="var(--teal)" opacity=".5"/><rect x="2" y="4" width="5" height="2" rx="1" fill="var(--teal)"/></svg></div><div class="sol-num">Budget</div></div>
         <h4>Estimation &amp; chiffrage</h4>
-        <p style="font-size:14px;color:var(--body);margin-top:8px;line-height:1.6;">Budget prévisionnel détaillé, analyse des devis, comparaison des offres et validation avant signature.</p>
+        <p style="font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.6;">Budget prévisionnel détaillé, analyse des devis, comparaison des offres avant signature.</p>
+        <div style="margin-top:10px;"><span class="sb sb-report">Comparatif devis</span></div>
       </div>
       <div class="card sol-card reveal reveal-d3">
-        <div class="sol-icon">🏡</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="ib ib-green" style="width:36px;height:36px;border-radius:9px;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 13V7l5.5-5 5.5 5v6H9.5V9.5h-4V13H2z" stroke="var(--teal-mint)" stroke-width="1.3" stroke-linejoin="round" fill="none"/></svg></div><div class="sol-num">Foncier</div></div>
         <h4>Recherche foncière</h4>
-        <p style="font-size:14px;color:var(--body);margin-top:8px;line-height:1.6;">Identification, visite et analyse de terrains adaptés. Vérification des titres et des contraintes.</p>
+        <p style="font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.6;">Identification et analyse de terrains adaptés. Vérification des titres et des contraintes.</p>
+        <div style="margin-top:10px;"><span class="sb sb-wait">Analyse titre foncier</span></div>
       </div>
       <div class="card sol-card reveal reveal-d1">
-        <div class="sol-icon">📏</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="ib ib-teal" style="width:36px;height:36px;border-radius:9px;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 13h11M4 13V6l3.5-4 3.5 4v7" stroke="var(--teal)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M6 13v-3h3v3" stroke="var(--teal)" stroke-width="1.2" fill="none"/></svg></div><div class="sol-num">Conception</div></div>
         <h4>Études &amp; conception</h4>
-        <p style="font-size:14px;color:var(--body);margin-top:8px;line-height:1.6;">APS, APD, plans, notes de calcul et études techniques avec les architectes et bureaux d'études du réseau.</p>
+        <p style="font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.6;">APS, APD, plans et études techniques avec les architectes et bureaux d'études du réseau.</p>
+        <div style="margin-top:10px;"><span class="sb sb-valid">Plans APD validés</span></div>
       </div>
       <div class="card sol-card reveal reveal-d2">
-        <div class="sol-icon">🤝</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="ib ib-green" style="width:36px;height:36px;border-radius:9px;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="5" cy="5" r="2.2" stroke="var(--teal-mint)" stroke-width="1.3" fill="none"/><circle cx="10" cy="5" r="2.2" stroke="var(--teal-mint)" stroke-width="1.3" fill="none" opacity=".5"/><path d="M1.5 13c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5" stroke="var(--teal-mint)" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg></div><div class="sol-num">Partenaires</div></div>
         <h4>Sélection de partenaires</h4>
-        <p style="font-size:14px;color:var(--body);margin-top:8px;line-height:1.6;">Entreprises BTP, maîtres d'œuvre, artisans : chaque partenaire est référencé, évalué et suivi.</p>
+        <p style="font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.6;">Entreprises BTP, maîtres d'œuvre, artisans : chaque partenaire est référencé, évalué et suivi.</p>
+        <div style="margin-top:10px;"><span class="sb sb-valid">Partenaire qualifié KOMA</span></div>
       </div>
       <div class="card sol-card reveal reveal-d3">
-        <div class="sol-icon">👷</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="ib ib-teal" style="width:36px;height:36px;border-radius:9px;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="2" y="9" width="11" height="5" rx="1" stroke="var(--teal)" stroke-width="1.3" fill="none"/><path d="M5 9V6a2.5 2.5 0 015 0v3" stroke="var(--teal)" stroke-width="1.3" fill="none"/><circle cx="7.5" cy="11.5" r=".8" fill="var(--teal)"/></svg></div><div class="sol-num">Supervision</div></div>
         <h4>Supervision chantier</h4>
-        <p style="font-size:14px;color:var(--body);margin-top:8px;line-height:1.6;">Visites, rapports, photos, points d'arrêt, non-conformités et validation de chaque étape clé.</p>
+        <p style="font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.6;">Visites, rapports, photos horodatées, points d'arrêt et validation de chaque étape clé.</p>
+        <div style="margin-top:10px;"><span class="sb sb-report">Rapport de visite</span></div>
       </div>
       <div class="card sol-card reveal reveal-d1">
-        <div class="sol-icon">📋</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="ib ib-green" style="width:36px;height:36px;border-radius:9px;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 2h9l1 1v10l-1 1H3l-1-1V3l1-1z" stroke="var(--teal-mint)" stroke-width="1.3" fill="none"/><path d="M5 6h5M5 8.5h5M5 11h3" stroke="var(--teal-mint)" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="sol-num">Reporting</div></div>
         <h4>Reporting &amp; GED</h4>
-        <p style="font-size:14px;color:var(--body);margin-top:8px;line-height:1.6;">Rapports réguliers, galerie photos, gestion documentaire centralisée et historique complet accessible.</p>
+        <p style="font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.6;">Rapports hebdomadaires, galerie photos, gestion documentaire centralisée et historique complet.</p>
+        <div style="margin-top:10px;"><span class="sb sb-report">GED centralisée</span></div>
       </div>
       <div class="card sol-card reveal reveal-d2">
-        <div class="sol-icon">💳</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div class="ib ib-teal" style="width:36px;height:36px;border-radius:9px;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1" y="3" width="13" height="9" rx="1.5" stroke="var(--teal)" stroke-width="1.3" fill="none"/><path d="M4 3V2M11 3V2" stroke="var(--teal)" stroke-width="1.3" stroke-linecap="round"/><path d="M5 8l1.5 1.5L10 6" stroke="var(--teal)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="sol-num">Paiements</div></div>
         <h4>Suivi des paiements</h4>
-        <p style="font-size:14px;color:var(--body);margin-top:8px;line-height:1.6;">Chaque décaissement est conditionné à une validation. Justificatifs et traçabilité avec CEYNA PAY.</p>
+        <p style="font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.6;">Chaque décaissement est conditionné à une validation. Traçabilité complète avec CEYNA PAY.</p>
+        <div style="margin-top:10px;"><span class="sb sb-wait">En attente validation</span></div>
       </div>
       <div class="card sol-card card-teal reveal reveal-d3">
-        <div class="sol-icon">🚀</div>
-        <h4 style="font-size:17px;">Reprise de chantier bloqué</h4>
-        <p style="font-size:14px;color:var(--body);margin-top:8px;line-height:1.6;">Audit de l'existant, diagnostic des problèmes, plan de reprise et coordination pour relancer votre projet.</p>
-        <a href="contact.html" class="btn btn-cta btn-sm" style="margin-top:20px;">Analyser mon chantier →</a>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><div style="width:36px;height:36px;border-radius:9px;background:var(--teal);display:flex;align-items:center;justify-content:center;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2L2 7h3v6h5V7h3L7.5 2z" fill="white" opacity=".9"/></svg></div><div class="sol-num" style="color:var(--teal-dark);">Urgence</div></div>
+        <h4 style="font-size:16px;">Reprise de chantier bloqué</h4>
+        <p style="font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.6;">Audit de l'existant, diagnostic des problèmes, plan de reprise et coordination pour relancer votre projet.</p>
+        <a href="contact.html" class="btn btn-cta btn-sm" style="margin-top:16px;">Analyser mon chantier →</a>
       </div>
     </div>
   </div>
@@ -686,12 +776,20 @@
         <div class="bc-label">Suivi chantier</div>
         <div class="bc-title">Photos &amp; rapports terrain</div>
         <div class="mini-photos">
-          <div class="mp-thumb">🏗️</div>
-          <div class="mp-thumb">🧱</div>
-          <div class="mp-thumb">⚙️</div>
-          <div class="mp-thumb">👷</div>
+          <div class="mp-thumb" style="background:linear-gradient(135deg,#b5d5dc,#8fc0c8);position:relative;overflow:hidden;">
+            <div style="position:absolute;bottom:5px;left:5px;background:rgba(0,0,0,.45);border-radius:4px;padding:2px 6px;font-size:8.5px;font-weight:600;color:#fff;letter-spacing:.04em;">Fondations</div>
+          </div>
+          <div class="mp-thumb" style="background:linear-gradient(135deg,#c8d8c0,#a5c09a);position:relative;overflow:hidden;">
+            <div style="position:absolute;bottom:5px;left:5px;background:rgba(0,0,0,.45);border-radius:4px;padding:2px 6px;font-size:8.5px;font-weight:600;color:#fff;letter-spacing:.04em;">Ferraillage</div>
+          </div>
+          <div class="mp-thumb" style="background:linear-gradient(135deg,#d5c8b5,#c0aa88);position:relative;overflow:hidden;">
+            <div style="position:absolute;bottom:5px;left:5px;background:rgba(0,0,0,.45);border-radius:4px;padding:2px 6px;font-size:8.5px;font-weight:600;color:#fff;letter-spacing:.04em;">Gros œuvre</div>
+          </div>
+          <div class="mp-thumb" style="background:linear-gradient(135deg,#c8bfd5,#a89ec0);position:relative;overflow:hidden;">
+            <div style="position:absolute;bottom:5px;left:5px;background:rgba(0,0,0,.45);border-radius:4px;padding:2px 6px;font-size:8.5px;font-weight:600;color:#fff;letter-spacing:.04em;">Toiture</div>
+          </div>
         </div>
-        <p class="bc-sub" style="margin-top:12px;">Galerie horodatée, classée par étape. Rapports de visite avec observations et non-conformités.</p>
+        <p class="bc-sub" style="margin-top:12px;">Galerie horodatée, classée par étape. Chaque photo porte la date et le commentaire du technicien terrain.</p>
       </div>
 
       <!-- Partenaires -->
@@ -1100,6 +1198,54 @@
   </div>
 </section>
 
+<!-- ═══ SECTION HUMAINE ═══ -->
+<section class="sec-alt" id="equipe">
+  <div class="container">
+    <div class="sec-head centered reveal">
+      <span class="label">Une plateforme, une équipe</span>
+      <h2>Un outil digital. Des humains terrain.</h2>
+      <p class="lead" style="text-align:center;margin:0 auto;">La plateforme centralise tout. Mais c'est une équipe réelle qui supervise, coordonne et répond à vos questions.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal reveal-d1">
+        <div class="team-avatar" style="background:rgba(24,183,210,.1);">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="9" r="4.5" stroke="var(--teal)" stroke-width="1.5" fill="none"/><path d="M4 22c0-4.97 4.03-9 9-9s9 4.03 9 9" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div class="team-role">Votre rôle</div>
+        <div class="team-name">Le client</div>
+        <p class="team-desc">Vous validez chaque étape et chaque paiement depuis n'importe où. Vous gardez la décision finale.</p>
+      </div>
+      <div class="team-card reveal reveal-d2">
+        <div class="team-avatar" style="background:rgba(24,183,210,.1);">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="4" y="4" width="18" height="18" rx="4" stroke="var(--teal)" stroke-width="1.5" fill="none"/><path d="M9 13l3 3 5-5" stroke="var(--teal)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="team-role">Coordination</div>
+        <div class="team-name">KOMA</div>
+        <p class="team-desc">Coordonne, trace, supervise et vous rend compte. Votre interlocuteur unique pour toute la durée du projet.</p>
+      </div>
+      <div class="team-card reveal reveal-d3">
+        <div class="team-avatar" style="background:rgba(107,192,170,.1);">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3L4 8v5c0 5 4 9.5 9 11 5-1.5 9-6 9-11V8L13 3z" stroke="var(--teal-mint)" stroke-width="1.5" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <div class="team-role">Ingénierie terrain</div>
+        <div class="team-name">SCI WeCare</div>
+        <p class="team-desc">Expertise technique, études, contrôle qualité et exécution spécialisée selon le périmètre défini.</p>
+      </div>
+      <div class="team-card reveal reveal-d4">
+        <div class="team-avatar" style="background:rgba(193,154,75,.1);">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="10" cy="9" r="3.5" stroke="var(--gold)" stroke-width="1.5" fill="none"/><circle cx="17" cy="9" r="3.5" stroke="var(--gold)" stroke-width="1.5" fill="none" opacity=".5"/><path d="M3 22c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" fill="none"/><path d="M20 16c1.66.9 2.8 2.62 2.8 4.62" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg>
+        </div>
+        <div class="team-role">Réseaux locaux</div>
+        <div class="team-name">Partenaires</div>
+        <p class="team-desc">Entreprises BTP, architectes, artisans, agents fonciers — qualifiés, évalués et suivis sur la plateforme.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;" class="reveal">
+      <a href="about.html" class="btn btn-outline">En savoir plus sur KOMA →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ FINAL CTA ═══ -->
 <section class="final-cta-section" id="commencer">
   <div class="hero-bg" aria-hidden="true">
@@ -1109,13 +1255,13 @@
   <div class="container" style="position:relative;z-index:2;">
     <div style="max-width:680px;margin:0 auto;text-align:center;" class="reveal">
       <span class="badge badge-dark" style="margin-bottom:20px;">Prêt à commencer ?</span>
-      <h2 style="color:#fff;font-size:clamp(32px,4vw,56px);">Votre projet en Afrique<br>mérite un cadre clair.</h2>
-      <p class="lead" style="color:rgba(255,255,255,.62);text-align:center;margin:20px auto 36px;">Commencez par décrire votre projet. KOMA vous aide à le cadrer, l'estimer et identifier la prochaine étape — sans engagement.</p>
+      <h2 style="color:#fff;font-size:clamp(26px,3.5vw,46px);font-weight:650;">Vous avez un terrain, un chantier bloqué<br>ou une idée de projet ?</h2>
+      <p class="lead" style="color:rgba(255,255,255,.62);text-align:center;margin:18px auto 32px;">Décrivez votre situation. KOMA vous aide à la cadrer, l'estimer et identifier la prochaine étape — sans engagement.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn btn-cta" style="font-size:16px;padding:16px 32px;">Commencer mon projet <span class="arrow">→</span></a>
-        <a href="solutions.html" class="btn btn-outline-white">Découvrir nos services</a>
+        <a href="contact.html" class="btn btn-cta" style="font-size:15px;padding:14px 28px;">Décrire ma situation <span class="arrow">→</span></a>
+        <a href="journey.html" class="btn btn-outline-white">Voir comment ça marche</a>
       </div>
-      <p style="margin-top:24px;font-size:13px;color:rgba(255,255,255,.32);">Premier diagnostic gratuit · Réponse sous 48h · Aucun engagement</p>
+      <p style="margin-top:20px;font-size:12.5px;color:rgba(255,255,255,.3);letter-spacing:.02em;">Premier diagnostic gratuit · Réponse sous 48h · Aucun engagement</p>
     </div>
   </div>
 </section>

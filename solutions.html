@@ -69,10 +69,10 @@
 
 <header class="site-header" id="site-header">
   <nav class="nav-unified">
-    <a href="home.html" class="nav-brand"><div class="koma-word">KOMA</div><div class="koma-sub">Expertise</div></a>
+    <a href="index.html" class="nav-brand"><div class="koma-word">KOMA</div><div class="koma-sub">Expertise</div></a>
     <div class="nav-divider"></div>
     <div class="nav-links">
-      <a href="home.html"      class="nav-item">Accueil</a>
+      <a href="index.html"      class="nav-item">Accueil</a>
       <a href="solutions.html" class="nav-item active">Services</a>
       <a href="journey.html"   class="nav-item">Comment ça marche</a>
       <a href="platform.html"  class="nav-item">Plateforme</a>
@@ -91,7 +91,7 @@
 </header>
 
 <div class="mobile-menu" id="mobile-menu">
-  <a href="home.html" class="mob-item">Accueil</a>
+  <a href="index.html" class="mob-item">Accueil</a>
   <a href="solutions.html" class="mob-item active">Services</a>
   <a href="journey.html" class="mob-item">Comment ça marche</a>
   <a href="platform.html" class="mob-item">Plateforme</a>
@@ -123,20 +123,55 @@
   </div>
 </section>
 
-<!-- SERVICES GRID -->
-<section>
+<!-- VOTRE SITUATION -->
+<section style="padding:clamp(40px,5vw,64px) 0 0;">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="label">Nos 10 services</span>
-      <h2>Un accompagnement de bout en bout.</h2>
-      <p class="lead">KOMA intervient sur chaque dimension de votre projet — avant, pendant et après la construction.</p>
+    <div class="sec-head reveal" style="margin-bottom:24px;">
+      <span class="label">Votre situation</span>
+      <h2 style="max-width:480px;">Où en êtes-vous dans votre projet ?</h2>
+      <p class="lead" style="max-width:52ch;">Sélectionnez votre situation pour voir les services les plus adaptés.</p>
     </div>
+    <div class="sit-selector reveal" data-sit-group>
+      <button class="sit-btn active" data-sit="all" data-recommend="" type="button">
+        <span class="sit-dot"></span> Tous les services
+      </button>
+      <button class="sit-btn" data-sit="zero" data-recommend="diagnostic,estimation" type="button">
+        <span class="sit-dot"></span> Je commence de zéro
+      </button>
+      <button class="sit-btn" data-sit="terrain" data-recommend="foncier,diagnostic,etudes" type="button">
+        <span class="sit-dot"></span> J'ai déjà un terrain
+      </button>
+      <button class="sit-btn" data-sit="devis" data-recommend="estimation,partenaires" type="button">
+        <span class="sit-dot"></span> J'ai des devis à analyser
+      </button>
+      <button class="sit-btn" data-sit="encours" data-recommend="supervision,reporting,paiements" type="button">
+        <span class="sit-dot"></span> Mon chantier est en cours
+      </button>
+      <button class="sit-btn" data-sit="bloque" data-recommend="reprise" type="button">
+        <span class="sit-dot"></span> Mon chantier est bloqué
+      </button>
+      <button class="sit-btn" data-sit="investir" data-recommend="investissement,foncier" type="button">
+        <span class="sit-dot"></span> Je veux investir
+      </button>
+    </div>
+    <!-- Situation reset hint -->
+    <p class="reveal" style="font-size:12.5px;color:var(--stone);margin-bottom:36px;">
+      Tous les services restent disponibles — la sélection met les plus pertinents en avant.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section style="padding-top:0;">
+  <div class="container">
     <div class="svc-grid">
 
       <!-- Service 1: Diagnostic -->
-      <div class="card svc-card svc-featured reveal">
-        <div class="svc-icon">🔍</div>
-        <div class="svc-cat">Étape 1 — gratuit</div>
+      <div class="card svc-card svc-featured reveal" data-svc="diagnostic">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat">Étape 1</div>
+          <span class="sb sb-valid">Gratuit</span>
+        </div>
         <div class="svc-title">Diagnostic & cadrage projet</div>
         <p class="svc-problem">Vous avez une idée, un terrain ou un projet en cours. Vous ne savez pas par où commencer ni si votre projet est réaliste.</p>
         <div class="svc-koma">
@@ -148,13 +183,15 @@
             <li>Premier cadrage écrit remis</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Fiche de cadrage projet<span class="svc-free">Gratuit</span></div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> Fiche de cadrage projet</div>
       </div>
 
       <!-- Service 2: Estimation -->
-      <div class="card svc-card reveal reveal-d1">
-        <div class="svc-icon">📊</div>
-        <div class="svc-cat">Chiffrage</div>
+      <div class="card svc-card reveal reveal-d1" data-svc="estimation">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat">Chiffrage</div>
+          <span class="sb sb-wait">Sur devis</span>
+        </div>
         <div class="svc-title">Estimation & analyse de devis</div>
         <p class="svc-problem">Les devis reçus sont incohérents ou incompréhensibles. Vous ne savez pas si les prix sont justes.</p>
         <div class="svc-koma">
@@ -166,13 +203,15 @@
             <li>Recommandation et validation</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Rapport d'analyse + comparatif</div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> Rapport d'analyse + comparatif devis</div>
       </div>
 
       <!-- Service 3: Foncier -->
-      <div class="card svc-card reveal reveal-d2">
-        <div class="svc-icon">🗺️</div>
-        <div class="svc-cat">Foncier</div>
+      <div class="card svc-card reveal reveal-d2" data-svc="foncier">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat">Foncier</div>
+          <span class="sb sb-wait">Sur devis</span>
+        </div>
         <div class="svc-title">Recherche & analyse foncière</div>
         <p class="svc-problem">Vous cherchez un terrain mais ne savez pas comment vérifier les titres, identifier les contraintes ou évaluer la valeur.</p>
         <div class="svc-koma">
@@ -184,13 +223,15 @@
             <li>Orientation vers notaires du réseau</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Fiche terrain + rapport de visite</div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> Fiche terrain + rapport de visite</div>
       </div>
 
       <!-- Service 4: Études -->
-      <div class="card svc-card reveal reveal-d1">
-        <div class="svc-icon">📐</div>
-        <div class="svc-cat">Conception</div>
+      <div class="card svc-card reveal reveal-d1" data-svc="etudes">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat">Conception</div>
+          <span class="sb sb-wait">Sur devis</span>
+        </div>
         <div class="svc-title">Études & conception technique</div>
         <p class="svc-problem">Vous n'avez pas de plans ou vos plans existants ne sont pas adaptés au contexte local ou aux normes techniques.</p>
         <div class="svc-koma">
@@ -202,13 +243,15 @@
             <li>Coordination bureaux d'études</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Dossier technique complet</div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> Dossier technique complet (APS/APD)</div>
       </div>
 
       <!-- Service 5: Partenaires -->
-      <div class="card svc-card reveal reveal-d2">
-        <div class="svc-icon">🤝</div>
-        <div class="svc-cat">Réseau</div>
+      <div class="card svc-card reveal reveal-d2" data-svc="partenaires">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat">Réseau</div>
+          <span class="sb sb-wait">Sur devis</span>
+        </div>
         <div class="svc-title">Sélection & mise en relation</div>
         <p class="svc-problem">Vous ne connaissez pas les bons prestataires locaux ou avez eu de mauvaises expériences avec des intervenants non qualifiés.</p>
         <div class="svc-koma">
@@ -220,13 +263,15 @@
             <li>Vérification des référencements</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Sélection motivée + contrats</div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> Sélection motivée + contrats</div>
       </div>
 
       <!-- Service 6: Supervision -->
-      <div class="card svc-card reveal reveal-d1">
-        <div class="svc-icon">👷</div>
-        <div class="svc-cat">Chantier</div>
+      <div class="card svc-card reveal reveal-d1" data-svc="supervision">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat">Chantier</div>
+          <span class="sb sb-wait">Sur devis</span>
+        </div>
         <div class="svc-title">Supervision & contrôle qualité</div>
         <p class="svc-problem">Votre chantier avance sans que vous puissiez le voir ni le contrôler. Vous n'avez pas de retours réguliers sur la qualité.</p>
         <div class="svc-koma">
@@ -238,13 +283,15 @@
             <li>Coordination des corrections</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Rapports de visite + photos</div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> Rapports de visite horodatés + photos terrain</div>
       </div>
 
       <!-- Service 7: Reporting -->
-      <div class="card svc-card reveal reveal-d2">
-        <div class="svc-icon">📷</div>
-        <div class="svc-cat">Documentation</div>
+      <div class="card svc-card reveal reveal-d2" data-svc="reporting">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat">Documentation</div>
+          <span class="sb sb-wait">Sur devis</span>
+        </div>
         <div class="svc-title">Reporting & gestion documentaire</div>
         <p class="svc-problem">Documents dispersés, photos non datées, historique introuvable. Aucune traçabilité en cas de litige ou de reprise.</p>
         <div class="svc-koma">
@@ -256,13 +303,15 @@
             <li>Historique complet sur la plateforme</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Archive complète du projet</div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> GED complète + archive projet</div>
       </div>
 
       <!-- Service 8: Paiements -->
-      <div class="card svc-card reveal reveal-d1">
-        <div class="svc-icon">💳</div>
-        <div class="svc-cat">Financier</div>
+      <div class="card svc-card reveal reveal-d1" data-svc="paiements">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat">Financier</div>
+          <span class="sb sb-wait">Sur devis</span>
+        </div>
         <div class="svc-title">Suivi financier & paiements</div>
         <p class="svc-problem">L'argent part sans justificatifs. Vous perdez le fil des paiements et ne savez plus combien il reste à dépenser.</p>
         <div class="svc-koma">
@@ -274,13 +323,15 @@
             <li>Justificatifs centralisés</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Tableau de bord financier</div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> Tableau de bord financier en temps réel</div>
       </div>
 
       <!-- Service 9: Reprise -->
-      <div class="card svc-card reveal reveal-d2" style="border-top-color:var(--danger);">
-        <div class="svc-icon">🚧</div>
-        <div class="svc-cat">Urgence</div>
+      <div class="card svc-card reveal reveal-d2" style="border-top-color:var(--danger);" data-svc="reprise">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat" style="color:var(--danger);">Urgence</div>
+          <span class="sb sb-action">Prioritaire</span>
+        </div>
         <div class="svc-title">Reprise de chantier bloqué</div>
         <p class="svc-problem">Votre chantier est à l'arrêt depuis des semaines ou des mois. Vous ne savez pas comment repartir ni à qui faire confiance.</p>
         <div class="svc-koma">
@@ -292,13 +343,15 @@
             <li>Remobilisation des bonnes équipes</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Rapport d'audit + plan de reprise</div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> Rapport d'audit + plan de reprise structuré</div>
       </div>
 
       <!-- Service 10: Investissement -->
-      <div class="card svc-card reveal reveal-d1">
-        <div class="svc-icon">📈</div>
-        <div class="svc-cat">Investissement</div>
+      <div class="card svc-card reveal reveal-d1" data-svc="investissement">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div class="svc-cat">Investissement</div>
+          <span class="sb sb-wait">Sur devis</span>
+        </div>
         <div class="svc-title">Accompagnement investissement</div>
         <p class="svc-problem">Vous voulez investir dans l'immobilier en Afrique mais manquez de visibilité sur les risques, la rentabilité et les bonnes zones.</p>
         <div class="svc-koma">
@@ -310,7 +363,7 @@
             <li>Pilotage et mise en location</li>
           </ul>
         </div>
-        <div class="svc-livrable">📋 Note d'investissement + stratégie</div>
+        <div class="svc-livrable"><span style="color:var(--teal-dark);">↳</span> Note d'investissement + stratégie</div>
       </div>
 
     </div>
@@ -373,11 +426,11 @@
           <div class="badge badge-green" style="margin-bottom:16px;">Quel que soit votre stade</div>
           <h3 style="margin-bottom:16px;">KOMA s'adapte à votre situation.</h3>
           <div style="display:grid;gap:10px;margin-bottom:24px;">
-            <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;"><span>💡</span><span>Idée à explorer — cadrage et faisabilité</span></div>
-            <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;"><span>🗺️</span><span>Terrain trouvé — analyse et conception</span></div>
-            <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;"><span>📄</span><span>Plans existants — chiffrage et consultation</span></div>
-            <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;"><span>🏗️</span><span>Chantier en cours — intégration et suivi</span></div>
-            <div style="display:flex;gap:10px;align-items:flex-start;font-size:14px;"><span>🚧</span><span>Chantier bloqué — audit et reprise</span></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;"><span class="sb sb-valid" style="flex-shrink:0;">Idée</span><span style="color:var(--body);">Cadrage et faisabilité avant tout engagement</span></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;"><span class="sb sb-valid" style="flex-shrink:0;">Terrain</span><span style="color:var(--body);">Analyse foncière, conception et chiffrage</span></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;"><span class="sb sb-valid" style="flex-shrink:0;">Plans</span><span style="color:var(--body);">Chiffrage, consultation et sélection des équipes</span></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;"><span class="sb sb-report" style="flex-shrink:0;">En cours</span><span style="color:var(--body);">Intégration dans la plateforme et suivi terrain</span></div>
+            <div style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;"><span class="sb sb-action" style="flex-shrink:0;">Bloqué</span><span style="color:var(--body);">Audit d'urgence et plan de reprise structuré</span></div>
           </div>
           <a href="contact.html" class="btn btn-cta" style="width:100%;justify-content:center;">Commencer par un diagnostic →</a>
         </div>
